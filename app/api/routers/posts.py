@@ -1,7 +1,6 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
 import json
 from app.schemas import Post
-from app.services import storage
 
 router = APIRouter(prefix="/posts", tags=["posts"])
 

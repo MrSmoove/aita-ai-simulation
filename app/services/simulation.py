@@ -1,21 +1,20 @@
 import asyncio
 import uuid
 from datetime import datetime
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 
 from app.schemas import Post, SimulationConfig, AgentAction, SimulationRun
 from app.oasis import adapter as oasis
 from app.services import storage
 
 
-async def run_single_post(post: Post, config: SimulationConfig) -> Dict[str, Any]:
+async def run_single_post(post: Post, config: SimulationConfig, run_id: Optional[str] = None) -> Dict[str, Any]:
     """
     Orchestrate a short multi-agent simulation.
-    - seeds post into oasis
-    - runs num_commenters agents for max_steps
-    - optionally runs an OP reply after seeding and between steps
+    Accepts optional run_id so callers (API route) can create one and return it immediately.
     """
-    run_id = str(uuid.uuid4())
+    if run_id is None:
+        run_id = str(uuid.uuid4())
     created_at = datetime.utcnow()
     session = await oasis.seed_post_to_oasis(post.dict(), config.model_name)
 
@@ -52,6 +51,10 @@ async def run_single_post(post: Post, config: SimulationConfig) -> Dict[str, Any
     )
 
     out = run.dict()
+    # Convert datetime to ISO string for JSON serialization
+    if isinstance(out.get("created_at"), datetime):
+        out["created_at"] = out["created_at"].isoformat()
+    
     storage.save_run_db(run_id, post.post_id, config.dict(), out)
     storage.save_run_json(run_id, out)
     return out
