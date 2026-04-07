@@ -1,24 +1,22 @@
 # Python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
+.pytest_cache/
 .venv/
-env/
+venv/
+node_modules/
+data/runs/
+*.log
+.DS_Store
+*.db
+.idea/
+.vscode/
 
 # Environment variables
 .env
+.env.local
 
 # Data files
 data/reddit/*.jsonl
 data/reddit/*.csv
 data/runs/*
-
-# Mac
-.DS_Store
-
-# VSCode
-.vscode/
-
-# Logs
-*.log

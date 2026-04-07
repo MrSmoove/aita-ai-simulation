@@ -1,15 +1,70 @@
+"""
+CAMEL-AI LLM client integration (no oasis wrapper).
+"""
 import asyncio
-from typing import Any, Dict, List
+import os
+from typing import Any, Dict
+from dotenv import load_dotenv
 
-# Minimal async adapter stub for camel-oasis. Replace with real client integration.
-async def seed_post_to_oasis(post: Dict[str, Any], model_name: str) -> Dict[str, Any]:
-    # In real code: call oasis client to create a conversation/seed the post
-    await asyncio.sleep(0.1)
-    return {"session_id": f"seed-{post.get('post_id')}", "model": model_name}
+load_dotenv()
+
+from camel.agents import ChatAgent
+from camel.messages import BaseMessage
+from camel.models import ModelFactory
+from camel.types import ModelPlatformType, ModelType
+
+from app import prompts
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+MODEL = os.getenv("LLM_MODEL", "gpt-4-turbo")
+
+if not OPENAI_API_KEY:
+    import warnings
+    warnings.warn("OPENAI_API_KEY not set. Responses will be stubs.")
 
 
-async def generate_comment(session_id: str, prompt: str, agent_name: str, model_name: str) -> str:
-    # Replace with actual call to camel-oasis generation API
-    await asyncio.sleep(0.1)
-    # Very simple deterministic stub so runs are reproducible-ish
-    return f"[{agent_name} @ {model_name}] Reply to '{prompt[:40]}...'"
+async def generate_comment(
+    session_id: str,
+    prompt_context: str,
+    agent_name: str,
+    model_name: str = "gpt-4-turbo",
+    role: str = "commenter",
+) -> str:
+    """Generate a comment using camel-ai ChatAgent."""
+    
+    if not OPENAI_API_KEY:
+        return f"[{agent_name}] (stub) {prompt_context[:40]}..."
+    
+    try:
+        # Create model
+        model = ModelFactory.create(
+            model_platform=ModelPlatformType.OPENAI,
+            model_type=ModelType.GPT_4_TURBO,
+            model_config_dict={
+                "api_key": OPENAI_API_KEY,
+                "temperature": 0.7,
+            },
+        )
+        
+        # Create agent
+        agent = ChatAgent(
+            system_prompt=prompts.system_prompt(),
+            model=model,
+        )
+        
+        # Generate response (run in thread to avoid blocking)
+        user_msg = BaseMessage.make_user_message(
+            role_name=agent_name,
+            content=prompt_context,
+        )
+        
+        response = await asyncio.to_thread(agent.step, user_msg)
+        
+        if response and len(response) > 0:
+            return response[0].content
+        return f"[{agent_name}] (no response)"
+        
+    except Exception as e:
+        import logging
+        logging.error(f"Error generating comment: {e}")
+        return f"[{agent_name}] (error)"
