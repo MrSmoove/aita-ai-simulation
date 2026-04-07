@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+httpx
+pydantic
+streamlit
+python-dotenv
+sqlite-utils
+camel-oasis  # placeholder, ensure installed or replace with real camel client
