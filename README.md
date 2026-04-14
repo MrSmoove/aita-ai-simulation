@@ -30,7 +30,7 @@ python scripts/cli.py \
   --max-steps 2
 ```
 
-Results saved to `data/runs/test-1.json`
+Results saved to `data/runs/<run_id>.json` and `data/runs.db`.
 
 ### 4. Start API Server (Optional)
 ```bash
@@ -50,12 +50,9 @@ uvicorn app.api.main:app --port 8000 --reload
 
 1. Customize agent personalities in `app/prompts.py`
 2. Add real Reddit post scraping
-3. Build dashboard for AI vs Real comparison
-4. Support multi-model testing (GPT-4, Claude, Llama)
+3. Compare AI vs real verdict outcomes
 
 ## Team Notes
 
 - All API calls are logged to `log/`
 - Results stored in `data/runs.db` + JSON
-- Use `--wave-mode` for multi-stage simulations
-- See `RESEARCH_NOTES.md` for experiment design
