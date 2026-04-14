@@ -1,8 +1,9 @@
 """
-CAMEL-AI LLM client integration (no oasis wrapper).
+CAMEL-AI LLM client integration.
 """
-import asyncio
 import os
+import asyncio
+import warnings
 from typing import Any, Dict
 from dotenv import load_dotenv
 
@@ -19,12 +20,20 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 MODEL = os.getenv("LLM_MODEL", "gpt-4-turbo")
 
 if not OPENAI_API_KEY:
-    import warnings
     warnings.warn("OPENAI_API_KEY not set. Responses will be stubs.")
 
 
+async def seed_post_to_oasis(post_dict: Dict[str, Any], model_name: str = "gpt-4-turbo") -> Dict[str, str]:
+    """
+    Initialize a conversation session with the OP post.
+    Returns dict with session_id for tracking.
+    """
+    session_id = f"session-{post_dict.get('post_id', 'unknown')}"
+    return {"session_id": session_id}
+
+
 async def generate_comment(
-    session_id: str,
+    session: Dict[str, str],
     prompt_context: str,
     agent_name: str,
     model_name: str = "gpt-4-turbo",
@@ -46,9 +55,10 @@ async def generate_comment(
             },
         )
         
-        # Create agent
+        # Create agent with correct API: system_prompt goes in the role_name + role_type
         agent = ChatAgent(
-            system_prompt=prompts.system_prompt(),
+            role_name=agent_name,
+            role_type=role,
             model=model,
         )
         
@@ -67,4 +77,4 @@ async def generate_comment(
     except Exception as e:
         import logging
         logging.error(f"Error generating comment: {e}")
-        return f"[{agent_name}] (error)"
+        return f"[{agent_name}] (error: {str(e)[:50]})"
