@@ -14,7 +14,7 @@ class Post(BaseModel):
 
 
 class SimulationConfig(BaseModel):
-    model_name: str = "oasis-small"
+    model_name: str = "gpt-4.1-mini"
     num_commenters: int = Field(3, ge=1, le=100)
     max_steps: int = Field(3, ge=1, le=50)
     op_enabled: bool = True
