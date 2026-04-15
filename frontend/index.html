@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulation Viewer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="toolbar">
+        <div>
+          <p class="eyebrow">Synthetic Thread Viewer</p>
+          <h1>Run Explorer</h1>
+          <p class="toolbar-copy">Read one simulation run like a forum thread, without backend wiring or editing.</p>
+        </div>
+        <form id="run-form" class="run-form">
+          <label for="run-select">Choose a run</label>
+          <select id="run-select" name="runSelect">
+            <option value="">Loading local runs...</option>
+          </select>
+          <label for="run-id">Or load by run ID</label>
+          <div class="run-input-row">
+            <input
+              id="run-id"
+              name="runId"
+              type="text"
+              placeholder="abab0e4d-0cbc-488c-8c1d-74a834c037d9"
+              autocomplete="off"
+            />
+            <button type="submit">Load</button>
+          </div>
+        </form>
+      </header>
+
+      <section id="status" class="status">Enter a run ID to load a local JSON file.</section>
+
+      <div id="viewer" class="viewer hidden">
+        <article id="post-card" class="card post-card">
+          <div class="post-shell">
+            <div class="post-vote-rail">
+              <span class="vote-arrow">▲</span>
+              <span class="vote-divider"></span>
+              <span class="vote-arrow muted">▼</span>
+            </div>
+            <div class="post-main">
+              <div class="post-meta">
+                <span id="simulated-verdict" class="badge hidden">Simulated Verdict</span>
+                <span id="post-author" class="author"></span>
+                <span id="post-created" class="author"></span>
+              </div>
+              <h2 id="post-title"></h2>
+              <p id="post-body" class="post-body"></p>
+            </div>
+          </div>
+        </article>
+
+        <section id="comments-section" class="comments">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Thread View</p>
+              <h3>Conversation</h3>
+            </div>
+            <p class="section-note">Chronological view with lightweight inferred reply nesting</p>
+          </div>
+          <div id="comments-list" class="comments-list"></div>
+        </section>
+      </div>
+    </main>
+
+    <template id="comment-template">
+      <article class="comment-shell">
+        <div class="vote-rail">
+          <span class="vote-arrow">▲</span>
+          <span class="comment-score"></span>
+        </div>
+        <div class="comment">
+          <div class="comment-header">
+            <div class="comment-meta">
+              <span class="comment-role"></span>
+            </div>
+            <span class="reply-chip hidden"></span>
+          </div>
+          <p class="comment-text"></p>
+          <span class="winner-chip hidden">Simulated Verdict</span>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+  </html>

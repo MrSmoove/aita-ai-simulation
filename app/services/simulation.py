@@ -1,5 +1,5 @@
 """
-Multi-agent AITA simulation using camel-ai.
+Multi-agent AITA simulation using direct LLM providers.
 """
 import asyncio
 import uuid
@@ -8,7 +8,7 @@ from datetime import datetime
 from typing import Dict, Any, List, Optional
 
 from app.schemas import Post, SimulationConfig, AgentAction, SimulationRun
-from app.oasis import adapter as oasis
+from app.llm import adapter as llm
 from app.services import storage
 
 
@@ -26,7 +26,7 @@ async def run_single_post(
     created_at = datetime.utcnow()
     
     # Initialize session
-    session = await oasis.seed_post_to_oasis(post.dict(), config.model_name)
+    session = await llm.seed_session(post.dict(), config.model_name)
     
     timeline: List[AgentAction] = []
     metadata: Dict[str, Any] = {"comment_scores": {}}
@@ -34,11 +34,12 @@ async def run_single_post(
 
     # Step 0: Optional OP first reply
     if config.op_enabled:
-        op_resp = await oasis.generate_comment(
+        op_resp = await llm.generate_comment(
             session, 
             post.body, 
             "OP", 
-            config.model_name
+            config.model_name,
+            role="op",
         )
         op_comment_id = f"{run_id}:0:op"
         timeline.append(AgentAction(
@@ -58,7 +59,7 @@ async def run_single_post(
             # Use post title on first step, else last comment as context
             prompt = f"Title: {post.title}\n\nBody:\n{post.body}" if step == 1 else timeline[-1].text
             tasks.append(
-                oasis.generate_comment(session, prompt, agent_name, config.model_name)
+                llm.generate_comment(session, prompt, agent_name, config.model_name)
             )
         
         results = await asyncio.gather(*tasks)
@@ -92,11 +93,12 @@ async def run_single_post(
         # Allow OP to respond each step if enabled
         if config.op_enabled:
             op_prompt = " ".join([a.text for a in timeline[-config.num_commenters:]])
-            op_resp = await oasis.generate_comment(
+            op_resp = await llm.generate_comment(
                 session, 
                 op_prompt, 
                 "OP", 
-                config.model_name
+                config.model_name,
+                role="op",
             )
             op_comment_id = f"{run_id}:{step}:op"
             timeline.append(AgentAction(

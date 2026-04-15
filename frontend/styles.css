@@ -1,0 +1,378 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f0e8;
+  --card: #fffdfa;
+  --card-strong: #ffffff;
+  --border: #ded2c2;
+  --text: #261f18;
+  --muted: #7a6e61;
+  --accent: #ca4b1d;
+  --accent-soft: #fff0e7;
+  --accent-deep: #8f320f;
+  --line: #eadfce;
+  --surface: rgba(255, 255, 255, 0.74);
+  --shadow: 0 16px 40px rgba(54, 39, 27, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(202, 75, 29, 0.1), transparent 24%),
+    radial-gradient(circle at top right, rgba(117, 90, 57, 0.09), transparent 20%),
+    linear-gradient(180deg, #fbf6f0 0%, #f0e7dc 100%);
+  color: var(--text);
+}
+
+.page {
+  width: min(1120px, calc(100vw - 32px));
+  margin: 32px auto 48px;
+}
+
+.toolbar,
+.card,
+.comments {
+  background: linear-gradient(180deg, var(--card-strong) 0%, var(--card) 100%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.toolbar {
+  padding: 22px;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 12px;
+  z-index: 5;
+  backdrop-filter: blur(10px);
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.toolbar-copy {
+  margin-top: 8px;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.45;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+}
+
+.run-form {
+  min-width: min(420px, 100%);
+}
+
+.run-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.run-form select {
+  width: 100%;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font: inherit;
+  background: white;
+}
+
+.run-input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.run-input-row input {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font: inherit;
+}
+
+.run-input-row button {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 700;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+.status {
+  margin: 16px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.viewer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+}
+
+.card {
+  padding: 24px;
+}
+
+.post-shell {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 14px;
+}
+
+.post-vote-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+  padding-top: 6px;
+}
+
+.vote-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--line);
+}
+
+.vote-arrow.muted {
+  color: #baa998;
+}
+
+.post-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.author {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.post-body {
+  margin-top: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  font-size: 1.02rem;
+}
+
+.comments {
+  margin-top: 18px;
+  padding: 20px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.section-note {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.comments-list {
+  display: grid;
+  gap: 12px;
+}
+
+.comment-shell {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 10px;
+  align-items: start;
+  position: relative;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: reveal 280ms ease forwards;
+}
+
+.vote-rail {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 14px;
+  min-height: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--muted);
+}
+
+.vote-arrow {
+  color: var(--accent);
+  font-size: 15px;
+}
+
+.comment {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  background: var(--surface);
+  position: relative;
+}
+
+.comment-shell.winner .comment {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.comment-shell.depth-1 {
+  margin-left: 26px;
+}
+
+.comment-shell.depth-2 {
+  margin-left: 58px;
+}
+
+.comment-shell.depth-1::before,
+.comment-shell.depth-2::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: -8px;
+  bottom: calc(100% - 22px);
+  width: 2px;
+  background: linear-gradient(180deg, var(--line), transparent);
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.comment-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.comment-role {
+  color: var(--text);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.reply-chip,
+.winner-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.reply-chip {
+  background: #f3ede5;
+  color: var(--accent-deep);
+}
+
+.comment-text {
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.winner-chip {
+  margin-top: 12px;
+  background: rgba(200, 77, 26, 0.12);
+  color: var(--accent-deep);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    width: calc(100vw - 20px);
+    margin-top: 16px;
+  }
+
+  .toolbar,
+  .card,
+  .comments {
+    border-radius: 14px;
+  }
+
+  .run-form {
+    min-width: 100%;
+  }
+
+  .run-input-row {
+    flex-direction: column;
+  }
+
+  .comment-shell,
+  .comment-shell.depth-1,
+  .comment-shell.depth-2 {
+    grid-template-columns: 42px 1fr;
+    margin-left: 0;
+  }
+
+  .comment-shell.depth-1::before,
+  .comment-shell.depth-2::before {
+    display: none;
+  }
+}
