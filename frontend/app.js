@@ -55,39 +55,34 @@ function buildRunLabel(run) {
   return `${postId} • ${title} • ${createdAt} • ${shortRunId(run.run_id)}`;
 }
 
-function inferThreadStructure(timeline) {
-  let latestOpId = null;
-  let latestCommentWave = [];
+function deriveThreadStructure(timeline) {
+  const items = timeline || [];
+  const byId = new Map(items.filter((item) => item.comment_id).map((item) => [item.comment_id, item]));
 
-  return (timeline || []).map((action) => {
+  return items.map((action) => {
     const item = { ...action, depth: 0, replyLabel: "" };
+    const parentId = action.parent_comment_id;
 
-    if (action.role === "commenter") {
-      if (latestOpId) {
-        item.depth = 1;
-        item.replyLabel = "Replying to OP";
-      } else {
-        item.depth = 0;
-        item.replyLabel = "Top-level reply";
-      }
-      latestCommentWave.push(action.comment_id);
+    if (!parentId) {
+      item.replyLabel = action.role === "op" ? "Original poster" : "Top-level reply";
       return item;
     }
 
-    if (action.role === "op") {
-      if (action.step === 0) {
-        item.depth = 0;
-        item.replyLabel = "Original poster";
-      } else {
-        item.depth = 2;
-        item.replyLabel = latestCommentWave.length > 0 ? "Replying to this comment wave" : "Replying";
-      }
-
-      latestOpId = action.comment_id;
-      latestCommentWave = [];
+    const parent = byId.get(parentId);
+    if (!parent) {
+      item.replyLabel = "Reply";
       return item;
     }
 
+    let depth = 1;
+    let cursor = parent;
+    while (cursor?.parent_comment_id) {
+      depth += 1;
+      cursor = byId.get(cursor.parent_comment_id);
+    }
+
+    item.depth = Math.min(depth, 2);
+    item.replyLabel = parent.role === "op" ? "Replying to OP" : `Replying to ${formatRole(parent)}`;
     return item;
   });
 }
@@ -95,7 +90,7 @@ function inferThreadStructure(timeline) {
 function renderRun(run) {
   const scores = run.metadata?.comment_scores || {};
   const winnerId = run.metadata?.verdict_comment_id || null;
-  const threadItems = inferThreadStructure(run.timeline || []);
+  const threadItems = deriveThreadStructure(run.timeline || []);
 
   postTitleEl.textContent = run.post?.title || "(untitled)";
   postBodyEl.textContent = run.post?.body || "";
