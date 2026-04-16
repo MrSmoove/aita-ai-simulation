@@ -26,6 +26,7 @@ class AgentAction(BaseModel):
     step: int
     role: str  # "commenter" or "op"
     comment_id: Optional[str] = None
+    parent_comment_id: Optional[str] = None
 
 
 class SimulationRun(BaseModel):
