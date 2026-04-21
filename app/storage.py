@@ -13,6 +13,8 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 DB_PATH = DATA_DIR / "runs.db"
 JSON_OUT_DIR = DATA_DIR / "runs"
 JSON_OUT_DIR.mkdir(parents=True, exist_ok=True)
+BATCH_OUT_DIR = DATA_DIR / "batch_runs"
+BATCH_OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def save_run(path: str | Path, payload: dict[str, Any]) -> None:
@@ -73,3 +75,17 @@ def save_run_json(run_id: str, payload: Dict[str, Any]) -> None:
     out = JSON_OUT_DIR / f"{run_id}.json"
     with open(out, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2, ensure_ascii=False)
+
+
+def save_batch_run_json(batch_run_id: str, payload: Dict[str, Any]) -> None:
+    out = BATCH_OUT_DIR / f"{batch_run_id}.json"
+    with open(out, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
+
+
+def load_batch_run_json(batch_run_id: str) -> Optional[Dict[str, Any]]:
+    path = BATCH_OUT_DIR / f"{batch_run_id}.json"
+    if not path.exists():
+        return None
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)

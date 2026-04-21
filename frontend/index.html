@@ -3,39 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulation Viewer</title>
+    <title>AITA Simulation</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="page">
       <header class="toolbar">
         <div>
-          <p class="eyebrow">Synthetic Thread Viewer</p>
-          <h1>Run Explorer</h1>
-          <p class="toolbar-copy">Read one simulation run like a forum thread, without backend wiring or editing.</p>
+          <p class="eyebrow">Off-Brand Reddit Lab</p>
+          <h1>r/AITA Simulation</h1>
+          <p class="toolbar-copy">Preview synthetic threads generated from scraped AITA posts, then open each simulated post like a Reddit-style discussion.</p>
         </div>
-        <form id="run-form" class="run-form">
-          <label for="run-select">Choose a run</label>
-          <select id="run-select" name="runSelect">
-            <option value="">Loading local runs...</option>
-          </select>
-          <label for="run-id">Or load by run ID</label>
-          <div class="run-input-row">
-            <input
-              id="run-id"
-              name="runId"
-              type="text"
-              placeholder="abab0e4d-0cbc-488c-8c1d-74a834c037d9"
-              autocomplete="off"
-            />
-            <button type="submit">Load</button>
-          </div>
-        </form>
+        <div class="toolbar-controls">
+          <nav class="mode-tabs" aria-label="View mode">
+            <button id="tab-batches" class="mode-tab is-active" type="button">Batch Runs</button>
+            <button id="tab-runs" class="mode-tab" type="button">Simulation Runs</button>
+          </nav>
+          <form id="run-form" class="run-form hidden">
+            <label for="run-select">Choose a run</label>
+            <select id="run-select" name="runSelect">
+              <option value="">Loading local runs...</option>
+            </select>
+            <label for="run-id">Or load by run ID</label>
+            <div class="run-input-row">
+              <input
+                id="run-id"
+                name="runId"
+                type="text"
+                placeholder="abab0e4d-0cbc-488c-8c1d-74a834c037d9"
+                autocomplete="off"
+              />
+              <button type="submit">Load</button>
+            </div>
+          </form>
+        </div>
       </header>
 
-      <section id="status" class="status">Enter a run ID to load a local JSON file.</section>
+      <section id="status" class="status">Loading generated batch previews...</section>
+
+      <section id="batch-feed" class="reddit-feed hidden">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Generated Batch</p>
+            <h3>Simulated Post Previews</h3>
+          </div>
+          <p id="batch-meta" class="section-note"></p>
+        </div>
+        <div class="batch-picker">
+          <label for="batch-select">Choose batch</label>
+          <select id="batch-select">
+            <option value="">Loading batch runs...</option>
+          </select>
+        </div>
+        <div id="post-list" class="post-list"></div>
+      </section>
+
+      <div id="batch-post-view" class="viewer hidden">
+        <div class="back-row">
+          <button id="back-to-batch-feed" class="ghost-button" type="button">← Back to batch previews</button>
+        </div>
+
+        <article class="card post-card">
+          <div class="post-shell">
+            <div class="post-vote-rail">
+              <span class="vote-arrow">▲</span>
+              <span id="batch-post-score" class="score-large"></span>
+              <span class="vote-divider"></span>
+              <span class="vote-arrow muted">▼</span>
+            </div>
+            <div class="post-main">
+              <div class="post-meta">
+                <span id="batch-source-verdict" class="badge hidden"></span>
+                <span id="batch-author" class="author"></span>
+                <span id="batch-created" class="author"></span>
+                <span id="batch-source-comments" class="author"></span>
+                <a id="batch-source-url" class="ghost-link" href="#" target="_blank" rel="noreferrer">Source Post</a>
+              </div>
+              <h2 id="batch-title"></h2>
+              <p id="batch-body" class="post-body"></p>
+            </div>
+          </div>
+        </article>
+
+        <section class="comments">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Synthetic Thread</p>
+              <h3>Generated Conversation</h3>
+            </div>
+            <p id="batch-comments-meta" class="section-note"></p>
+          </div>
+          <div id="batch-comments-list" class="comments-list"></div>
+        </section>
+      </div>
 
       <div id="viewer" class="viewer hidden">
+        <div class="back-row">
+          <button id="back-to-run-list" class="ghost-button" type="button">← Back to runs</button>
+        </div>
         <article id="post-card" class="card post-card">
           <div class="post-shell">
             <div class="post-vote-rail">
@@ -84,6 +149,30 @@
           <p class="comment-text"></p>
           <span class="winner-chip hidden">Simulated Verdict</span>
         </div>
+      </article>
+    </template>
+
+    <template id="feed-item-template">
+      <article class="feed-item">
+        <button class="feed-item-button" type="button">
+          <div class="feed-vote">
+            <span class="vote-arrow">▲</span>
+            <span class="feed-score"></span>
+          </div>
+          <div class="feed-main">
+            <div class="feed-meta">
+              <span class="feed-topic"></span>
+              <span class="feed-comments-count"></span>
+            </div>
+            <h4 class="feed-title"></h4>
+            <p class="feed-body-preview"></p>
+            <div class="feed-footer">
+              <span class="feed-author"></span>
+              <span class="feed-verdict"></span>
+              <span class="feed-sim-meta"></span>
+            </div>
+          </div>
+        </button>
       </article>
     </template>
 

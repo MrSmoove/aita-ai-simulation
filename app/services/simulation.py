@@ -5,10 +5,12 @@ import asyncio
 import uuid
 import random
 import itertools
+import json
 from datetime import datetime
+from pathlib import Path
 from typing import Dict, Any, List, Optional
 
-from app.schemas import Post, SimulationConfig, AgentAction, SimulationRun
+from app.schemas import Post, SimulationConfig, AgentAction, SimulationRun, BatchRun, BatchPostResult
 from app.llm import adapter as llm
 from app.services import storage
 
@@ -133,6 +135,12 @@ def _build_op_prompt(post: Post, target_comment_text: str) -> str:
         f"Original post body:\n{post.body}\n\n"
         f"You are replying to this comment:\n{target_comment_text}\n"
     )
+
+
+def _scaled_num_commenters(real_num_comments: int, commenter_cap: int) -> int:
+    if real_num_comments <= 0:
+        return min(10, commenter_cap)
+    return max(10, min(round(real_num_comments ** 0.5), commenter_cap))
 
 
 async def run_single_post(
@@ -290,4 +298,77 @@ async def run_single_post(
     
     storage.save_run_db(run_id, post.post_id, config.dict(), out)
     storage.save_run_json(run_id, out)
+    return out
+
+
+async def run_batch_from_scrape(
+    source_file: str,
+    model_name: str = "gpt-4.1-mini",
+    max_steps: int = 6,
+    commenter_cap: int = 50,
+    op_enabled: bool = True,
+    limit: Optional[int] = None,
+) -> Dict[str, Any]:
+    batch_run_id = str(uuid.uuid4())
+    created_at = datetime.utcnow()
+
+    with open(source_file, "r", encoding="utf-8") as f:
+        raw_posts = json.load(f)
+
+    if limit is not None:
+        raw_posts = raw_posts[:limit]
+
+    batch_posts: List[BatchPostResult] = []
+
+    for raw_post in raw_posts:
+        post = Post(
+            post_id=raw_post["post_id"],
+            title=raw_post["title"],
+            body=raw_post["body"],
+            true_verdict=raw_post.get("verdict"),
+            topic=raw_post.get("topic_category"),
+            author=raw_post.get("author"),
+        )
+        simulated_config = SimulationConfig(
+            model_name=model_name,
+            num_commenters=_scaled_num_commenters(raw_post.get("num_comments", 0), commenter_cap),
+            max_steps=max_steps,
+            op_enabled=op_enabled,
+        )
+        simulated = await run_single_post(post, simulated_config)
+        batch_posts.append(
+            BatchPostResult(
+                post=post,
+                source_num_comments=raw_post.get("num_comments", 0),
+                source_score=raw_post.get("score"),
+                source_verdict=raw_post.get("verdict"),
+                source_top_comment=raw_post.get("top_comment"),
+                source_top_comment_score=raw_post.get("top_comment_score"),
+                source_url=raw_post.get("url"),
+                simulated_config=simulated_config.dict(),
+                timeline=[AgentAction(**action) for action in simulated["timeline"]],
+                metadata=simulated.get("metadata"),
+            )
+        )
+
+    batch_run = BatchRun(
+        batch_run_id=batch_run_id,
+        source_file=str(Path(source_file)),
+        created_at=created_at,
+        config={
+            "model_name": model_name,
+            "max_steps": max_steps,
+            "commenter_cap": commenter_cap,
+            "op_enabled": op_enabled,
+            "scaling_rule": "sqrt_cap_min10",
+            "source_count": len(batch_posts),
+        },
+        posts=batch_posts,
+    )
+
+    out = batch_run.dict()
+    if isinstance(out.get("created_at"), datetime):
+        out["created_at"] = out["created_at"].isoformat()
+
+    storage.save_batch_run_json(batch_run_id, out)
     return out

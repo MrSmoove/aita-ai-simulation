@@ -1,6 +1,5 @@
 from pydantic import BaseModel, Field
 from typing import Optional, List, Dict
-from enum import Enum
 from datetime import datetime
 
 
@@ -36,3 +35,24 @@ class SimulationRun(BaseModel):
     timeline: List[AgentAction]
     created_at: datetime
     metadata: Optional[Dict] = None
+
+
+class BatchPostResult(BaseModel):
+    post: Post
+    source_num_comments: int
+    source_score: Optional[int] = None
+    source_verdict: Optional[str] = None
+    source_top_comment: Optional[str] = None
+    source_top_comment_score: Optional[int] = None
+    source_url: Optional[str] = None
+    simulated_config: Dict
+    timeline: List[AgentAction]
+    metadata: Optional[Dict] = None
+
+
+class BatchRun(BaseModel):
+    batch_run_id: str
+    source_file: str
+    created_at: datetime
+    config: Dict
+    posts: List[BatchPostResult]
