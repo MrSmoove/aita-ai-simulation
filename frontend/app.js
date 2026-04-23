@@ -31,9 +31,17 @@ const batchBodyEl = document.querySelector("#batch-body");
 const batchPostScoreEl = document.querySelector("#batch-post-score");
 const batchCommentsMetaEl = document.querySelector("#batch-comments-meta");
 const batchCommentsListEl = document.querySelector("#batch-comments-list");
+const toggleSourcePanelEl = document.querySelector("#toggle-source-panel");
+const sourcePanelEl = document.querySelector("#source-panel");
+const sourcePanelVerdictEl = document.querySelector("#source-panel-verdict");
+const sourcePanelScoreEl = document.querySelector("#source-panel-score");
+const sourcePanelCommentsEl = document.querySelector("#source-panel-comments");
+const sourcePanelTopScoreEl = document.querySelector("#source-panel-top-score");
+const sourcePanelTopCommentEl = document.querySelector("#source-panel-top-comment");
 
 let batchRuns = [];
 let activeBatch = null;
+let sourcePanelOpen = false;
 
 function setStatus(message, isError = false) {
   statusEl.textContent = message;
@@ -45,6 +53,14 @@ function formatRole(action) {
     return "OP";
   }
   return action.agent_id || action.role || "comment";
+}
+
+function formatProvider(action) {
+  const provider = action.provider || action.simulation_provider || "";
+  if (!provider) {
+    return "";
+  }
+  return provider.charAt(0).toUpperCase() + provider.slice(1);
 }
 
 function escapeHtml(value) {
@@ -86,6 +102,22 @@ function formatUnixTimestamp(seconds) {
   return new Date(seconds * 1000).toLocaleString();
 }
 
+function formatSimulatedTime(action) {
+  const minute = action.simulated_minute;
+  if (minute === null || minute === undefined) {
+    return action.bucket_label || "";
+  }
+  if (minute < 60) {
+    return `${minute}m`;
+  }
+  const hours = Math.floor(minute / 60);
+  const remainder = minute % 60;
+  if (remainder === 0) {
+    return `${hours}h`;
+  }
+  return `${hours}h ${remainder}m`;
+}
+
 function setMode(mode) {
   const isBatch = mode === "batch";
   tabBatchesEl.classList.toggle("is-active", isBatch);
@@ -111,6 +143,19 @@ function showBatchFeed() {
   window.history.replaceState({}, "", url);
 }
 
+function syncSourcePanelToggle() {
+  toggleSourcePanelEl.textContent = sourcePanelOpen ? "Hide source context" : "Show source context";
+  sourcePanelEl.classList.toggle("hidden", !sourcePanelOpen);
+}
+
+function renderSourcePanel(post) {
+  sourcePanelVerdictEl.textContent = post.source_verdict || "Unknown";
+  sourcePanelScoreEl.textContent = `${post.source_score ?? 0}`;
+  sourcePanelCommentsEl.textContent = `${post.source_num_comments ?? 0}`;
+  sourcePanelTopScoreEl.textContent = `${post.source_top_comment_score ?? 0}`;
+  sourcePanelTopCommentEl.textContent = post.source_top_comment || "No scraped top comment captured for this source post.";
+}
+
 function showBatchPost(postId) {
   const post = activeBatch?.posts?.find((item) => item.post.post_id === postId);
   if (!post) {
@@ -132,6 +177,8 @@ function showBatchPost(postId) {
   batchBodyEl.textContent = post.post.body || "";
   batchPostScoreEl.textContent = `${post.source_score ?? 0}`;
   batchCommentsMetaEl.textContent = `${post.timeline?.length ?? 0} generated comments in this synthetic thread`;
+  renderSourcePanel(post);
+  syncSourcePanelToggle();
   renderBatchPostComments(post);
   setStatus(`Viewing generated post ${post.post.post_id}`);
 
@@ -146,33 +193,10 @@ function renderBatchPostComments(post) {
   const scores = post.metadata?.comment_scores || {};
   const winnerId = post.metadata?.verdict_comment_id || null;
   const threadItems = deriveThreadStructure(post.timeline || []);
+  const showSimulatedTime = post.simulated_config?.timeline_mode === "24h";
 
   threadItems.forEach((action, index) => {
-    const fragment = commentTemplate.content.cloneNode(true);
-    const shellEl = fragment.querySelector(".comment-shell");
-    const roleEl = fragment.querySelector(".comment-role");
-    const scoreEl = fragment.querySelector(".comment-score");
-    const textEl = fragment.querySelector(".comment-text");
-    const replyChipEl = fragment.querySelector(".reply-chip");
-    const winnerChipEl = fragment.querySelector(".winner-chip");
-
-    roleEl.textContent = formatRole(action);
-    scoreEl.textContent = `${scores[action.comment_id] ?? 0}`;
-    textEl.textContent = action.text || "";
-    shellEl.classList.add(`depth-${action.depth}`);
-    shellEl.style.animationDelay = `${index * 28}ms`;
-
-    if (action.comment_id === winnerId) {
-      shellEl.classList.add("winner");
-      winnerChipEl.classList.remove("hidden");
-    }
-
-    if (action.replyLabel) {
-      replyChipEl.textContent = action.replyLabel;
-      replyChipEl.classList.remove("hidden");
-    }
-
-    batchCommentsListEl.appendChild(fragment);
+    batchCommentsListEl.appendChild(renderCommentNode(action, scores, winnerId, index, showSimulatedTime));
   });
 }
 
@@ -198,9 +222,11 @@ function renderBatchFeed(batchRun) {
     commentsCountEl.textContent = `${post.source_num_comments ?? 0} source comments`;
     titleEl.textContent = post.post.title || "(untitled)";
     bodyPreviewEl.textContent = post.post.body || "";
-    authorEl.textContent = `${post.post.author || "OP"} • ${activeBatch.config.model_name}`;
+    const providerLabel = post.simulation_provider ? post.simulation_provider : activeBatch.config.provider || "provider";
+    const modelLabel = post.simulation_model || post.simulated_config?.model_name || "default model";
+    authorEl.textContent = `${post.post.author || "OP"} • ${providerLabel} • ${modelLabel}`;
     verdictEl.textContent = `Source: ${post.source_verdict || "Unknown"}`;
-    simMetaEl.textContent = `Sim: ${post.metadata?.verdict_comment_id ? "generated" : "no verdict"} • ${post.simulated_config?.num_commenters ?? 0} commenters`;
+    simMetaEl.textContent = `Sim: ${post.metadata?.verdict_comment_id ? "generated" : "no verdict"} • ${post.simulated_config?.num_commenters ?? 0} commenters • ${post.simulated_config?.timeline_mode || "basic"}`;
     buttonEl.addEventListener("click", () => showBatchPost(post.post.post_id));
 
     postListEl.appendChild(fragment);
@@ -261,44 +287,105 @@ async function loadBatchOptions() {
 
 function deriveThreadStructure(timeline) {
   const items = timeline || [];
-  const byId = new Map(items.filter((item) => item.comment_id).map((item) => [item.comment_id, item]));
+  const nodeById = new Map();
 
-  return items.map((action) => {
-    const item = { ...action, depth: 0, replyLabel: "" };
-    const parentId = action.parent_comment_id;
-
-    if (!parentId) {
-      item.replyLabel = action.role === "op" ? "Original poster" : "Top-level reply";
-      return item;
-    }
-
-    const parent = byId.get(parentId);
-    if (!parent) {
-      item.replyLabel = "Reply";
-      return item;
-    }
-
-    let depth = 1;
-    let cursor = parent;
-    while (cursor?.parent_comment_id) {
-      depth += 1;
-      cursor = byId.get(cursor.parent_comment_id);
-    }
-
-    item.depth = Math.min(depth, 2);
-    item.replyLabel = parent.role === "op" ? "Replying to OP" : `Replying to ${formatRole(parent)}`;
-    return item;
+  items.forEach((action, index) => {
+    const key = action.comment_id || `orphan-${index}`;
+    nodeById.set(key, {
+      ...action,
+      originalIndex: index,
+      children: [],
+      depth: 0,
+      replyLabel: "",
+    });
   });
+
+  const roots = [];
+  nodeById.forEach((node) => {
+    const parentId = node.parent_comment_id;
+    const parent = parentId ? nodeById.get(parentId) : null;
+    if (parent) {
+      parent.children.push(node);
+      node.depth = Math.min((parent.depth || 0) + 1, 4);
+      node.replyLabel = parent.role === "op" ? "Replying to OP" : `Replying to ${formatRole(parent)}`;
+    } else {
+      node.replyLabel = node.role === "op" ? "Original poster" : "Top-level reply";
+      roots.push(node);
+    }
+  });
+
+  const sortNodes = (left, right) => {
+    const leftMinute = left.simulated_minute ?? Number.MAX_SAFE_INTEGER;
+    const rightMinute = right.simulated_minute ?? Number.MAX_SAFE_INTEGER;
+    if (leftMinute !== rightMinute) {
+      return leftMinute - rightMinute;
+    }
+    return left.originalIndex - right.originalIndex;
+  };
+
+  const flatten = (node, output) => {
+    output.push(node);
+    node.children.sort(sortNodes);
+    node.children.forEach((child) => flatten(child, output));
+  };
+
+  const ordered = [];
+  roots.sort(sortNodes);
+  roots.forEach((root) => flatten(root, ordered));
+  return ordered;
+}
+
+function renderCommentNode(action, scores, winnerId, index, showSimulatedTime = false) {
+  const fragment = commentTemplate.content.cloneNode(true);
+  const shellEl = fragment.querySelector(".comment-shell");
+  const roleEl = fragment.querySelector(".comment-role");
+  const providerEl = fragment.querySelector(".comment-provider");
+  const timeEl = fragment.querySelector(".comment-time");
+  const scoreEl = fragment.querySelector(".comment-score");
+  const textEl = fragment.querySelector(".comment-text");
+  const replyChipEl = fragment.querySelector(".reply-chip");
+  const winnerChipEl = fragment.querySelector(".winner-chip");
+
+  roleEl.textContent = formatRole(action);
+  const providerLabel = formatProvider(action);
+  if (providerLabel) {
+    providerEl.textContent = providerLabel;
+    providerEl.classList.remove("hidden");
+  }
+  if (showSimulatedTime) {
+    timeEl.textContent = formatSimulatedTime(action);
+    timeEl.classList.remove("hidden");
+  } else {
+    timeEl.textContent = "";
+    timeEl.classList.add("hidden");
+  }
+  scoreEl.textContent = `${scores[action.comment_id] ?? 0}`;
+  textEl.textContent = action.text || "";
+  shellEl.classList.add(`depth-${Math.min(action.depth || 0, 4)}`);
+  shellEl.style.animationDelay = `${index * 28}ms`;
+
+  if (action.comment_id === winnerId) {
+    shellEl.classList.add("winner");
+    winnerChipEl.classList.remove("hidden");
+  }
+
+  if (action.replyLabel) {
+    replyChipEl.textContent = action.replyLabel;
+    replyChipEl.classList.remove("hidden");
+  }
+
+  return fragment;
 }
 
 function renderRun(run) {
   const scores = run.metadata?.comment_scores || {};
   const winnerId = run.metadata?.verdict_comment_id || null;
   const threadItems = deriveThreadStructure(run.timeline || []);
+  const showSimulatedTime = run.config?.timeline_mode === "24h";
 
   postTitleEl.textContent = run.post?.title || "(untitled)";
   postBodyEl.textContent = run.post?.body || "";
-  postAuthorEl.textContent = run.post?.author || "u/anonymous";
+  postAuthorEl.textContent = `${run.post?.author || "u/anonymous"} • ${run.config?.provider || "provider"} • ${run.config?.model_name || "default model"} • ${run.config?.timeline_mode || "basic"}`;
   postCreatedEl.textContent = formatCreatedAt(run.created_at);
 
   verdictBadgeEl.classList.toggle("hidden", !winnerId);
@@ -308,31 +395,7 @@ function renderRun(run) {
   commentsListEl.innerHTML = "";
 
   threadItems.forEach((action, index) => {
-    const fragment = commentTemplate.content.cloneNode(true);
-    const shellEl = fragment.querySelector(".comment-shell");
-    const roleEl = fragment.querySelector(".comment-role");
-    const scoreEl = fragment.querySelector(".comment-score");
-    const textEl = fragment.querySelector(".comment-text");
-    const replyChipEl = fragment.querySelector(".reply-chip");
-    const winnerChipEl = fragment.querySelector(".winner-chip");
-
-    roleEl.textContent = formatRole(action);
-    scoreEl.textContent = `${scores[action.comment_id] ?? 0}`;
-    textEl.textContent = action.text || "";
-    shellEl.classList.add(`depth-${action.depth}`);
-    shellEl.style.animationDelay = `${index * 28}ms`;
-
-    if (action.comment_id === winnerId) {
-      shellEl.classList.add("winner");
-      winnerChipEl.classList.remove("hidden");
-    }
-
-    if (action.replyLabel) {
-      replyChipEl.textContent = action.replyLabel;
-      replyChipEl.classList.remove("hidden");
-    }
-
-    commentsListEl.appendChild(fragment);
+    commentsListEl.appendChild(renderCommentNode(action, scores, winnerId, index, showSimulatedTime));
   });
 
   setStatus(`Loaded ${run.run_id}`);
@@ -431,6 +494,10 @@ tabRunsEl.addEventListener("click", () => {
 });
 
 backToBatchFeedEl.addEventListener("click", () => showBatchFeed());
+toggleSourcePanelEl.addEventListener("click", () => {
+  sourcePanelOpen = !sourcePanelOpen;
+  syncSourcePanelToggle();
+});
 backToRunListEl.addEventListener("click", () => {
   setMode("runs");
   viewerEl.classList.add("hidden");

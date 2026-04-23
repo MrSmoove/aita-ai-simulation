@@ -13,10 +13,12 @@ class Post(BaseModel):
 
 
 class SimulationConfig(BaseModel):
-    model_name: str = "gpt-4.1-mini"
+    model_name: Optional[str] = "gpt-4.1-mini"
+    provider: str = "openai"
     num_commenters: int = Field(3, ge=1, le=100)
     max_steps: int = Field(3, ge=1, le=50)
     op_enabled: bool = True
+    timeline_mode: str = "basic"
 
 
 class AgentAction(BaseModel):
@@ -26,6 +28,10 @@ class AgentAction(BaseModel):
     role: str  # "commenter" or "op"
     comment_id: Optional[str] = None
     parent_comment_id: Optional[str] = None
+    provider: Optional[str] = None
+    model_name: Optional[str] = None
+    simulated_minute: Optional[int] = None
+    bucket_label: Optional[str] = None
 
 
 class SimulationRun(BaseModel):
@@ -45,6 +51,8 @@ class BatchPostResult(BaseModel):
     source_top_comment: Optional[str] = None
     source_top_comment_score: Optional[int] = None
     source_url: Optional[str] = None
+    simulation_provider: Optional[str] = None
+    simulation_model: Optional[str] = None
     simulated_config: Dict
     timeline: List[AgentAction]
     metadata: Optional[Dict] = None

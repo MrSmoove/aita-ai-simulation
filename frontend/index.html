@@ -85,6 +85,40 @@
           </div>
         </article>
 
+        <section class="compare-card">
+          <div class="compare-header">
+            <div>
+              <p class="eyebrow">Source Context</p>
+              <h3>Original Reddit Snapshot</h3>
+            </div>
+            <button id="toggle-source-panel" class="ghost-button" type="button">Show source context</button>
+          </div>
+          <div id="source-panel" class="source-panel hidden">
+            <div class="source-grid">
+              <div class="source-stat">
+                <span class="source-label">Verdict</span>
+                <span id="source-panel-verdict" class="source-value"></span>
+              </div>
+              <div class="source-stat">
+                <span class="source-label">Score</span>
+                <span id="source-panel-score" class="source-value"></span>
+              </div>
+              <div class="source-stat">
+                <span class="source-label">Comments</span>
+                <span id="source-panel-comments" class="source-value"></span>
+              </div>
+              <div class="source-stat">
+                <span class="source-label">Top Comment Score</span>
+                <span id="source-panel-top-score" class="source-value"></span>
+              </div>
+            </div>
+            <div class="source-copy">
+              <h4>Top Scraped Comment</h4>
+              <p id="source-panel-top-comment" class="source-text"></p>
+            </div>
+          </div>
+        </section>
+
         <section class="comments">
           <div class="section-heading">
             <div>
@@ -143,6 +177,8 @@
           <div class="comment-header">
             <div class="comment-meta">
               <span class="comment-role"></span>
+              <span class="comment-provider badge subtle-badge hidden"></span>
+              <span class="comment-time"></span>
             </div>
             <span class="reply-chip hidden"></span>
           </div>

@@ -36,10 +36,12 @@ def render_pretty_run(result: dict) -> str:
         post["body"],
         "",
         "Config",
+        f"  Provider: {config['provider']}",
         f"  Model: {config['model_name']}",
         f"  Commenters: {config['num_commenters']}",
         f"  Steps: {config['max_steps']}",
         f"  OP enabled: {config['op_enabled']}",
+        f"  Timeline mode: {config.get('timeline_mode', 'basic')}",
         "",
         "Timeline",
     ]
@@ -47,7 +49,7 @@ def render_pretty_run(result: dict) -> str:
     for action in result["timeline"]:
         lines.extend(
             [
-                f"  Step {action['step']} | {action['role']} | {action['agent_id']}",
+                f"  Step {action['step']} | {action['role']} | {action['agent_id']} | {action.get('provider') or 'unknown'} | {action.get('bucket_label') or 'n/a'} | {action.get('simulated_minute') or 0}m",
                 f"  {action['text']}",
                 "",
             ]
@@ -84,7 +86,9 @@ async def main():
     parser.add_argument("--num-commenters", type=int, default=3, help="Number of commenter agents")
     parser.add_argument("--max-steps", type=int, default=2, help="Max simulation steps")
     parser.add_argument("--op-enabled", action="store_true", default=True, help="Enable OP replies")
-    parser.add_argument("--model", default="gpt-4.1-mini", help="Model name")
+    parser.add_argument("--provider", default="openai", help="Provider name: openai, gemini, or groq")
+    parser.add_argument("--model", default=None, help="Model name (defaults to the provider's configured default)")
+    parser.add_argument("--timeline-mode", default="basic", choices=["basic", "24h"], help="Simulation timeline mode")
     parser.add_argument("--output", default=None, help="Output JSON file (default: data/runs/{run_id}.json)")
     parser.add_argument(
         "--pretty-output",
@@ -108,14 +112,21 @@ async def main():
     # Create config
     config = SimulationConfig(
         model_name=args.model,
+        provider=args.provider,
         num_commenters=args.num_commenters,
         max_steps=args.max_steps,
         op_enabled=args.op_enabled,
+        timeline_mode=args.timeline_mode,
     )
     
     print(f"\n▶ Running simulation: {post.post_id}")
     print(f"  Title: {post.title}")
-    print(f"  Commenters: {config.num_commenters}, Steps: {config.max_steps}, OP: {config.op_enabled}\n")
+    display_steps = 6 if config.timeline_mode == "24h" else config.max_steps
+    print(
+        f"  Provider: {config.provider}, Model: {config.model_name or 'default'}, "
+        f"Commenters: {config.num_commenters}, Steps: {display_steps}, "
+        f"OP: {config.op_enabled}, Timeline: {config.timeline_mode}\n"
+    )
     
     # Run simulation
     result = await simulation.run_single_post(post, config)
@@ -140,6 +151,16 @@ async def main():
     print(f"  Saved to: {output_path}")
     print(f"  Pretty: {pretty_output_path}")
     print(f"  DB: data/runs.db")
+    usage = result.get("metadata", {}).get("usage", {})
+    if usage:
+        print("  Usage summary:")
+        print(f"    Requests: {usage.get('request_count', 0)}")
+        print(f"    Prompt tokens: {usage.get('prompt_tokens', 0)}")
+        print(f"    Completion tokens: {usage.get('completion_tokens', 0)}")
+        print(f"    Total tokens: {usage.get('total_tokens', 0)}")
+        if usage.get("models"):
+            models = ", ".join(f"{name} ({count})" for name, count in usage["models"].items())
+            print(f"    Models: {models}")
 
 
 if __name__ == "__main__":
