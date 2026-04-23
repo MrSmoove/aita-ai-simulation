@@ -191,12 +191,13 @@ function showBatchPost(postId) {
 function renderBatchPostComments(post) {
   batchCommentsListEl.innerHTML = "";
   const scores = post.metadata?.comment_scores || {};
+  const voteTotals = post.metadata?.comment_votes || {};
   const winnerId = post.metadata?.verdict_comment_id || null;
   const threadItems = deriveThreadStructure(post.timeline || []);
   const showSimulatedTime = post.simulated_config?.timeline_mode === "24h";
 
   threadItems.forEach((action, index) => {
-    batchCommentsListEl.appendChild(renderCommentNode(action, scores, winnerId, index, showSimulatedTime));
+    batchCommentsListEl.appendChild(renderCommentNode(action, scores, voteTotals, winnerId, index, showSimulatedTime));
   });
 }
 
@@ -335,7 +336,7 @@ function deriveThreadStructure(timeline) {
   return ordered;
 }
 
-function renderCommentNode(action, scores, winnerId, index, showSimulatedTime = false) {
+function renderCommentNode(action, scores, voteTotals, winnerId, index, showSimulatedTime = false) {
   const fragment = commentTemplate.content.cloneNode(true);
   const shellEl = fragment.querySelector(".comment-shell");
   const roleEl = fragment.querySelector(".comment-role");
@@ -344,6 +345,7 @@ function renderCommentNode(action, scores, winnerId, index, showSimulatedTime = 
   const scoreEl = fragment.querySelector(".comment-score");
   const textEl = fragment.querySelector(".comment-text");
   const replyChipEl = fragment.querySelector(".reply-chip");
+  const voteBreakdownEl = fragment.querySelector(".vote-breakdown");
   const winnerChipEl = fragment.querySelector(".winner-chip");
 
   roleEl.textContent = formatRole(action);
@@ -360,6 +362,13 @@ function renderCommentNode(action, scores, winnerId, index, showSimulatedTime = 
     timeEl.classList.add("hidden");
   }
   scoreEl.textContent = `${scores[action.comment_id] ?? 0}`;
+  const voteInfo = voteTotals[action.comment_id] || {};
+  const upvotes = voteInfo.upvotes ?? 0;
+  const downvotes = voteInfo.downvotes ?? 0;
+  if (upvotes > 0 || downvotes > 0) {
+    voteBreakdownEl.textContent = `↑ ${upvotes}  ↓ ${downvotes}`;
+    voteBreakdownEl.classList.remove("hidden");
+  }
   textEl.textContent = action.text || "";
   shellEl.classList.add(`depth-${Math.min(action.depth || 0, 4)}`);
   shellEl.style.animationDelay = `${index * 28}ms`;
@@ -379,6 +388,7 @@ function renderCommentNode(action, scores, winnerId, index, showSimulatedTime = 
 
 function renderRun(run) {
   const scores = run.metadata?.comment_scores || {};
+  const voteTotals = run.metadata?.comment_votes || {};
   const winnerId = run.metadata?.verdict_comment_id || null;
   const threadItems = deriveThreadStructure(run.timeline || []);
   const showSimulatedTime = run.config?.timeline_mode === "24h";
@@ -395,7 +405,7 @@ function renderRun(run) {
   commentsListEl.innerHTML = "";
 
   threadItems.forEach((action, index) => {
-    commentsListEl.appendChild(renderCommentNode(action, scores, winnerId, index, showSimulatedTime));
+    commentsListEl.appendChild(renderCommentNode(action, scores, voteTotals, winnerId, index, showSimulatedTime));
   });
 
   setStatus(`Loaded ${run.run_id}`);

@@ -574,6 +574,14 @@ h1 {
   white-space: pre-wrap;
 }
 
+.vote-breakdown {
+  display: inline-flex;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .winner-chip {
   margin-top: 12px;
   background: rgba(200, 77, 26, 0.12);

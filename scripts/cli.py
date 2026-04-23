@@ -68,10 +68,14 @@ def render_pretty_run(result: dict) -> str:
         )
 
     comment_scores = metadata.get("comment_scores") or {}
+    comment_votes = metadata.get("comment_votes") or {}
     if comment_scores:
         lines.append("Scores")
         for comment_id, score in comment_scores.items():
-            lines.append(f"  {comment_id}: {score}")
+            votes = comment_votes.get(comment_id, {})
+            upvotes = votes.get("upvotes", 0)
+            downvotes = votes.get("downvotes", 0)
+            lines.append(f"  {comment_id}: {score} (↑{upvotes} ↓{downvotes})")
         lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"

@@ -318,6 +318,7 @@ def _vote_on_comments(
     voter_profiles: List[Dict[str, Any]],
     candidate_comment_ids: List[str],
     comment_scores: Dict[str, int],
+    comment_vote_totals: Dict[str, Dict[str, int]],
     depth_by_id: Dict[str, int],
     comment_step_by_id: Dict[str, int],
     current_step: int,
@@ -339,7 +340,17 @@ def _vote_on_comments(
             weights.append(max(0.05, depth_multiplier * visibility))
 
         target_id = random.choices(candidate_comment_ids, weights=weights, k=1)[0]
-        comment_scores[target_id] = comment_scores.get(target_id, 0) + 1
+        current_score = comment_scores.get(target_id, 0)
+        downvote_bias = 0.08 if current_score >= 0 else 0.28
+        downvote_bias += min(depth_by_id.get(target_id, 0), 3) * 0.04
+        is_downvote = random.random() < min(0.4, downvote_bias)
+        vote_totals = comment_vote_totals.setdefault(target_id, {"upvotes": 0, "downvotes": 0})
+        if is_downvote:
+            vote_totals["downvotes"] += 1
+            comment_scores[target_id] = current_score - 1
+        else:
+            vote_totals["upvotes"] += 1
+            comment_scores[target_id] = current_score + 1
 
 
 def _build_provider_plan(
@@ -406,6 +417,7 @@ async def run_single_post(
         timeline: List[AgentAction] = []
         metadata: Dict[str, Any] = {
             "comment_scores": {},
+            "comment_votes": {},
             "commenter_profiles": commenter_profiles,
             "timeline_mode": resolved_config.timeline_mode,
             "wave_schedule": schedule,
@@ -413,6 +425,7 @@ async def run_single_post(
             "model_name": resolved_model_name,
         }
         comment_scores: Dict[str, int] = metadata["comment_scores"]
+        comment_vote_totals: Dict[str, Dict[str, int]] = metadata["comment_votes"]
         action_counts: Dict[str, int] = {profile["agent_id"]: 0 for profile in commenter_profiles}
         comment_text_by_id: Dict[str, str] = {}
         comment_role_by_id: Dict[str, str] = {}
@@ -513,6 +526,7 @@ async def run_single_post(
                 )
                 action_counts[pending["agent_id"]] += 1
                 comment_scores[comment_id] = comment_scores.get(comment_id, 0)
+                comment_vote_totals[comment_id] = comment_vote_totals.get(comment_id, {"upvotes": 0, "downvotes": 0})
                 comment_text_by_id[comment_id] = text
                 comment_role_by_id[comment_id] = pending["agent_id"]
                 comment_step_by_id[comment_id] = step
@@ -530,6 +544,7 @@ async def run_single_post(
                 voter_profiles=arrived_profiles,
                 candidate_comment_ids=candidate_comment_ids,
                 comment_scores=comment_scores,
+                comment_vote_totals=comment_vote_totals,
                 depth_by_id=depth_by_id,
                 comment_step_by_id=comment_step_by_id,
                 current_step=step,
@@ -575,6 +590,7 @@ async def run_single_post(
                     )
                 )
                 comment_scores[op_comment_id] = 0
+                comment_vote_totals[op_comment_id] = {"upvotes": 0, "downvotes": 0}
                 comment_text_by_id[op_comment_id] = op_resp
                 comment_role_by_id[op_comment_id] = "OP"
                 comment_step_by_id[op_comment_id] = step
