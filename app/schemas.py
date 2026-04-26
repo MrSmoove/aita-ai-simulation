@@ -15,7 +15,9 @@ class Post(BaseModel):
 class SimulationConfig(BaseModel):
     model_name: Optional[str] = "gpt-4.1-mini"
     provider: str = "openai"
-    num_commenters: int = Field(3, ge=1, le=100)
+    num_commenters: int = Field(3, ge=1, le=300)
+    num_voters: int = Field(0, ge=0, le=1000)
+    mobility: float = Field(1.0, ge=0.5, le=2.5)
     max_steps: int = Field(3, ge=1, le=50)
     op_enabled: bool = True
     timeline_mode: str = "basic"
@@ -32,6 +34,7 @@ class AgentAction(BaseModel):
     model_name: Optional[str] = None
     simulated_minute: Optional[int] = None
     bucket_label: Optional[str] = None
+    verdict_label: Optional[str] = None  # YTA / NTA / ESH / NAH (top-level commenter comments only)
 
 
 class SimulationRun(BaseModel):
@@ -56,6 +59,7 @@ class BatchPostResult(BaseModel):
     simulated_config: Dict
     timeline: List[AgentAction]
     metadata: Optional[Dict] = None
+    verdict_match: Optional[bool] = None  # True if AI verdict == real Reddit verdict
 
 
 class BatchRun(BaseModel):

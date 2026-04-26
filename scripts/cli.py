@@ -88,6 +88,8 @@ async def main():
     parser.add_argument("--body", default="My situation...", help="Post body")
     parser.add_argument("--author", default="u/anonymous", help="Author")
     parser.add_argument("--num-commenters", type=int, default=3, help="Number of commenter agents")
+    parser.add_argument("--num-voters", type=int, default=0, help="Number of dedicated vote-only agents")
+    parser.add_argument("--mobility", type=float, default=1.0, help="How freely agents return and engage (0.5 to 2.5)")
     parser.add_argument("--max-steps", type=int, default=2, help="Max simulation steps")
     parser.add_argument("--op-enabled", action="store_true", default=True, help="Enable OP replies")
     parser.add_argument("--provider", default="openai", help="Provider name: openai, gemini, or groq")
@@ -118,6 +120,8 @@ async def main():
         model_name=args.model,
         provider=args.provider,
         num_commenters=args.num_commenters,
+        num_voters=args.num_voters,
+        mobility=args.mobility,
         max_steps=args.max_steps,
         op_enabled=args.op_enabled,
         timeline_mode=args.timeline_mode,
@@ -128,7 +132,7 @@ async def main():
     display_steps = 6 if config.timeline_mode == "24h" else config.max_steps
     print(
         f"  Provider: {config.provider}, Model: {config.model_name or 'default'}, "
-        f"Commenters: {config.num_commenters}, Steps: {display_steps}, "
+        f"Commenters: {config.num_commenters}, Voters: {config.num_voters}, Steps: {display_steps}, "
         f"OP: {config.op_enabled}, Timeline: {config.timeline_mode}\n"
     )
     
@@ -148,7 +152,7 @@ async def main():
 
     pretty_output_path = args.pretty_output or f"data/runs/{result['run_id']}.txt"
     Path(pretty_output_path).parent.mkdir(parents=True, exist_ok=True)
-    with open(pretty_output_path, "w") as f:
+    with open(pretty_output_path, "w", encoding="utf-8") as f:
         f.write(render_pretty_run(result))
     
     print(f"\n✓ Simulation complete. Run ID: {result['run_id']}")

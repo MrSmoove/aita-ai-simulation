@@ -15,28 +15,35 @@ load_dotenv()
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_MODEL = os.getenv("LLM_MODEL", "gpt-4.1-mini")
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
+DEEPSEEK_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash")
+DEEPSEEK_BASE_URL = "https://api.deepseek.com"
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "models/gemini-2.5-flash")
+GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
 LLM_PROVIDER = (os.getenv("LLM_PROVIDER") or "openai").strip().lower()
+_DISABLED_PROVIDERS = {p.strip().lower() for p in os.getenv("DISABLED_PROVIDERS", "").split(",") if p.strip()}
 
 PROVIDER_DEFAULT_MODELS = {
     "openai": OPENAI_MODEL,
-    "gemini": GEMINI_MODEL,
+    "deepseek": DEEPSEEK_MODEL,
     "groq": GROQ_MODEL,
+    "gemini": GEMINI_MODEL,
 }
 
 MODEL_ALIASES = {
     "oasis-small": {
         "openai": OPENAI_MODEL,
-        "gemini": GEMINI_MODEL,
+        "deepseek": DEEPSEEK_MODEL,
         "groq": GROQ_MODEL,
+        "gemini": GEMINI_MODEL,
     }
 }
 
-if not OPENAI_API_KEY and not GEMINI_API_KEY and not GROQ_API_KEY:
-    warnings.warn("No LLM API key set (OPENAI_API_KEY, GEMINI_API_KEY, or GROQ_API_KEY). Responses will be stubs.")
+if not OPENAI_API_KEY and not DEEPSEEK_API_KEY and not GROQ_API_KEY and not GEMINI_API_KEY:
+    warnings.warn("No LLM API key set. Responses will be stubs.")
 
 
 _usage_context: ContextVar[Optional[Dict[str, Any]]] = ContextVar("usage_context", default=None)
@@ -44,12 +51,14 @@ _usage_context: ContextVar[Optional[Dict[str, Any]]] = ContextVar("usage_context
 
 def available_providers() -> list[str]:
     providers = []
-    if OPENAI_API_KEY:
+    if OPENAI_API_KEY and "openai" not in _DISABLED_PROVIDERS:
         providers.append("openai")
-    if GEMINI_API_KEY:
-        providers.append("gemini")
-    if GROQ_API_KEY:
+    if DEEPSEEK_API_KEY and "deepseek" not in _DISABLED_PROVIDERS:
+        providers.append("deepseek")
+    if GROQ_API_KEY and "groq" not in _DISABLED_PROVIDERS:
         providers.append("groq")
+    if GEMINI_API_KEY and "gemini" not in _DISABLED_PROVIDERS:
+        providers.append("gemini")
     return providers
 
 
@@ -145,33 +154,83 @@ async def generate_comment(
     resolved_model = resolve_model_name(resolved_provider, model_name or session.get("model_name"))
     instructions = _build_instruction(agent_name, role)
 
-    if resolved_provider == "gemini" and GEMINI_API_KEY:
+    if resolved_provider == "deepseek" and DEEPSEEK_API_KEY:
         try:
-            from google import genai
+            from openai import OpenAI
 
-            client = genai.Client(api_key=GEMINI_API_KEY)
+            client = OpenAI(
+                api_key=DEEPSEEK_API_KEY,
+                base_url=DEEPSEEK_BASE_URL,
+            )
 
             def _generate() -> Any:
-                return client.models.generate_content(
+                return client.chat.completions.create(
                     model=resolved_model,
-                    contents=f"{instructions}\n\n{prompt_context}",
+                    messages=[
+                        {"role": "system", "content": instructions},
+                        {"role": "user", "content": prompt_context},
+                    ],
+                    temperature=0.7,
                 )
 
-            resp = await asyncio.to_thread(_generate)
-            usage = getattr(resp, "usage_metadata", None)
+            response = await asyncio.to_thread(_generate)
+            usage = getattr(response, "usage", None)
             _record_usage(
-                "gemini",
-                resolved_model,
-                getattr(usage, "prompt_token_count", None),
-                getattr(usage, "candidates_token_count", None),
+                "deepseek",
+                getattr(response, "model", None) or resolved_model,
+                getattr(usage, "prompt_tokens", None),
+                getattr(usage, "completion_tokens", None),
             )
-            text = getattr(resp, "text", None)
+            choice = response.choices[0] if getattr(response, "choices", None) else None
+            message = getattr(choice, "message", None)
+            text = getattr(message, "content", None)
             if text:
                 return text
             return f"[{agent_name}] (no response)"
         except Exception as e:
             import logging
 
+            logging.error(f"Error generating DeepSeek comment: {e}")
+            return f"[{agent_name}] (error: {str(e)[:50]})"
+
+    if resolved_provider == "deepseek" and not DEEPSEEK_API_KEY:
+        return f"[{agent_name}] (stub) DEEPSEEK_API_KEY not set..."
+
+    if resolved_provider == "gemini" and GEMINI_API_KEY:
+        try:
+            from openai import OpenAI
+
+            client = OpenAI(
+                api_key=GEMINI_API_KEY,
+                base_url=GEMINI_BASE_URL,
+            )
+
+            def _generate_gemini() -> Any:
+                return client.chat.completions.create(
+                    model=resolved_model,
+                    messages=[
+                        {"role": "system", "content": instructions},
+                        {"role": "user", "content": prompt_context},
+                    ],
+                    temperature=0.7,
+                )
+
+            response = await asyncio.to_thread(_generate_gemini)
+            usage = getattr(response, "usage", None)
+            _record_usage(
+                "gemini",
+                getattr(response, "model", None) or resolved_model,
+                getattr(usage, "prompt_tokens", None),
+                getattr(usage, "completion_tokens", None),
+            )
+            choice = response.choices[0] if getattr(response, "choices", None) else None
+            message = getattr(choice, "message", None)
+            text = getattr(message, "content", None)
+            if text:
+                return text
+            return f"[{agent_name}] (no response)"
+        except Exception as e:
+            import logging
             logging.error(f"Error generating Gemini comment: {e}")
             return f"[{agent_name}] (error: {str(e)[:50]})"
 
@@ -213,6 +272,7 @@ async def generate_comment(
                     part.get("text", "") if isinstance(part, dict) else getattr(part, "text", "")
                     for part in text
                 )
+            await asyncio.sleep(2)  # Groq free tier rate limit buffer
             if text:
                 return text
             return f"[{agent_name}] (no response)"

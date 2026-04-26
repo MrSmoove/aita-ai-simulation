@@ -22,7 +22,11 @@ async def main() -> None:
     parser.add_argument("--model", default=None, help="Model name for single-provider runs")
     parser.add_argument("--timeline-mode", default="basic", choices=["basic", "24h"], help="Simulation timeline mode")
     parser.add_argument("--max-steps", type=int, default=6, help="Max steps per simulated post")
-    parser.add_argument("--commenter-cap", type=int, default=50, help="Max commenters per simulated post")
+    parser.add_argument("--commenter-cap", type=int, default=120, help="Max commenters per simulated post")
+    parser.add_argument("--voter-ratio", type=float, default=1.0, help="Number of voter agents per commenter agent")
+    parser.add_argument("--commenter-min", type=int, default=1, help="Minimum commenter agents per simulated post")
+    parser.add_argument("--commenter-scale-power", type=float, default=0.5, help="Scaling exponent from real comment count to simulated commenters")
+    parser.add_argument("--mobility", type=float, default=1.0, help="How freely agents return and engage (0.5 to 2.5)")
     parser.add_argument("--concurrency", type=int, default=1, help="Number of posts to simulate in parallel")
     parser.add_argument("--limit", type=int, default=None, help="Optional number of scraped posts to process")
     args = parser.parse_args()
@@ -33,6 +37,10 @@ async def main() -> None:
         model_name=args.model,
         max_steps=args.max_steps,
         commenter_cap=args.commenter_cap,
+        voter_ratio=args.voter_ratio,
+        commenter_min=args.commenter_min,
+        commenter_scale_power=args.commenter_scale_power,
+        mobility=args.mobility,
         concurrency=args.concurrency,
         provider_strategy=args.provider_strategy,
         provider=args.provider,
@@ -46,6 +54,9 @@ async def main() -> None:
     print(f"  Provider strategy: {result['config'].get('provider_strategy')}")
     print(f"  Timeline mode: {result['config'].get('timeline_mode')}")
     print(f"  Saved to: data/batch_runs/{result['batch_run_id']}.json")
+    accuracy = result.get("config", {}).get("accuracy", {})
+    if accuracy:
+        print(f"  Accuracy: {accuracy.get('correct')}/{accuracy.get('total')} correct ({accuracy.get('rate', 0)*100:.1f}%)")
     usage = result.get("config", {}).get("usage", {})
     provider_distribution = result.get("config", {}).get("provider_distribution", {})
     if provider_distribution:

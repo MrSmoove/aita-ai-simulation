@@ -85,7 +85,11 @@ Run a scraped-post batch and save one combined artifact:
   --provider-strategy balanced \
   --timeline-mode 24h \
   --max-steps 6 \
-  --commenter-cap 50 \
+  --commenter-cap 120 \
+  --voter-ratio 1.0 \
+  --commenter-min 1 \
+  --commenter-scale-power 0.5 \
+  --mobility 1.0 \
   --concurrency 4
 ```
 
@@ -94,8 +98,23 @@ Notes:
 - `--provider-strategy balanced` rotates available providers across posts as evenly as possible.
 - `--provider-strategy single --provider openai --model gpt-4.1-mini` forces one provider/model for the whole batch.
 - `--timeline-mode 24h` uses a six-wave first-day lifecycle; `basic` keeps the simpler mode.
+- `--voter-ratio` adds dedicated voter agents in addition to commenter agents.
+- `--mobility` controls how freely agents return and act across waves (higher means denser threads and more votes).
+- `--commenter-scale-power` and `--commenter-min` tune how aggressively real comment counts map to simulated commenters.
 - Each finished batch is saved to `data/batch_runs/<batch_run_id>.json`.
 - The terminal now prints a single usage summary at the end instead of per-request token spam.
+
+For denser runs without enforcing a fixed comment count, try:
+
+```bash
+./.venv/bin/python scripts/run_scraped_batch.py \
+  --timeline-mode 24h \
+  --commenter-cap 180 \
+  --voter-ratio 2.0 \
+  --commenter-min 20 \
+  --commenter-scale-power 0.72 \
+  --mobility 1.5
+```
 
 ## Architecture
 
