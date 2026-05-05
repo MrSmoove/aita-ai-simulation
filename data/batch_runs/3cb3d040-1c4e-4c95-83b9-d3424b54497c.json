@@ -1,0 +1,1210 @@
+{
+  "batch_run_id": "3cb3d040-1c4e-4c95-83b9-d3424b54497c",
+  "source_file": "data\\reddit\\aita_posts_2026_random_100.json",
+  "created_at": "2026-04-27T16:22:54.161279",
+  "config": {
+    "model_name": null,
+    "provider": "mistral",
+    "provider_strategy": "single",
+    "timeline_mode": "24h",
+    "max_steps": 6,
+    "commenter_cap": 30,
+    "voter_ratio": 1.5,
+    "commenter_min": 1,
+    "commenter_scale_power": 0.5,
+    "mobility": 1.2,
+    "op_enabled": true,
+    "concurrency": 1,
+    "scaling_rule": "real_comments^0.5_cap_30_min_1",
+    "source_count": 3,
+    "provider_distribution": {
+      "mistral": 3
+    },
+    "accuracy": {
+      "correct": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "usage": {
+      "request_count": 26,
+      "prompt_tokens": 19927,
+      "completion_tokens": 2630,
+      "total_tokens": 22557,
+      "models": {
+        "mistral-small-latest": 26
+      },
+      "providers": {
+        "mistral": 26
+      }
+    }
+  },
+  "posts": [
+    {
+      "post": {
+        "post_id": "1sul6sb",
+        "title": "AITA for not wanting to help my dad cheat a drug test?",
+        "body": "My dad works for a construction company. Earlier today, someone backed their truck into his and now they both have to submit to a drug test tomorrow. He texted me asking me if my piss is clean (it is) and if I’d be willing to help him out. He smokes weed pretty regularly and 100% would fail the test. In my state, it is a criminal offense to help someone cheat a drug test, so I don’t really want to commit a crime to help him out even though I love him and would (almost) always help him out.",
+        "true_verdict": "NTA",
+        "topic": null,
+        "author": "OP"
+      },
+      "source_num_comments": 126,
+      "source_score": 22,
+      "source_verdict": "NTA",
+      "source_top_comment": "",
+      "source_top_comment_score": 0,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1sul6sb/aita_for_not_wanting_to_help_my_dad_cheat_a_drug/",
+      "simulation_provider": "mistral",
+      "simulation_model": "mistral-small-latest",
+      "simulated_config": {
+        "model_name": "mistral-small-latest",
+        "provider": "mistral",
+        "num_commenters": 11,
+        "num_voters": 0,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "24h"
+      },
+      "timeline": [
+        {
+          "agent_id": "c2",
+          "text": "NTA\n\nDude’s putting you in a shitty position. Yeah, he’s your dad and yeah, you love him, but this is a job requirement. If he can’t pass a drug test for a job that’s on him, not on you. You’re not an asshole for not wanting to break the law or enable his habits. He should’ve thought about the consequences before lighting up.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:c2:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 65,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c1",
+          "text": "NTA\n\nYour dad’s asking you to break the law and potentially get yourself in serious legal trouble just so he can avoid the consequences of his own weed habit. Yeah, weed is legal in a lot of places now, but his job still has rules and you shouldn’t risk your future for that.\n\nIf he fails the test, it’s on him. You’re not responsible for his choices. Stand your ground and tell him no.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:c1:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 82,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Yeah, that’s exactly how I see it. I didn’t sign up to be his backup plan when he can’t handle his job responsibilities.",
+          "step": 1,
+          "role": "op",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:op",
+          "parent_comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:c2:1",
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 119,
+          "bucket_label": "0-2h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c5",
+          "text": "NTA\n\nYour dad’s the one who should’ve known better than to show up to work high. Now he’s trying to drag you into his mess? Nah. This is his problem to fix, not yours. You’re not obligated to commit a crime for him, especially when he’s the one who messed up. Stand your ground—he’ll figure it out, or he’ll face the consequences. Either way, it’s not on you.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:c5:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 133,
+          "bucket_label": "2-5h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c9",
+          "text": "NTA\n\nCome on man, he's literally asking you to commit a crime to help him lie to his employer. That's not how this works. He made his choices and now he has to face the consequences. You're not his personal drug dealer or his lab assistant. If he can't pass a drug test, maybe he should lay off the weed or find a job that doesn't require them. It's his responsibility, not yours.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:c9:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 149,
+          "bucket_label": "2-5h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Damn right. Like I said in my post, he’s the one who can’t handle his job sober. I’m not about to risk my record for his bad decisions.",
+          "step": 2,
+          "role": "op",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:op",
+          "parent_comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:c5:1",
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 299,
+          "bucket_label": "2-5h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c4",
+          "text": "NTA\n\nDude, your dad put you in an impossible spot. Yeah, it sucks he’s gonna lose his job over being high at work, but that’s on him. He’s the adult here, not you. You’re not his personal drug test indemnifier. If he can’t handle his responsibilities sober, that’s his problem to fix, not yours to cover up.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:3:c4:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 376,
+          "bucket_label": "5-8h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c3",
+          "text": "NTA\n\nSeriously? Your dad’s out here trying to get his kid to commit a crime so he can keep his job while high. That’s not just shitty, that’s straight-up irresponsible. If he can’t pass a drug test sober, maybe he shouldn’t be operating heavy machinery—or any machinery at all. You’re not the asshole for not wanting to be an accomplice to his bad decisions. He made his bed, now he can lie in it.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:4:c3:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 579,
+          "bucket_label": "8-12h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c11",
+          "text": "NTA\n\nDude’s a grown man who can’t keep his shit together enough to pass a drug test. Yeah, you love him, but he’s the one who chose to be high at work and now wants you to bail him out of the consequences. You’re not his personal piss reservoir. Fuck that.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:4:c11:1",
+          "parent_comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:op",
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 699,
+          "bucket_label": "8-12h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c6",
+          "text": "NTA\n\nYour dad’s the one who can’t handle his job responsibilities while high. You’re not his personal drug test replacement. Let him face the consequences of his own actions.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:4:c6:1",
+          "parent_comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:op",
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 701,
+          "bucket_label": "8-12h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c7",
+          "text": "NTA\n\nDude’s literally putting you in a position where you could get charged with a crime just to cover his own ass because he can’t be bothered to show up to work sober. Yeah, you love him, but that’s not how this works. He messed up, now he has to deal with the consequences. Don’t let him drag you into it.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:5:c7:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 893,
+          "bucket_label": "12-18h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c11",
+          "text": "commenter_11:\nDamn right NTA. Your dad’s sitting there like \"hey kid, do me a solid and break the law so I don't have to face the consequences of my own bad habits.\" Like bruh, he’s the adult here. He knew his job had drug testing policies and he chose to smoke anyway. Now he’s trying to rope you into his mess? Absolutely not. If he fails, it’s his own fault for not being responsible. You’re not his get-out-of-jail-free card. Tell him no and let him deal with the fallout—it’s the only way he’ll learn.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:6:c11:2",
+          "parent_comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:c1:1",
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 1434,
+          "bucket_label": "18-24h",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:c2:1": 1,
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:c1:1": 1,
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:op": 0,
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:c5:1": 2,
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:c9:1": 0,
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:op": 0,
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:3:c4:1": 0,
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:4:c3:1": 0,
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:4:c11:1": 0,
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:4:c6:1": 0,
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:5:c7:1": 1,
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:6:c11:2": 0
+        },
+        "comment_votes": {
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:c2:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:c1:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:1:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:c5:1": {
+            "upvotes": 2,
+            "downvotes": 0
+          },
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:c9:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:3:c4:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:4:c3:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:4:c11:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:4:c6:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:5:c7:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:6:c11:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c6",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c7",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 5,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c8",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 6,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c9",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c10",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c11",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          }
+        ],
+        "timeline_mode": "24h",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "0-2h",
+            "start_min": 0,
+            "end_min": 120,
+            "arrival_pct": 0.25,
+            "top_level_bias": 0.88,
+            "return_share": 0.0,
+            "op_reply_rate": 0.7
+          },
+          {
+            "step": 2,
+            "label": "2-5h",
+            "start_min": 121,
+            "end_min": 300,
+            "arrival_pct": 0.3,
+            "top_level_bias": 0.74,
+            "return_share": 0.18,
+            "op_reply_rate": 0.6
+          },
+          {
+            "step": 3,
+            "label": "5-8h",
+            "start_min": 301,
+            "end_min": 480,
+            "arrival_pct": 0.2,
+            "top_level_bias": 0.55,
+            "return_share": 0.24,
+            "op_reply_rate": 0.52
+          },
+          {
+            "step": 4,
+            "label": "8-12h",
+            "start_min": 481,
+            "end_min": 720,
+            "arrival_pct": 0.12,
+            "top_level_bias": 0.38,
+            "return_share": 0.28,
+            "op_reply_rate": 0.38
+          },
+          {
+            "step": 5,
+            "label": "12-18h",
+            "start_min": 721,
+            "end_min": 1080,
+            "arrival_pct": 0.08,
+            "top_level_bias": 0.24,
+            "return_share": 0.22,
+            "op_reply_rate": 0.24
+          },
+          {
+            "step": 6,
+            "label": "18-24h",
+            "start_min": 1081,
+            "end_min": 1440,
+            "arrival_pct": 0.05,
+            "top_level_bias": 0.14,
+            "return_share": 0.16,
+            "op_reply_rate": 0.12
+          }
+        ],
+        "provider": "mistral",
+        "model_name": "mistral-small-latest",
+        "latest_op_comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:op",
+        "verdict_tally": {
+          "NTA": 7
+        },
+        "verdict_comment_id": "e2cd0838-e9ab-4a61-8040-a11c3b31e52f:2:c5:1",
+        "verdict_score": 2,
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 12,
+          "prompt_tokens": 7022,
+          "completion_tokens": 918,
+          "total_tokens": 7940,
+          "models": {
+            "mistral-small-latest": 12
+          },
+          "providers": {
+            "mistral": 12
+          }
+        }
+      },
+      "verdict_match": true
+    },
+    {
+      "post": {
+        "post_id": "1svz8km",
+        "title": "WIBTA for going against my family's wishes for my future?",
+        "body": "24M Asian currently in final year of med school. I come from a working class family whose both parents earn barely enough to lead a comfy life. \n\nMy father has an \"Elder son\" mentality for his 6 others siblings. He has self built his life and career as a professor and brought up most of his other not so well off siblings in terms of financial and social support, often putting their interests ahead of ours. But over the years, none of his other siblings have acknowledged his sacrifices for him and kept exploiting him as well as his wife over the years. He still meets them and talks well with all but I feel either my dad's too naive and being exploited or he's stuck in a Sunken Cost Fallacy.\n\nI wanted to pursue a Bachelors in Nuclear engineering ever since my primary school days. But my parents (more likely coz they couldn't afford to) instead pressured me to join med school. I am honestly not enjoying it here coz of the stress and academics. Moreover my seniors have been telling how their work life balance for medical professional is very horrible in our country. \n\nI'm planning to pursue Preparation for the AMC exam so that I move to Australia and practice there. Word is although the preparation and process is very challenging, the work-life balance is much better than in our country. But my parents are upset over this decision of mine, stating that I have tons of familial responsibilities once I finish my education including saving money for my sister's marriage, funding my younger cousins education (my mom's brother's children). I am frustrated bcoz although I acknowledge how much they have supported me for my present education and upbringing, I have always compromised on many of my dreams for them (I intended to buy a motorcycle on my own savings once I start earning in a few months) and I don't want to be burdened with all these responsibilities in my prime youth just like my Dad underwent and later miss out on living my own life. We had a fight over this at dinner and my Sister started labelling me as an AH for disregarding the family's interests for my own. I didn't do anything rash except slamming my room's door hard.\n\nThe worst part is now my mom is complaining to our relatives and family members about my plans and trying to bring me in a bad light. Things been rough since a few weeks at home.\n\nAm I the asshole for going against my family's wishes for my future? Its not that I intend to desert themnor cut ties with them; I am planning to take my parents too along with me should I clear my AMC and if they are okay with moving to a foreign country.",
+        "true_verdict": "NTA",
+        "topic": "economy",
+        "author": "OP"
+      },
+      "source_num_comments": 28,
+      "source_score": 21,
+      "source_verdict": "NTA",
+      "source_top_comment": "",
+      "source_top_comment_score": 0,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1svz8km/wibta_for_going_against_my_familys_wishes_for_my/",
+      "simulation_provider": "mistral",
+      "simulation_model": "mistral-small-latest",
+      "simulated_config": {
+        "model_name": "mistral-small-latest",
+        "provider": "mistral",
+        "num_commenters": 5,
+        "num_voters": 0,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "24h"
+      },
+      "timeline": [
+        {
+          "agent_id": "c1",
+          "text": "NTA\n\nYour dad’s the classic Asian parent who’s stuck in a cycle of sacrifice that’s been taken for granted by his siblings. He’s done his bit, and now it’s time to stop pouring into people who don’t appreciate it. You’re not deserting them—you’re setting yourself up for a better life where you *can* actually support them down the line without burning yourself out like your dad. Your mom’s dragging relatives into this? Petty move. If they’re so concerned about familial duties, maybe they should start pulling their weight instead of expecting you to carry their weight *and* yours. Your sister’s calling you an AH for wanting a life where you’re not drowning in obligations? Yeah, no. You’re not wrong for wanting to live your own life. If they can’t see that, that’s on them.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:1:c1:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 97,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Yeah, my sister's reaction just showed how much she's bought into this toxic family dynamic. It's exhausting that even my own sibling can't see past the guilt-tripping my mom's pushing.",
+          "step": 1,
+          "role": "op",
+          "comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:1:op",
+          "parent_comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:1:c1:1",
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 119,
+          "bucket_label": "0-2h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c2",
+          "text": "NTA\n\nYou're 24, in the final year of med school, and you're miserable. That's not some minor inconvenience—it's years of your life you're losing to something you never even wanted to do. Your parents pushed you into this because they couldn't afford your dream, and now that you're almost done, they're still trying to dictate what you do next?\n\nYeah, family responsibilities exist, but at 24, you're not obligated to sacrifice your entire life for them. Your dad's got a history of putting everyone else first and getting nothing in return—that's on him, not you. If your mom's running her mouth to relatives, that's her own bitterness talking. You're not deserting anyone; you're planning to bring them with you if you can.\n\nYour sister calling you an AH for wanting a better life? That's messed up. Sounds like she's bought into the same toxic cycle your dad's trapped in. You're not the asshole here—you're the one trying to break free from a cycle that's been bleeding your family dry for years. Keep pushing forward.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:2:c2:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 292,
+          "bucket_label": "2-5h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Yeah, thanks. That’s pretty much how I feel—like my sister’s just regurgitating the same script my parents have been fed for years.",
+          "step": 2,
+          "role": "op",
+          "comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:2:op",
+          "parent_comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:2:c2:1",
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 299,
+          "bucket_label": "2-5h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c4",
+          "text": "NTA\n\nBro, you're 24 and your life is at stake here. You've spent years in med school, which clearly isn't your calling, and now you're considering a path that'll give you a better work-life balance. That's not selfish, that's self-preservation.\n\nYour parents' situation is tough, but that's their journey, not yours. You don't have to repeat their mistakes. It's great that you're considering taking them with you, but it's not your responsibility to fund your cousins' education or save for your sister's marriage. That's their parents' job, not yours.\n\nYour sister's reaction just shows how deeply ingrained this toxic family dynamic is. Don't let her guilt trip you into a life of misery. You owe it to yourself to chase a better future.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:3:c4:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 369,
+          "bucket_label": "5-8h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c5",
+          "text": "NTA\n\nLook, your parents put you in med school because they couldn’t afford your dream path at the time, and now they want you to carry their financial burdens *and* their emotional ones? That’s not how this works.\n\nYou’re not deserting them—you’re moving to a country where you can actually *live* without drowning in debt and resentment. If they want to come with you, great! If not, that’s on them. Your sister labeling you an AH for wanting a life where you’re not a personal ATM for every relative’s problems? Classic emotional blackmail.\n\nYour dad’s situation is sad, but it doesn’t mean you have to repeat his mistakes. You’re not an asshole for not wanting to end up bitter and broke while everyone else leeches off you.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:4:c5:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 490,
+          "bucket_label": "8-12h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Damn right, thanks. Exactly what I've been trying to make them understand. I'm not saying I won't help at all, but I refuse to be the sole provider for everyone's problems while I drown in my own misery.",
+          "step": 4,
+          "role": "op",
+          "comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:4:op",
+          "parent_comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:4:c5:1",
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 719,
+          "bucket_label": "8-12h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c3",
+          "text": "NTA\n\nYour sister’s acting like a parrot for your parents’ toxic expectations. You’re not being unreasonable—you’re trying to live your own life instead of repeating your dad’s cycle of exploitation and resentment. If she can’t see that, that’s her problem, not yours. Stick to your plan and don’t let her guilt trip you into sacrificing your happiness.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:5:c3:1",
+          "parent_comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:2:op",
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 941,
+          "bucket_label": "12-18h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c3",
+          "text": "commenter_3: Yeah, man, your sister’s just parroting the same toxic BS your parents have fed her. You're not wrong for wanting a life that isn't just endless sacrifice with zero appreciation. Your dad's the poster child for \"sacrificial lamb\" syndrome—don't let his naive martyrdom become your fate too. If they can't respect your decision to chase your own happiness, that’s on them. Keep your head up and don’t let their guilt-tripping derail your plans.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:6:c3:2",
+          "parent_comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:5:c3:1",
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 1324,
+          "bucket_label": "18-24h",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:1:c1:1": 1,
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:1:op": 0,
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:2:c2:1": 0,
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:2:op": 0,
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:3:c4:1": 0,
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:4:c5:1": 0,
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:4:op": 0,
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:5:c3:1": 0,
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:6:c3:2": 0
+        },
+        "comment_votes": {
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:1:c1:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:1:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:2:c2:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:2:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:3:c4:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:4:c5:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:4:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:5:c3:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:6:c3:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          }
+        ],
+        "timeline_mode": "24h",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "0-2h",
+            "start_min": 0,
+            "end_min": 120,
+            "arrival_pct": 0.25,
+            "top_level_bias": 0.88,
+            "return_share": 0.0,
+            "op_reply_rate": 0.7
+          },
+          {
+            "step": 2,
+            "label": "2-5h",
+            "start_min": 121,
+            "end_min": 300,
+            "arrival_pct": 0.3,
+            "top_level_bias": 0.74,
+            "return_share": 0.18,
+            "op_reply_rate": 0.6
+          },
+          {
+            "step": 3,
+            "label": "5-8h",
+            "start_min": 301,
+            "end_min": 480,
+            "arrival_pct": 0.2,
+            "top_level_bias": 0.55,
+            "return_share": 0.24,
+            "op_reply_rate": 0.52
+          },
+          {
+            "step": 4,
+            "label": "8-12h",
+            "start_min": 481,
+            "end_min": 720,
+            "arrival_pct": 0.12,
+            "top_level_bias": 0.38,
+            "return_share": 0.28,
+            "op_reply_rate": 0.38
+          },
+          {
+            "step": 5,
+            "label": "12-18h",
+            "start_min": 721,
+            "end_min": 1080,
+            "arrival_pct": 0.08,
+            "top_level_bias": 0.24,
+            "return_share": 0.22,
+            "op_reply_rate": 0.24
+          },
+          {
+            "step": 6,
+            "label": "18-24h",
+            "start_min": 1081,
+            "end_min": 1440,
+            "arrival_pct": 0.05,
+            "top_level_bias": 0.14,
+            "return_share": 0.16,
+            "op_reply_rate": 0.12
+          }
+        ],
+        "provider": "mistral",
+        "model_name": "mistral-small-latest",
+        "latest_op_comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:4:op",
+        "verdict_tally": {
+          "NTA": 4
+        },
+        "verdict_comment_id": "8f8c9f6d-0f8d-4569-9b73-9db9874d8bbd:1:c1:1",
+        "verdict_score": 1,
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 9,
+          "prompt_tokens": 9166,
+          "completion_tokens": 1052,
+          "total_tokens": 10218,
+          "models": {
+            "mistral-small-latest": 9
+          },
+          "providers": {
+            "mistral": 9
+          }
+        }
+      },
+      "verdict_match": true
+    },
+    {
+      "post": {
+        "post_id": "1ssaeap",
+        "title": "AITA for confronting my friends about a trip and setting boundaries?",
+        "body": "I'm in college and became friends with two girls, Rachel and Kat. Rachel has a boyfriend, Peter, and they tend to act like a unit. I planned a DC trip for us and spent hours making an itinerary, checking with them beforehand. Kat contributed, and Rachel said she was fine with anything. During the trip, things didn’t go as planned. They were 4 hours late because Rachel and Peter were “play fighting,” and when we finally went out, Rachel suddenly didn’t want the food we had planned. The day felt unorganized and frustrating, especially since I had put in a lot of effort. Later, Rachel told Peter to take me home early, and Kat also changed plans and didn’t stay at my place like originally planned. They all went back together without me, which upset me since I felt like my effort wasn’t respected. Afterward, Kat told me privately she also felt like a third wheel around Rachel and Peter. When Rachel later mentioned planning a NYC trip, I calmly told her I wasn’t mad but wanted boundaries going forward, like separating couple time and better communication so the same issues wouldn’t happen again. After that, Rachel stopped initiating conversation with me. Kat also became distant. They’ve been hanging out without me and didn’t invite me to things. I even asked Kat to hang out one day and she said no, but then posted herself with mutual friends doing the same activity the next day. I was recently removed from a group chat for a future NYC trip that I had originally been added to before I brought up my concerns. Now I feel like I’m being excluded instead of them communicating with me. I didn’t think I was wrong for bringing up what happened and setting boundaries, especially since Kat had the same issues privately.",
+        "true_verdict": "NTA",
+        "topic": "social",
+        "author": "OP"
+      },
+      "source_num_comments": 40,
+      "source_score": 137,
+      "source_verdict": "NTA",
+      "source_top_comment": "",
+      "source_top_comment_score": 0,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1ssaeap/aita_for_confronting_my_friends_about_a_trip_and/",
+      "simulation_provider": "mistral",
+      "simulation_model": "mistral-small-latest",
+      "simulated_config": {
+        "model_name": "mistral-small-latest",
+        "provider": "mistral",
+        "num_commenters": 6,
+        "num_voters": 0,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "24h"
+      },
+      "timeline": [
+        {
+          "agent_id": "c5",
+          "text": "**NTA**\n\nYou set clear expectations about how you wanted the trip to go, and they ignored them. Then you calmly addressed the issue and set boundaries, and now they’re punishing you for it? Fuck that. Rachel sounds like she’s all about her and Peter, and Kat isn’t exactly standing up for you either. If Kat really felt like a third wheel, she should’ve backed you up instead of ghosting you. Now they’re all acting like *you’re* the bad guy? Nah. You’re not wrong for wanting basic respect and communication.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "885fb830-526c-434a-adb7-471e4cb918b6:2:c5:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 157,
+          "bucket_label": "2-5h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c1",
+          "text": "**NTA**\n\nYou set clear expectations about how you wanted the trip to go, and they ignored them. Then you calmly addressed the issue with Rachel, and suddenly you're the bad guy? Rachel and Kat are acting like spoiled brats who can't handle a little accountability. If Kat felt like a third wheel, she should've backed you up instead of ghosting you after. Rachel's petty silence and exclusion says more about *her* immaturity than anything you did. Grow up, girls.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "885fb830-526c-434a-adb7-471e4cb918b6:3:c1:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 467,
+          "bucket_label": "5-8h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c4",
+          "text": "NTA\n\nYou planned the trip, put in the effort, and set clear expectations. They ignored all of it and then got salty when you called it out. Rachel’s little power move at the end (getting Peter to kick you out early) was petty AF. Kat agreeing with you privately but bailing on you publicly? Weak.\n\nYou handled it maturely by setting boundaries instead of flipping out, and now they’re punishing you for it. Classic couple behavior—Rachel can’t handle Rachel time being disrupted, so now they’re freezing you out. Sucks for you, but you’re not the bad guy here.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "885fb830-526c-434a-adb7-471e4cb918b6:4:c4:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 633,
+          "bucket_label": "8-12h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c2",
+          "text": "**NTA**\n\nYou put in the effort to plan a trip, they flaked and made it a mess, then you had the decency to address it calmly instead of exploding. Rachel and Kat's reaction is textbook avoidance and petty punishment for you having needs. If Kat was also feeling like a third wheel, she should've backed you up instead of ghosting you after your talk. Rachel straight up cut you off because you set a boundary? Sounds like she's the one who can't handle basic mutual respect.\n\nThe fact that they're now excluding you from plans and pretending nothing happened just proves you were right to call them out. Keep your head up, these aren't the friends you thought they were.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "885fb830-526c-434a-adb7-471e4cb918b6:4:c2:1",
+          "parent_comment_id": null,
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 638,
+          "bucket_label": "8-12h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c1",
+          "text": "commenter_1\nESH, but Rachel is the bigger asshole by a mile. You put in the effort to plan a trip and set expectations—fair enough. But Rachel and Peter acted like entitled brats, and then when you addressed it like a normal person, they decided to freeze you out instead of actually fixing the problem. That’s textbook petty.\n\nKat’s not innocent either—she privately agreed with you but didn’t have your back when it mattered. Ghosting you after you called out the obvious issue? Weak. If she’s really your friend, she should’ve shut Rachel down when she was being a problem, not just nodded along and then ditched you.\n\nBut Rachel? Absolute top-tier asshole behavior. She’s mad because you asked for basic respect? Cry me a river.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "885fb830-526c-434a-adb7-471e4cb918b6:5:c1:2",
+          "parent_comment_id": "885fb830-526c-434a-adb7-471e4cb918b6:2:c5:1",
+          "provider": "mistral",
+          "model_name": "mistral-small-latest",
+          "simulated_minute": 837,
+          "bucket_label": "12-18h",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "885fb830-526c-434a-adb7-471e4cb918b6:2:c5:1": 1,
+          "885fb830-526c-434a-adb7-471e4cb918b6:3:c1:1": 0,
+          "885fb830-526c-434a-adb7-471e4cb918b6:4:c4:1": 0,
+          "885fb830-526c-434a-adb7-471e4cb918b6:4:c2:1": 0,
+          "885fb830-526c-434a-adb7-471e4cb918b6:5:c1:2": 0
+        },
+        "comment_votes": {
+          "885fb830-526c-434a-adb7-471e4cb918b6:2:c5:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "885fb830-526c-434a-adb7-471e4cb918b6:3:c1:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "885fb830-526c-434a-adb7-471e4cb918b6:4:c4:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "885fb830-526c-434a-adb7-471e4cb918b6:4:c2:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "885fb830-526c-434a-adb7-471e4cb918b6:5:c1:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          },
+          {
+            "agent_id": "c6",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "mistral",
+            "model_name": "mistral-small-latest"
+          }
+        ],
+        "timeline_mode": "24h",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "0-2h",
+            "start_min": 0,
+            "end_min": 120,
+            "arrival_pct": 0.25,
+            "top_level_bias": 0.88,
+            "return_share": 0.0,
+            "op_reply_rate": 0.7
+          },
+          {
+            "step": 2,
+            "label": "2-5h",
+            "start_min": 121,
+            "end_min": 300,
+            "arrival_pct": 0.3,
+            "top_level_bias": 0.74,
+            "return_share": 0.18,
+            "op_reply_rate": 0.6
+          },
+          {
+            "step": 3,
+            "label": "5-8h",
+            "start_min": 301,
+            "end_min": 480,
+            "arrival_pct": 0.2,
+            "top_level_bias": 0.55,
+            "return_share": 0.24,
+            "op_reply_rate": 0.52
+          },
+          {
+            "step": 4,
+            "label": "8-12h",
+            "start_min": 481,
+            "end_min": 720,
+            "arrival_pct": 0.12,
+            "top_level_bias": 0.38,
+            "return_share": 0.28,
+            "op_reply_rate": 0.38
+          },
+          {
+            "step": 5,
+            "label": "12-18h",
+            "start_min": 721,
+            "end_min": 1080,
+            "arrival_pct": 0.08,
+            "top_level_bias": 0.24,
+            "return_share": 0.22,
+            "op_reply_rate": 0.24
+          },
+          {
+            "step": 6,
+            "label": "18-24h",
+            "start_min": 1081,
+            "end_min": 1440,
+            "arrival_pct": 0.05,
+            "top_level_bias": 0.14,
+            "return_share": 0.16,
+            "op_reply_rate": 0.12
+          }
+        ],
+        "provider": "mistral",
+        "model_name": "mistral-small-latest",
+        "latest_op_comment_id": null,
+        "verdict_tally": {
+          "NTA": 4
+        },
+        "verdict_comment_id": "885fb830-526c-434a-adb7-471e4cb918b6:2:c5:1",
+        "verdict_score": 1,
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 5,
+          "prompt_tokens": 3739,
+          "completion_tokens": 660,
+          "total_tokens": 4399,
+          "models": {
+            "mistral-small-latest": 5
+          },
+          "providers": {
+            "mistral": 5
+          }
+        }
+      },
+      "verdict_match": true
+    }
+  ]
+}

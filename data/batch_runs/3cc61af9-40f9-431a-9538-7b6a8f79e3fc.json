@@ -1,0 +1,2143 @@
+{
+  "batch_run_id": "3cc61af9-40f9-431a-9538-7b6a8f79e3fc",
+  "source_file": "data\\reddit\\aita_posts.json",
+  "created_at": "2026-04-27T01:58:23.292211",
+  "config": {
+    "model_name": null,
+    "provider": null,
+    "provider_strategy": "balanced",
+    "timeline_mode": "basic",
+    "max_steps": 6,
+    "commenter_cap": 120,
+    "voter_ratio": 1.0,
+    "commenter_min": 1,
+    "commenter_scale_power": 0.5,
+    "mobility": 1.0,
+    "op_enabled": true,
+    "concurrency": 1,
+    "scaling_rule": "power_cap_min",
+    "source_count": 3,
+    "provider_distribution": {
+      "openai": 1,
+      "deepseek": 1,
+      "gemini": 1
+    },
+    "accuracy": {
+      "correct": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "usage": {
+      "request_count": 41,
+      "prompt_tokens": 41239,
+      "completion_tokens": 5733,
+      "total_tokens": 46972,
+      "models": {
+        "gpt-4.1-mini-2025-04-14": 14,
+        "deepseek-v4-flash": 11,
+        "models/gemini-2.5-flash": 16
+      },
+      "providers": {
+        "openai": 14,
+        "deepseek": 11,
+        "gemini": 16
+      }
+    }
+  },
+  "posts": [
+    {
+      "post": {
+        "post_id": "1svqghl",
+        "title": "AITA for telling the family that my cousin has been taking classes in her daughter’s place?",
+        "body": "I (24f) have a younger brother, Joshua (18m).  He’s been really struggling this past year as our parents are going through a nasty divorce.  Our dad had an affair with Joshua’s best friend’s mom, so this has broken up his friend group, too.  As a result, his grades are slipping and he’s at risk of not graduating. Ordinarily, I would never condone cheating, but I agreed to take an online class in his place to help him graduate on time. I don’t feel good about it and I told him he has to take a course on the subject when he goes to college next year, but I just want him to graduate and move out to hopefully get a fresh start.\n\nMeanwhile, my cousin Sarah (34f) has a daughter Shayna (15f), who does high school online. Sarah admitted to me last year that she actually does assignments and even takes entire online courses in Shayna’s place, because the subjects are things Sarah has decided Shayna doesn’t actually need to know.\n\nThe extended family found out about me taking a class for Joshua.  Surprisingly, *Sarah* has been the most vocal about how wrong it is. I thought she was being sarcastic at first, but she’s seriously judging me and doesn’t see any irony in it. I’ve since heard that she’s been talking behind my back about it.  Apparently, I was the only one who knew she regularly did the same for Shayna, so no one called her out.\n\nWe had a big family dinner on Easter, and my uncle asked how Joshua was holding up. I told him it was really rough between home and school, but he seemed to be doing better lately.  Sarah kept trying to butt in, and I tried to ignore her. Finally, she outright told our uncle that I’m pretending to be Joshua for an online class. I’d had enough, and told her she wasn’t in any position to judge me for it, considering she does the same for Shayna all the time, and Shayna isn’t even going through a rough time. The rest of the family started asking Sarah if this was true, and to her credit she admitted it was.  Everyone started ganging up on her, asking why she’s been trashing me for doing the same for Joshua. Sarah was really upset, sat quietly when the rest of us shifted the conversation, and left as soon as dinner was done.\n\nNote: Shayna and Joshua weren’t in the room; the teens and kids were in the family room at the other end of the house.\n\nSarah’s now texting my mom, calling me a hypocrite for embarrassing her in front of the family for taking classes for Shayna when I’m doing the same for Joshua. I honestly would have taken her secret to the grave if she hadn’t given me such a hard time. A couple of our aunts and uncles have said that I shouldn’t have said anything because no one was really taking Sarah’s criticism seriously anyways. Sarah’s sister is saying I should have talked to her about it in private instead of outing her to the whole family. I feel like I’m in the right, but maybe I should have just ignored her, or at least waited to confront her in private. AITA?",
+        "true_verdict": "NTA",
+        "topic": "social",
+        "author": "OP"
+      },
+      "source_num_comments": 81,
+      "source_score": 584,
+      "source_verdict": "NTA",
+      "source_top_comment": "NTA. I’ll refer Sarah to the universal law of “don’t start none, won’t be none.”",
+      "source_top_comment_score": 946,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1svqghl/aita_for_telling_the_family_that_my_cousin_has/",
+      "simulation_provider": "openai",
+      "simulation_model": "gpt-4.1-mini",
+      "simulated_config": {
+        "model_name": "gpt-4.1-mini",
+        "provider": "openai",
+        "num_commenters": 9,
+        "num_voters": 9,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "basic"
+      },
+      "timeline": [
+        {
+          "agent_id": "c6",
+          "text": "NTA. Sarah was being a massive hypocrite trashing you for doing exactly what she’s been doing all along. You tried to ignore her, but when she outed you first and kept judging you, calling her out publicly was the only way to stop her. Sure, a private conversation might have been less dramatic, but honestly, she brought it on herself by being so vocal and then lying about her own actions. You were standing up for yourself and exposing double standards. If anything, Sarah’s the one who should be embarrassed here.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:1:c6:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 7,
+          "bucket_label": "Wave 1",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c1",
+          "text": "NTA. Sarah’s hypocrisy is wild—calling you out for the exact same thing she’s been doing behind everyone’s back? You didn’t start this drama; she did by trashing you first. If she wanted to keep it private, she shouldn’t have been throwing stones in the first place. Sure, maybe a private chat would’ve been more diplomatic, but honestly, she brought this on herself. You stood up for yourself when she crossed a line.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:2:c1:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 34,
+          "bucket_label": "Wave 2",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Yeah, I get the private chat point, but I honestly felt backed into a corner when she kept dragging me in front of everyone. If she hadn’t been so hypocritical and judgmental, none of this would’ve blown up.",
+          "step": 2,
+          "role": "op",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:2:op",
+          "parent_comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:2:c1:1",
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 58,
+          "bucket_label": "Wave 2",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c3",
+          "text": "NTA. You’re right to call out Sarah’s hypocrisy here. She’s been cheating just as much as you, yet she’s acting like the moral police. I get that outing her in front of the family was confrontational, but she forced your hand by dragging you in front of everyone first. Plus, you weren’t trying to shame her, just expose the double standard. That said, the whole situation is messy—both of you enabling cheating isn’t great, but given your brother’s tough situation, your intentions seem more about helping him survive a rough patch. Sarah’s just being a hypocrite and a bully.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:3:c3:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 83,
+          "bucket_label": "Wave 3",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c4",
+          "text": "NTA. Sarah was being a giant hypocrite judging you for something she’s been doing regularly and secretly. You tried to ignore her but she kept pushing and trashing you behind your back—at some point, calling her out in front of the family was the only way to expose her double standard. Sure, maybe a private conversation first would have been more tactful, but you were literally defending yourself from unfair judgment. Plus, you’re doing it to help your brother through a tough time, while she’s doing it because she thinks her daughter “doesn’t need” the material. That’s a whole different level of entitlement. Sarah brought this on herself.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:3:c4:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 86,
+          "bucket_label": "Wave 3",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c8",
+          "text": "NTA. Sarah’s behavior is straight-up hypocritical and toxic. She’s cheating just as much as you but has the audacity to publicly shame you for it? That’s rich. You didn’t out her to be petty—you only responded when she dragged you in front of the family. Sure, maybe a private conversation first would have been cleaner, but once she went public, you had every right to call her out. Plus, she’s putting her daughter at risk of falling behind just because she \"decided\" certain subjects aren’t needed, which is a whole other level of messed up. You’re trying to help your brother get through a tough time, and Sarah’s just bullying you while doing the same thing. Your family should be more focused on supporting the kids than playing gotcha games.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:4:c8:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 103,
+          "bucket_label": "Wave 4",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Exactly, I was trying to help my brother through a really rough patch, not just skipping out on responsibility like Sarah is with her daughter. Once she went public and started attacking me, I had no choice but to call her out—had I known she was doing the same, I wouldn’t have stayed quiet.",
+          "step": 4,
+          "role": "op",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:4:op",
+          "parent_comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:4:c8:1",
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 118,
+          "bucket_label": "Wave 4",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c6",
+          "text": "Exactly. Sarah’s not just being a hypocrite, she’s actively harming her daughter’s education and then tries to shame OP for trying to help her brother survive a rough patch. The fact she’s so quick to judge while hiding her own cheating speaks volumes about her character. OP’s only mistake was holding back for so long; sometimes calling out hypocrisy publicly is the only way to get through to people. Family dynamics are messy, but Sarah brought this on herself.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:5:c6:2",
+          "parent_comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:4:c8:1",
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 123,
+          "bucket_label": "Wave 5",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c5",
+          "text": "NTA. Sarah’s hypocrisy is insane here. She’s been doing the exact same thing and had zero right to judge you or call you out. You tried to handle it maturely by not exposing her initially, but once she started trashing you behind your back, calling her out publicly was fair game. Yeah, maybe a private conversation first would’ve been ideal, but given her attitude and the fact she escalated it first, you’re not the asshole for standing your ground and refusing to be bullied. Both of you are enabling cheating, sure, but Sarah’s the one playing the victim after being caught.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:5:c5:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 142,
+          "bucket_label": "Wave 5",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c6",
+          "text": "Exactly! Sarah had zero right to throw stones when her own glass house was full of cracks. She didn’t just criticize quietly—she was actively shaming OP behind their back, so calling her out publicly wasn’t just fair, it was necessary. Sometimes hypocrisy like that only gets exposed when you shine a light on it in front of everyone. OP didn’t start this drama, Sarah did by being so extra about it.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:6:c6:3",
+          "parent_comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:1:c6:1",
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 155,
+          "bucket_label": "Wave 6",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c7",
+          "text": "commenter_7:  \nExactly. Sarah made this a public spectacle by dragging you into it first. You didn’t start this drama—you just defended yourself when cornered. Plus, hypocrisy like that deserves to be called out, especially when it’s harming a kid’s education. Private talks are great when both parties are willing, but Sarah chose to go loud and nasty. You’re not the asshole here.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:6:c7:1",
+          "parent_comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:1:c6:1",
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 156,
+          "bucket_label": "Wave 6",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c3",
+          "text": "Exactly, you didn’t just out her for the sake of drama—you were defending yourself from her hypocrisy and double standards. If she hadn’t been so vocal and judgmental about something she’s been doing herself, you’d have no reason to bring it up at all. And honestly, her reasoning for doing it is way more problematic than yours. You’re trying to help your brother through a rough patch; she’s just cutting corners because she thinks her daughter’s education isn’t worth the effort. Sarah’s the one who made this a family issue by throwing stones from her glass house.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:6:c3:2",
+          "parent_comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:3:c4:1",
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 159,
+          "bucket_label": "Wave 6",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c8",
+          "text": "Exactly. Sarah had no problem playing dirty and hiding her own cheating, so she lost the right to act all high and mighty when someone else did the same. If she wanted to keep her secret safe, she should’ve kept her judgment to herself. OP didn’t escalate this, she just called out the hypocrisy when it was shoved in her face. Sometimes calling out bad behavior publicly is the only way to stop it.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:6:c8:2",
+          "parent_comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:2:c1:1",
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 175,
+          "bucket_label": "Wave 6",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "op",
+          "text": "Absolutely. Sarah’s been playing the same game in secret and had no right to gaslight me for it. If she wanted to keep her hypocrisy hidden, she should’ve kept her mouth shut instead of dragging me through the mud.",
+          "step": 6,
+          "role": "op",
+          "comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:6:op",
+          "parent_comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:6:c6:3",
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": 178,
+          "bucket_label": "Wave 6",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "35324da8-8805-4084-84c3-4d91dfc00b11:1:c6:1": 5,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:2:c1:1": 2,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:2:op": 3,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:3:c3:1": -1,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:3:c4:1": 0,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:4:c8:1": 0,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:4:op": 0,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:5:c6:2": 0,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:5:c5:1": 0,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:6:c6:3": 0,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:6:c7:1": 0,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:6:c3:2": 0,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:6:c8:2": 0,
+          "35324da8-8805-4084-84c3-4d91dfc00b11:6:op": 0
+        },
+        "comment_votes": {
+          "35324da8-8805-4084-84c3-4d91dfc00b11:1:c6:1": {
+            "upvotes": 5,
+            "downvotes": 0
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:2:c1:1": {
+            "upvotes": 3,
+            "downvotes": 1
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:2:op": {
+            "upvotes": 3,
+            "downvotes": 0
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:3:c3:1": {
+            "upvotes": 0,
+            "downvotes": 1
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:3:c4:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:4:c8:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:4:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:5:c6:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:5:c5:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:6:c6:3": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:6:c7:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:6:c3:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:6:c8:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "35324da8-8805-4084-84c3-4d91dfc00b11:6:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "thread camper",
+            "return_probability": 0.58,
+            "max_comments": 5,
+            "max_top_level_comments": 3,
+            "max_reply_comments": 4,
+            "max_votes": 10,
+            "reply_likelihood": 0.7696000000000001,
+            "vote_likelihood": 0.9152,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "casual regular",
+            "return_probability": 0.34,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.468,
+            "vote_likelihood": 0.8112,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 5,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "c6",
+            "activity_style": "thread camper",
+            "return_probability": 0.58,
+            "max_comments": 5,
+            "max_top_level_comments": 3,
+            "max_reply_comments": 4,
+            "max_votes": 10,
+            "reply_likelihood": 0.7696000000000001,
+            "vote_likelihood": 0.9152,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "c7",
+            "activity_style": "casual regular",
+            "return_probability": 0.34,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.468,
+            "vote_likelihood": 0.8112,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 6,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "c8",
+            "activity_style": "casual regular",
+            "return_probability": 0.34,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.468,
+            "vote_likelihood": 0.8112,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "c9",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          }
+        ],
+        "voter_profiles": [
+          {
+            "agent_id": "v1",
+            "activity_style": "heavy voter",
+            "return_probability": 0.612,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 16,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.936,
+            "downvote_likelihood": 0.16,
+            "arrival_wave": 1,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "v2",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 1,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "v3",
+            "activity_style": "casual voter",
+            "return_probability": 0.3876,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 10,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.8528,
+            "downvote_likelihood": 0.14,
+            "arrival_wave": 5,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "v4",
+            "activity_style": "heavy voter",
+            "return_probability": 0.612,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 16,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.936,
+            "downvote_likelihood": 0.16,
+            "arrival_wave": 2,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "v5",
+            "activity_style": "casual voter",
+            "return_probability": 0.3876,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 10,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.8528,
+            "downvote_likelihood": 0.14,
+            "arrival_wave": 6,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "v6",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 2,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "v7",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 3,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "v8",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 3,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          },
+          {
+            "agent_id": "v9",
+            "activity_style": "casual voter",
+            "return_probability": 0.3876,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 10,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.8528,
+            "downvote_likelihood": 0.14,
+            "arrival_wave": 4,
+            "provider": "openai",
+            "model_name": "gpt-4.1-mini"
+          }
+        ],
+        "timeline_mode": "basic",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "Wave 1",
+            "start_min": 0,
+            "end_min": 29,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.82,
+            "return_share": 0.08,
+            "op_reply_rate": 0.58
+          },
+          {
+            "step": 2,
+            "label": "Wave 2",
+            "start_min": 30,
+            "end_min": 59,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.7,
+            "return_share": 0.12,
+            "op_reply_rate": 0.49999999999999994
+          },
+          {
+            "step": 3,
+            "label": "Wave 3",
+            "start_min": 60,
+            "end_min": 89,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.58,
+            "return_share": 0.16,
+            "op_reply_rate": 0.41999999999999993
+          },
+          {
+            "step": 4,
+            "label": "Wave 4",
+            "start_min": 90,
+            "end_min": 119,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.45999999999999996,
+            "return_share": 0.2,
+            "op_reply_rate": 0.33999999999999997
+          },
+          {
+            "step": 5,
+            "label": "Wave 5",
+            "start_min": 120,
+            "end_min": 149,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.33999999999999997,
+            "return_share": 0.24,
+            "op_reply_rate": 0.25999999999999995
+          },
+          {
+            "step": 6,
+            "label": "Wave 6",
+            "start_min": 150,
+            "end_min": 179,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.22,
+            "return_share": 0.28,
+            "op_reply_rate": 0.18
+          }
+        ],
+        "provider": "openai",
+        "model_name": "gpt-4.1-mini",
+        "mobility": 1.0,
+        "latest_op_comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:6:op",
+        "agent_seen_comment_counts": {
+          "c1": 1,
+          "c2": 3,
+          "c3": 9,
+          "c4": 3,
+          "c5": 7,
+          "c6": 9,
+          "c7": 8,
+          "c8": 8,
+          "c9": 1,
+          "v1": 3,
+          "v2": 5,
+          "v3": 7,
+          "v4": 1,
+          "v5": 8,
+          "v6": 1,
+          "v7": 5,
+          "v8": 3,
+          "v9": 8
+        },
+        "verdict_tally": {
+          "NTA": 6
+        },
+        "verdict_weighted_tally": {
+          "NTA": 6.86
+        },
+        "verdict_comment_id": "35324da8-8805-4084-84c3-4d91dfc00b11:1:c6:1",
+        "verdict_score": 5,
+        "top_comment_verdict_label": "NTA",
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 14,
+          "prompt_tokens": 16569,
+          "completion_tokens": 1378,
+          "total_tokens": 17947,
+          "models": {
+            "gpt-4.1-mini-2025-04-14": 14
+          },
+          "providers": {
+            "openai": 14
+          }
+        }
+      },
+      "verdict_match": true
+    },
+    {
+      "post": {
+        "post_id": "1svqbp6",
+        "title": "AITA for yawning when I am talking to people?",
+        "body": "Hey all! This is my first aita post\n\nAnyway, here’s the situation\n\nContext:\n\nI have been INCREDIBLY stressed lately. I have had a ridiculous amount of work, to the point that I stay up until 10,11, sometimes even 12 at night, and I wake up between 4:30 and 5 most days\n\nI know that I am physically exhausted, because there are points where I will be physically unable to stop myself from sleeping\n\nI was talking to someone close to me about some of my work today, and yawned in the middle of my sentence (not theirs) They then got a bit mad at me and said that it was really irritating when I yawned while talking since I guess it doesn’t happen when I’m talking about things I am interested in? but it does really irritate me too. Other people in my life don’t seem bothered by it, other than myself and this person \n\nI did suppress my yawns for the rest of our conversation, but I find suppressing yawns to be kind of painful, bothering my throat and ears,and making my eyes water\n\nIt was especially bad because although I got up at 10 this morning, I went to bed at 2 and I was on a physically exhausting trip for the few days prior. My stamina is also gone from a recent personal event. When I timed the yawns a bit later and ended up yawning about 15 times in 10 minutes\n\nAita for yawning? Should I work on suppressing the yawns, and apologize? Should I explain myself better? Thank you",
+        "true_verdict": "NTA",
+        "topic": "social",
+        "author": "OP"
+      },
+      "source_num_comments": 46,
+      "source_score": 27,
+      "source_verdict": "NTA",
+      "source_top_comment": "NTA. You can't control your yawns and suppressing them doesn't sound healthy. Unrelatedly, for some reason I can't stop yawning now.",
+      "source_top_comment_score": 50,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1svqbp6/aita_for_yawning_when_i_am_talking_to_people/",
+      "simulation_provider": "deepseek",
+      "simulation_model": "deepseek-v4-flash",
+      "simulated_config": {
+        "model_name": "deepseek-v4-flash",
+        "provider": "deepseek",
+        "num_commenters": 7,
+        "num_voters": 7,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "basic"
+      },
+      "timeline": [
+        {
+          "agent_id": "c4",
+          "text": "NTA. Your body is literally running on fumes. Yawning isn't a choice—it's a physiological response to exhaustion and lack of oxygen. If this person is close to you, they should be more understanding of your insane schedule and physical state rather than getting mad at an involuntary reflex.\n\nAlso, the \"you only yawn when you're not interested\" thing is a massive oversimplification and kind of manipulative. People yawn when they're tired, stressed, or even anxious. You're not trying to signal boredom; you're barely keeping your eyes open.\n\nYou could maybe explain once that it's not about them, it's about your sleep deprivation, but you don't owe them an apology for a bodily function you can't fully control. Suppressing yawns constantly is genuinely uncomfortable and can even cause jaw pain.\n\nTake care of yourself first. That sleep schedule is brutal.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:c4:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 10,
+          "bucket_label": "Wave 1",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c1",
+          "text": "NTA. You're clearly running on fumes—getting up at 4:30-5 AM after going to bed at 10-12 is brutal, and 15 yawns in 10 minutes is a biological cry for help, not a social faux pas. Yawning isn't something you can just \"suppress\" without discomfort; it's an involuntary reflex triggered by exhaustion, not boredom.\n\nYour friend's comment about it only happening when you're not interested is unfair and dismissive. If they're close to you, they should be concerned about your sleep deprivation, not irritated by your body's physical response to it. You don't need to apologize for being exhausted. Maybe apologize if the timing bothered them, but explain the context—if they still hold it against you, that's their issue. NTA.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:c1:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 27,
+          "bucket_label": "Wave 1",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks, that's pretty much how I feel. I'm genuinely exhausted and not trying to be rude, but it's hard when someone close to me takes an involuntary reflex as a personal insult.",
+          "step": 1,
+          "role": "op",
+          "comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:op",
+          "parent_comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:c4:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 28,
+          "bucket_label": "Wave 1",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c5",
+          "text": "NTA. Yawning is a physiological response, not a deliberate act of rudeness. You're running on fumes—15 yawns in 10 minutes is your body screaming for sleep, not a commentary on how interesting the conversation is. Your friend needs to get over themselves. You're not doing it to be annoying; you're literally exhausted. If they're that bothered, they can let you finish your sentence and then say \"hey, you seem really tired\" instead of making it about them. Also, suppressing yawns sucks and can actually be painful. You're fine. Get some rest if you can.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:2:c5:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 33,
+          "bucket_label": "Wave 2",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c7",
+          "text": "NTA. Yawning isn’t something you can just will away when you’re that sleep-deprived. 15 yawns in 10 minutes? Your body is screaming for rest. The person who got mad at you for yawning needs to chill—it’s not like you’re doing it on purpose to be dismissive. Sounds like they’re projecting their own irritation over something else. Honestly, the bigger issue here is that you’re running on fumes. Please prioritize sleep before you crash. Your health matters more than anyone’s opinion about a yawn.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:3:c7:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 65,
+          "bucket_label": "Wave 3",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks, I appreciate that. I know I need more sleep, but it's not that simple with my workload right now—just wish the other person could see it's not intentional rudeness.",
+          "step": 3,
+          "role": "op",
+          "comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:3:op",
+          "parent_comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:3:c7:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 88,
+          "bucket_label": "Wave 3",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c3",
+          "text": "NTA. Your friend is being unreasonable. Yawning isn't a choice when you're that sleep-deprived—it's a physiological reflex. 15 yawns in 10 minutes means your body is screaming for rest. It's not like you're doing it on purpose or to be dismissive. If they're that bothered by a natural bodily function, they need to check their own expectations. You're not being rude; you're exhausted. Maybe apologize for the timing if you want to keep the peace, but honestly, they owe you an apology for making you feel bad about something you can't help.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:4:c3:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 95,
+          "bucket_label": "Wave 4",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c6",
+          "text": "NTA. Yawning isn't a choice—it's a physiological response to sleep deprivation. 15 yawns in 10 minutes means your body is screaming for rest. Your friend is taking something involuntary personally, which is weird. Yeah, it's annoying to talk to someone who keeps yawning, but they should be more concerned about your well-being than their own minor irritation.\n\nThat said, please prioritize sleep. 4:30 AM wake-ups after midnight bedtimes? That's unsustainable. You're going to crash hard eventually. Might be worth re-evaluating your workload if you can. But no, you're not an asshole for having a reflex.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:5:c6:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 134,
+          "bucket_label": "Wave 5",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c4",
+          "text": "NTA. Look, yawning is a reflex—you can't just switch it off when you're running on that little sleep. 15 yawns in 10 minutes is your body screaming for rest. The friend getting annoyed about it is understandable if they don't realize how exhausted you are, but they're being a bit unreasonable expecting you to suppress painful yawns for their comfort.\n\nThat said, I'd gently suggest you take a hard look at your schedule. Staying up until midnight and waking at 4:30 is not sustainable. You might not think you have a choice with workload, but something's gotta give—your health, your relationships, or your productivity (which is already probably tanking from sleep deprivation). You're NTA for yawning, but you will be TA to yourself if you don't address the root cause.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:5:c4:2",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 142,
+          "bucket_label": "Wave 5",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c2",
+          "text": "Honestly, I'm with you. The friend getting *mad* about a yawn is the weirdest part here. Like, yeah, it's mildly annoying, but getting actually angry? That's a them problem. OP's body is literally shutting down mid-conversation and this person is making it about themselves. NTA at all. Hope OP gets some rest soon though, that schedule is brutal.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:6:c2:1",
+          "parent_comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:5:c6:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 169,
+          "bucket_label": "Wave 6",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c4",
+          "text": "Right? That comment about it only happening when you're not interested is the real red flag here. Even if OP *was* bored (which they're clearly not—they're exhausted), who cares? Yawning is still involuntary. Friend sounds like they're taking OP's sleep deprivation personally, which is just... weird. NTA all the way. Tell your friend to chill and get some empathy.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:6:c4:3",
+          "parent_comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:c1:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 179,
+          "bucket_label": "Wave 6",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:c4:1": 1,
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:c1:1": 2,
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:op": 3,
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:2:c5:1": 0,
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:3:c7:1": 1,
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:3:op": 2,
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:4:c3:1": -1,
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:5:c6:1": 0,
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:5:c4:2": 0,
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:6:c2:1": 0,
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:6:c4:3": 0
+        },
+        "comment_votes": {
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:c4:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:c1:1": {
+            "upvotes": 2,
+            "downvotes": 0
+          },
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:op": {
+            "upvotes": 3,
+            "downvotes": 0
+          },
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:2:c5:1": {
+            "upvotes": 1,
+            "downvotes": 1
+          },
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:3:c7:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:3:op": {
+            "upvotes": 2,
+            "downvotes": 0
+          },
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:4:c3:1": {
+            "upvotes": 0,
+            "downvotes": 1
+          },
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:5:c6:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:5:c4:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:6:c2:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "a85a9532-bc30-4cbc-9779-a04f94aaa607:6:c4:3": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "casual regular",
+            "return_probability": 0.34,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.468,
+            "vote_likelihood": 0.8112,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 6,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "casual regular",
+            "return_probability": 0.34,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.468,
+            "vote_likelihood": 0.8112,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "thread camper",
+            "return_probability": 0.58,
+            "max_comments": 5,
+            "max_top_level_comments": 3,
+            "max_reply_comments": 4,
+            "max_votes": 10,
+            "reply_likelihood": 0.7696000000000001,
+            "vote_likelihood": 0.9152,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c6",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 5,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c7",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          }
+        ],
+        "voter_profiles": [
+          {
+            "agent_id": "v1",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 1,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "v2",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 6,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "v3",
+            "activity_style": "heavy voter",
+            "return_probability": 0.612,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 16,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.936,
+            "downvote_likelihood": 0.16,
+            "arrival_wave": 2,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "v4",
+            "activity_style": "casual voter",
+            "return_probability": 0.3876,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 10,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.8528,
+            "downvote_likelihood": 0.14,
+            "arrival_wave": 1,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "v5",
+            "activity_style": "casual voter",
+            "return_probability": 0.3876,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 10,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.8528,
+            "downvote_likelihood": 0.14,
+            "arrival_wave": 5,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "v6",
+            "activity_style": "casual voter",
+            "return_probability": 0.3876,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 10,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.8528,
+            "downvote_likelihood": 0.14,
+            "arrival_wave": 3,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "v7",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 4,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          }
+        ],
+        "timeline_mode": "basic",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "Wave 1",
+            "start_min": 0,
+            "end_min": 29,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.82,
+            "return_share": 0.08,
+            "op_reply_rate": 0.58
+          },
+          {
+            "step": 2,
+            "label": "Wave 2",
+            "start_min": 30,
+            "end_min": 59,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.7,
+            "return_share": 0.12,
+            "op_reply_rate": 0.49999999999999994
+          },
+          {
+            "step": 3,
+            "label": "Wave 3",
+            "start_min": 60,
+            "end_min": 89,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.58,
+            "return_share": 0.16,
+            "op_reply_rate": 0.41999999999999993
+          },
+          {
+            "step": 4,
+            "label": "Wave 4",
+            "start_min": 90,
+            "end_min": 119,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.45999999999999996,
+            "return_share": 0.2,
+            "op_reply_rate": 0.33999999999999997
+          },
+          {
+            "step": 5,
+            "label": "Wave 5",
+            "start_min": 120,
+            "end_min": 149,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.33999999999999997,
+            "return_share": 0.24,
+            "op_reply_rate": 0.25999999999999995
+          },
+          {
+            "step": 6,
+            "label": "Wave 6",
+            "start_min": 150,
+            "end_min": 179,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.22,
+            "return_share": 0.28,
+            "op_reply_rate": 0.18
+          }
+        ],
+        "provider": "deepseek",
+        "model_name": "deepseek-v4-flash",
+        "mobility": 1.0,
+        "latest_op_comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:3:op",
+        "agent_seen_comment_counts": {
+          "c1": 4,
+          "c2": 8,
+          "c3": 6,
+          "c4": 9,
+          "c5": 3,
+          "c6": 5,
+          "c7": 4,
+          "v1": 0,
+          "v2": 5,
+          "v3": 4,
+          "v4": 6,
+          "v5": 8,
+          "v6": 8,
+          "v7": 5
+        },
+        "verdict_tally": {
+          "NTA": 7
+        },
+        "verdict_weighted_tally": {
+          "NTA": 7.47
+        },
+        "verdict_comment_id": "a85a9532-bc30-4cbc-9779-a04f94aaa607:1:c1:1",
+        "verdict_score": 2,
+        "top_comment_verdict_label": "NTA",
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 11,
+          "prompt_tokens": 9138,
+          "completion_tokens": 2567,
+          "total_tokens": 11705,
+          "models": {
+            "deepseek-v4-flash": 11
+          },
+          "providers": {
+            "deepseek": 11
+          }
+        }
+      },
+      "verdict_match": true
+    },
+    {
+      "post": {
+        "post_id": "1svpz34",
+        "title": "AITA for telling my (F29) man (M28) this isn’t normal behavior?",
+        "body": "We just did a deep spring cleaning and he thinks that we may have accidentally thrown out some of our child’s toys.\n\nNow, I would understand it if it was like a favorite stuffed animal or something. It’s not though. It’s some LEGO pieces.\n\nHe has two bags of garbage sitting in our kitchen right now. He says he’s gonna open them up right there and sift through it all to find these fucking LEGO pieces.\n\nMind you, these aren’t LEGO sets. It’s like the stray pieces that fell off our kid’s play table that were swept up in with the broom and tossed. He wants to shift through these bag for that. There’s maybe like five of them in there to be found.\n\nHe won’t let me throw these bags out either. I just tried and he got really mad. Now, other than opening trash in my kitchen my other issue is that he’s not gonna fucking go through the bags at all. They will sit there until I’ve had enough and I secretly throw them out. Things like this have happened before. His mother was also a hoarder. She wasn’t a lost cause but she had small paths through all the stuff in her house. Just something to keep in mind.\n\nAlso, our son doesn’t care. He doesn’t really even play with them anymore. So this is just my BF.\n\nSo, am I the asshole here for saying screw those LEGO pieces and throw the bags out? His reaction when I try to throw them out is really strange. He gets visibly angry and will throw an absolute fit if I toss them. I wouldn’t be surprised if he’d go pull them from the dumpster.\n\nAm I being insensitive or something? He acts like I should just allow him to do this in the kitchen even though I just spent my entire day cleaning pretty much the whole house. Like he’s literally acting like I’m being a psychopath because I want to throw this trash out. I just don’t want it in my kitchen anymore!",
+        "true_verdict": "NTA",
+        "topic": null,
+        "author": "OP"
+      },
+      "source_num_comments": 202,
+      "source_score": 213,
+      "source_verdict": "NTA",
+      "source_top_comment": "There is a lot to unpack in his behavior. Maybe give him a deadline to go through the bags and let him know they will be thrown out as soon as the deadline arrives.",
+      "source_top_comment_score": 691,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1svpz34/aita_for_telling_my_f29_man_m28_this_isnt_normal/",
+      "simulation_provider": "gemini",
+      "simulation_model": "models/gemini-2.5-flash",
+      "simulated_config": {
+        "model_name": "models/gemini-2.5-flash",
+        "provider": "gemini",
+        "num_commenters": 14,
+        "num_voters": 14,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "basic"
+      },
+      "timeline": [
+        {
+          "agent_id": "c3",
+          "text": "NTA. Oh hell no. Your boyfriend is not just being 'strange,' he's being completely unreasonable and borderline alarming. His reaction to you wanting to throw out literal garbage, especially when it's just stray LEGO pieces no one cares about, is a HUGE red flag. This isn't about the LEGOs. This is about control, and honestly, given his mother's history, this screams early signs of hoarding behavior.\n\nYou just cleaned the entire house, and he wants to leave two bags of trash in the kitchen that he'll 'get to later'? No. Absolutely not. He's trying to gaslight you by calling you a psychopath for wanting a clean house. Throw them out. If he pulls them from the dumpster, you've got a much bigger problem on your hands than some LEGOs.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:1:c3:1",
+          "parent_comment_id": null,
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 2,
+          "bucket_label": "Wave 1",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c8",
+          "text": "NTA. Full stop. This isn't \"strange,\" this is a massive red flag for hoarding behavior, which you even mentioned runs in his family. His reaction to you wanting to throw out *literal garbage* that his kid doesn't even care about is completely unhinged.\n\nHe's not going to go through those bags, they're going to sit there and rot, and he's using anger to control you. You are NOT being insensitive, he's being unreasonable and frankly, alarming. This is way bigger than a few LEGOs. You need to address this serious issue, not just these trash bags.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:2:c8:1",
+          "parent_comment_id": null,
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 36,
+          "bucket_label": "Wave 2",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c14",
+          "text": "NTA.\n\nThis isn't about the LEGOs, OP. This is about your boyfriend showing some serious red flags for hoarding behavior, especially with his mom's history, and getting irrationally angry when you try to address it.\n\nHe's not going to go through those bags. They're going to sit there and fester until you're forced to deal with them, just like things have \"happened before.\" His reaction is *not* normal, and you are absolutely not the asshole for wanting to throw out literal trash from your clean kitchen. This is a bigger problem than just a few plastic bricks.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:2:c14:1",
+          "parent_comment_id": null,
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 37,
+          "bucket_label": "Wave 2",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c1",
+          "text": "Exactly! The hoarding background is a massive flag here. This isn't just about some random LEGOs, it's about him escalating over *trash* and trying to make you feel crazy for wanting a clean kitchen after you just deep cleaned. That's some serious disrespect for your time and effort.\n\nIf he pulls those bags out of the dumpster, you've got a much bigger problem on your hands than some LEGOs. Seriously re-evaluate.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:2:c1:1",
+          "parent_comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:1:c3:1",
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 44,
+          "bucket_label": "Wave 2",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c12",
+          "text": "NTA. This isn't \"strange,\" this is alarming. Opening trash bags in a freshly cleaned kitchen for a few random LEGOs no one cares about is absolutely not normal behavior.\n\nThe fact that he gets *visibly angry* and throws a fit when you try to dispose of actual trash, combined with his mother's hoarding issues and his own history of letting things sit until you deal with them, is a massive, flashing red light. This isn't about the LEGOs, it's about control and a serious potential hoarding problem.\n\nDon't let him do this. The bags need to go. If he pulls them out of the dumpster, that's a whole other level of problem you need to address immediately, likely with professional help. This is beyond just annoying boyfriend behavior.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:3:c12:1",
+          "parent_comment_id": null,
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 89,
+          "bucket_label": "Wave 3",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c7",
+          "text": "NTA. Absolutely not. He's not just being \"strange,\" he's being completely disrespectful of your time, your home, and your efforts. You just cleaned the whole house, and he thinks it's okay to open up *trash bags* in the kitchen for a few random LEGOs that your kid doesn't even care about?\n\nThe hoarding background isn't just \"something to keep in mind,\" it's the core of the problem. This isn't about LEGOs, it's about control and his inability to let go of things, even literal garbage. His anger when you try to throw out *trash* is a massive red flag. You are not being insensitive, he's being unreasonable and frankly, quite alarming.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:4:c7:1",
+          "parent_comment_id": null,
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 113,
+          "bucket_label": "Wave 4",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "That's exactly what I'm worried about, and it feels like he's completely disregarding all the effort I put into cleaning. It's not just about the LEGOs, it's the principle.",
+          "step": 4,
+          "role": "op",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:4:op",
+          "parent_comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:4:c7:1",
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 118,
+          "bucket_label": "Wave 4",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c13",
+          "text": "NTA. Your boyfriend is completely out of line. This isn't 'strange,' it's a massive red flag, especially with his mom being a hoarder. The fact he'd get *visibly angry* and throw a fit over *trash* that the kid doesn't even care about is not normal. He's disrespecting your hard work and trying to normalize really unhealthy behavior. Do NOT let him open those bags in your clean kitchen.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c13:1",
+          "parent_comment_id": null,
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 121,
+          "bucket_label": "Wave 5",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c9",
+          "text": "NTA. This isn't just \"strange,\" this is a full-blown red flag, and you know it too with the mention of his mother. He's not going to go through those bags, they're going to sit there until you deal with them, just like everything else. He's weaponizing his inaction and disrespecting your hard work and your home.\n\nThis isn't about five LEGO pieces. This is about his inability to let go of *anything* and a serious control issue. Do not let him open those bags in your kitchen. Throw them out. If he pulls them from the dumpster, that's another problem entirely, and one you need to seriously address.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c9:1",
+          "parent_comment_id": null,
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 127,
+          "bucket_label": "Wave 5",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c6",
+          "text": "100% this. He's not going to touch those bags. This is just a power play and an excuse to keep garbage. The anger is absolutely a control tactic, and it's chilling given his mom's history.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c6:1",
+          "parent_comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:2:c8:1",
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 134,
+          "bucket_label": "Wave 5",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c2",
+          "text": "NTA. This isn't \"strange,\" this is a huge red flag waving right in front of your face. His mother was a hoarder, and he's exhibiting classic early hoarding tendencies, especially with the refusal to let go of literal trash and the disproportionate anger when you try to discard it.\n\nHe doesn't care about the LEGOs, he cares about *not letting go*. This isn't normal, it's not healthy, and it's absolutely disrespectful to you and your home after you just cleaned. Do not let him go through those bags in your kitchen. This needs to be addressed before it gets worse.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c2:1",
+          "parent_comment_id": null,
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 139,
+          "bucket_label": "Wave 5",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Exactly! His anger over *trash* is what's really getting to me, especially after I just spent all day making the house spotless. It feels like he's completely disregarding my efforts.",
+          "step": 5,
+          "role": "op",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:5:op",
+          "parent_comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c13:1",
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 148,
+          "bucket_label": "Wave 5",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c11",
+          "text": "NTA. You just spent *all day* cleaning and he wants to turn your kitchen into a trash sorting station for five random LEGO pieces your kid doesn't even care about? Absolutely not.\n\nThis isn't about LEGOs, it's about him disrespecting your work and showing a massive red flag for hoarding, especially with his mom's history. His reaction isn't \"strange,\" it's completely unhinged for the situation. Throw those bags out. He needs therapy.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c11:1",
+          "parent_comment_id": null,
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 164,
+          "bucket_label": "Wave 6",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c12",
+          "text": "Exactly. This isn't just \"strange,\" it's a massive red flag, especially with the hoarding history. The anger over *trash* is what's truly alarming here. He's not just disrespecting your effort, he's showing signs of a deeper issue. Do not let him gaslight you into thinking you're the crazy one for wanting a clean kitchen after a deep clean.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c12:2",
+          "parent_comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:1:c3:1",
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 166,
+          "bucket_label": "Wave 6",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c5",
+          "text": "Exactly. 'Strange' doesn't even begin to cover it. He's not just being unreasonable, he's being manipulative and disrespecting your labor. You just cleaned the entire house, and he thinks he can just leave bags of garbage in your kitchen and then try to make *you* feel like a psychopath for wanting a clean space? Hell no.\n\nThis isn't about LEGOs, it's about control and a massive red flag for hoarding, especially with his family history. Don't let him gaslight you into thinking this is normal.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c5:1",
+          "parent_comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:1:c3:1",
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 173,
+          "bucket_label": "Wave 6",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c9",
+          "text": "NTA. This isn't just \"strange,\" OP, you know it's a massive red flag. You even said his mother was a hoarder. This *is* hoarding behavior, plain and simple.\n\nThe fact he gets \"visibly angry\" and \"throws an absolute fit\" over *trash* is not normal. And you know he's just going to leave them there until you deal with it, because he's done it before. He's disrespecting your home, your effort, and your sanity. This isn't about the LEGOs; it's about control and a developing problem. Get those bags out of your kitchen.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c9:2",
+          "parent_comment_id": null,
+          "provider": "gemini",
+          "model_name": "models/gemini-2.5-flash",
+          "simulated_minute": 177,
+          "bucket_label": "Wave 6",
+          "verdict_label": "NTA"
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:1:c3:1": 8,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:2:c8:1": 4,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:2:c14:1": -1,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:2:c1:1": 0,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:3:c12:1": -2,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:4:c7:1": 0,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:4:op": 2,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c13:1": 0,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c9:1": 0,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c6:1": 0,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c2:1": 0,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:5:op": 0,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c11:1": 0,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c12:2": 0,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c5:1": 0,
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c9:2": 0
+        },
+        "comment_votes": {
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:1:c3:1": {
+            "upvotes": 8,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:2:c8:1": {
+            "upvotes": 4,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:2:c14:1": {
+            "upvotes": 0,
+            "downvotes": 1
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:2:c1:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:3:c12:1": {
+            "upvotes": 0,
+            "downvotes": 2
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:4:c7:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:4:op": {
+            "upvotes": 2,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c13:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c9:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c6:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:5:c2:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:5:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c11:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c12:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c5:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d25a31d8-794c-4efe-b57f-89116a6a366d:6:c9:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "thread camper",
+            "return_probability": 0.58,
+            "max_comments": 5,
+            "max_top_level_comments": 3,
+            "max_reply_comments": 4,
+            "max_votes": 10,
+            "reply_likelihood": 0.7696000000000001,
+            "vote_likelihood": 0.9152,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 5,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "thread camper",
+            "return_probability": 0.58,
+            "max_comments": 5,
+            "max_top_level_comments": 3,
+            "max_reply_comments": 4,
+            "max_votes": 10,
+            "reply_likelihood": 0.7696000000000001,
+            "vote_likelihood": 0.9152,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 6,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c6",
+            "activity_style": "casual regular",
+            "return_probability": 0.34,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.468,
+            "vote_likelihood": 0.8112,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c7",
+            "activity_style": "casual regular",
+            "return_probability": 0.34,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.468,
+            "vote_likelihood": 0.8112,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c8",
+            "activity_style": "casual regular",
+            "return_probability": 0.34,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.468,
+            "vote_likelihood": 0.8112,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c9",
+            "activity_style": "casual regular",
+            "return_probability": 0.34,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.468,
+            "vote_likelihood": 0.8112,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c10",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c11",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 6,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c12",
+            "activity_style": "thread camper",
+            "return_probability": 0.58,
+            "max_comments": 5,
+            "max_top_level_comments": 3,
+            "max_reply_comments": 4,
+            "max_votes": 10,
+            "reply_likelihood": 0.7696000000000001,
+            "vote_likelihood": 0.9152,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c13",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 5,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "c14",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          }
+        ],
+        "voter_profiles": [
+          {
+            "agent_id": "v1",
+            "activity_style": "heavy voter",
+            "return_probability": 0.612,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 16,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.936,
+            "downvote_likelihood": 0.16,
+            "arrival_wave": 2,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v2",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 5,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v3",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 1,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v4",
+            "activity_style": "casual voter",
+            "return_probability": 0.3876,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 10,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.8528,
+            "downvote_likelihood": 0.14,
+            "arrival_wave": 2,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v5",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 3,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v6",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 4,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v7",
+            "activity_style": "heavy voter",
+            "return_probability": 0.612,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 16,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.936,
+            "downvote_likelihood": 0.16,
+            "arrival_wave": 6,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v8",
+            "activity_style": "casual voter",
+            "return_probability": 0.3876,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 10,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.8528,
+            "downvote_likelihood": 0.14,
+            "arrival_wave": 4,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v9",
+            "activity_style": "heavy voter",
+            "return_probability": 0.612,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 16,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.936,
+            "downvote_likelihood": 0.16,
+            "arrival_wave": 3,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v10",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 6,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v11",
+            "activity_style": "drive-by voter",
+            "return_probability": 0.20400000000000001,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 6,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.7488,
+            "downvote_likelihood": 0.12,
+            "arrival_wave": 2,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v12",
+            "activity_style": "casual voter",
+            "return_probability": 0.3876,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 10,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.8528,
+            "downvote_likelihood": 0.14,
+            "arrival_wave": 1,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v13",
+            "activity_style": "casual voter",
+            "return_probability": 0.3876,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 10,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.8528,
+            "downvote_likelihood": 0.14,
+            "arrival_wave": 5,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          },
+          {
+            "agent_id": "v14",
+            "activity_style": "casual voter",
+            "return_probability": 0.3876,
+            "max_comments": 0,
+            "max_top_level_comments": 0,
+            "max_reply_comments": 0,
+            "max_votes": 10,
+            "reply_likelihood": 0.0,
+            "vote_likelihood": 0.8528,
+            "downvote_likelihood": 0.14,
+            "arrival_wave": 1,
+            "provider": "gemini",
+            "model_name": "models/gemini-2.5-flash"
+          }
+        ],
+        "timeline_mode": "basic",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "Wave 1",
+            "start_min": 0,
+            "end_min": 29,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.82,
+            "return_share": 0.08,
+            "op_reply_rate": 0.58
+          },
+          {
+            "step": 2,
+            "label": "Wave 2",
+            "start_min": 30,
+            "end_min": 59,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.7,
+            "return_share": 0.12,
+            "op_reply_rate": 0.49999999999999994
+          },
+          {
+            "step": 3,
+            "label": "Wave 3",
+            "start_min": 60,
+            "end_min": 89,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.58,
+            "return_share": 0.16,
+            "op_reply_rate": 0.41999999999999993
+          },
+          {
+            "step": 4,
+            "label": "Wave 4",
+            "start_min": 90,
+            "end_min": 119,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.45999999999999996,
+            "return_share": 0.2,
+            "op_reply_rate": 0.33999999999999997
+          },
+          {
+            "step": 5,
+            "label": "Wave 5",
+            "start_min": 120,
+            "end_min": 149,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.33999999999999997,
+            "return_share": 0.24,
+            "op_reply_rate": 0.25999999999999995
+          },
+          {
+            "step": 6,
+            "label": "Wave 6",
+            "start_min": 150,
+            "end_min": 179,
+            "arrival_pct": 0.16666666666666666,
+            "top_level_bias": 0.22,
+            "return_share": 0.28,
+            "op_reply_rate": 0.18
+          }
+        ],
+        "provider": "gemini",
+        "model_name": "models/gemini-2.5-flash",
+        "mobility": 1.0,
+        "latest_op_comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:5:op",
+        "agent_seen_comment_counts": {
+          "c1": 1,
+          "c2": 5,
+          "c3": 1,
+          "c4": 0,
+          "c5": 11,
+          "c6": 7,
+          "c7": 8,
+          "c8": 1,
+          "c9": 9,
+          "c10": 5,
+          "c11": 5,
+          "c12": 11,
+          "c13": 5,
+          "c14": 1,
+          "v1": 11,
+          "v2": 6,
+          "v3": 0,
+          "v4": 8,
+          "v5": 4,
+          "v6": 5,
+          "v7": 11,
+          "v8": 5,
+          "v9": 5,
+          "v10": 5,
+          "v11": 1,
+          "v12": 1,
+          "v13": 7,
+          "v14": 7
+        },
+        "verdict_tally": {
+          "NTA": 10
+        },
+        "verdict_weighted_tally": {
+          "NTA": 11.29
+        },
+        "verdict_comment_id": "d25a31d8-794c-4efe-b57f-89116a6a366d:1:c3:1",
+        "verdict_score": 8,
+        "top_comment_verdict_label": "NTA",
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 16,
+          "prompt_tokens": 15532,
+          "completion_tokens": 1788,
+          "total_tokens": 17320,
+          "models": {
+            "models/gemini-2.5-flash": 16
+          },
+          "providers": {
+            "gemini": 16
+          }
+        }
+      },
+      "verdict_match": true
+    }
+  ]
+}

@@ -1,136 +1,115 @@
-# AITA AI Simulation
+## Professor Quick Reproduction Guide (Windows)
 
-Multi-agent simulation of Reddit r/AmItheAsshole threads comparing AI vs real human discussions.
+This is the shortest reliable path to run one batch, analyze it, and export spreadsheet rows.
 
-## Quick Start
+### Step 1. Open PowerShell and enter the project folder
 
-### 1. Clone & Install
-```bash
-git clone <repo>
+```powershell
+git clone <repo-url>
 cd aita-ai-simulation
-python3 -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
+
+If the repo is already cloned, just run the second line.
+
+### Step 2. Create and activate a virtual environment
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 2. Set Up Environment
-```bash
-cp .env.example .env
-# Edit .env and add your OPENAI_API_KEY (default provider is OpenAI)
+If PowerShell blocks activation:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
-### 3. Run a Test Simulation
-```bash
-export PYTHONPATH=$(pwd)
-./.venv/bin/python scripts/cli.py \
-  --post-id test-1 \
-  --title "AITA for eating my roommate's leftovers?" \
-  --body "I was hungry..." \
-  --num-commenters 3 \
-  --max-steps 2
+### Step 3. Environment file
+
+This repository already includes a .env file.
+
+If API keys are expired or out of credits, batch runs will fail at generation time.
+
+### Step 4. Run one comparable batch
+
+Copy/paste exactly:
+
+```powershell
+python scripts/run_scraped_batch.py --source data/reddit/aita_posts_balanced_50_50.json --provider-strategy balanced --timeline-mode 24h --max-steps 6 --commenter-cap 30 --voter-ratio 1.0 --commenter-min 1 --commenter-scale-power 0.5 --mobility 1.0 --concurrency 4
 ```
 
-Results saved to `data/runs/<run_id>.json`, `data/runs/<run_id>.txt`, and `data/runs.db`.
+You should see output that includes all of the following:
+- Batch ID
+- Saved to data/batch_runs/<batch_id>.json
+- Accuracy line
 
-Single-run options now include provider and timeline mode:
+### Step 5. Analyze the newest batch
 
-```bash
-./.venv/bin/python scripts/cli.py \
-  --provider openai \
-  --timeline-mode 24h \
-  --post-id test-1 \
-  --title "AITA for eating my roommate's leftovers?" \
-  --body "I was hungry..." \
-  --num-commenters 12 \
-  --max-steps 6
+```powershell
+python scripts/analyze_batch.py
 ```
 
-### 4. View a Run in the Frontend
-Start the local static viewer:
+This prints:
+- Config tracker row
+- Results tracker row
+- Mismatch and verdict summaries
 
-```bash
-./scripts/serve_frontend.sh
+### Step 6. Export spreadsheet rows
+
+```powershell
+python scripts/analyze_batch.py --write-csv data/batch_analysis
 ```
 
-Then open:
+Creates:
+- data/batch_analysis/config_row.csv
+- data/batch_analysis/results_row.csv
+
+### Step 7. Optional run-to-run comparison
+
+Last 5 runs:
+
+```powershell
+python scripts/compare_runs.py --last 5
+```
+
+Specific run IDs:
+
+```powershell
+python scripts/compare_runs.py <batch_id_1> <batch_id_2>
+```
+
+### Step 8. Optional frontend viewer
+
+```powershell
+bash scripts/serve_frontend.sh
+```
+
+Open in browser:
 
 ```text
 http://localhost:8000/frontend/
 ```
 
-The frontend auto-discovers local runs from `data/runs/`.
+### Troubleshooting
 
-Batch runs are saved separately under `data/batch_runs/` and can also be browsed from the same frontend.
+- If python is not found, replace python with py in all commands.
+- If API calls fail, verify .env exists in project root and has valid keys.
+- If you see ModuleNotFoundError for pydantic_core, reinstall:
 
-### 5. Generate a Viewer Smoke Test (Optional)
-This creates a small run and prints the exact viewer URL for it:
-
-```bash
-./scripts/test_viewer_run.sh
+```powershell
+python -m pip install --upgrade pip
+python -m pip install --no-cache-dir --force-reinstall --only-binary=:all: pydantic-core==2.46.3 pydantic==2.13.3
 ```
 
-### 6. Start API Server (Optional)
-```bash
-uvicorn app.api.main:app --port 8000 --reload
-# Visit http://localhost:8000/docs
-```
+### Meaning of the main batch flags
 
-## Batch Simulations
+- --concurrency: number of posts simulated in parallel.
+- --provider-strategy balanced: rotate across available providers.
+- --provider-strategy single --provider openai --model gpt-4.1-mini: force one provider/model.
+- --timeline-mode 24h: six-wave first-day lifecycle.
+- --voter-ratio: voter agents per commenter agent.
+- --mobility: how freely agents return/engage between waves.
+- --commenter-scale-power and --commenter-min: map real comment count to simulated commenters.
 
-Run a scraped-post batch and save one combined artifact:
-
-```bash
-./.venv/bin/python scripts/run_scraped_batch.py \
-  --source data/reddit/aita_posts.json \
-  --provider-strategy balanced \
-  --timeline-mode 24h \
-  --max-steps 6 \
-  --commenter-cap 120 \
-  --voter-ratio 1.0 \
-  --commenter-min 1 \
-  --commenter-scale-power 0.5 \
-  --mobility 1.0 \
-  --concurrency 4
-```
-
-Notes:
-- `--concurrency` controls how many posts are simulated in parallel.
-- `--provider-strategy balanced` rotates available providers across posts as evenly as possible.
-- `--provider-strategy single --provider openai --model gpt-4.1-mini` forces one provider/model for the whole batch.
-- `--timeline-mode 24h` uses a six-wave first-day lifecycle; `basic` keeps the simpler mode.
-- `--voter-ratio` adds dedicated voter agents in addition to commenter agents.
-- `--mobility` controls how freely agents return and act across waves (higher means denser threads and more votes).
-- `--commenter-scale-power` and `--commenter-min` tune how aggressively real comment counts map to simulated commenters.
-- Each finished batch is saved to `data/batch_runs/<batch_run_id>.json`.
-- The terminal now prints a single usage summary at the end instead of per-request token spam.
-
-For denser runs without enforcing a fixed comment count, try:
-
-```bash
-./.venv/bin/python scripts/run_scraped_batch.py \
-  --timeline-mode 24h \
-  --commenter-cap 180 \
-  --voter-ratio 2.0 \
-  --commenter-min 20 \
-  --commenter-scale-power 0.72 \
-  --mobility 1.5
-```
-
-## Architecture
-
-- **app/schemas.py** — Data models (Post, Comment, Agent, etc.)
-- **app/services/simulation.py** — Multi-wave simulation logic
-- **app/llm/adapter.py** — LLM integration (OpenAI or Gemini)
-- **app/prompts.py** — Agent personality + instruction prompts
-- **scripts/cli.py** — Command-line interface
-
-## Next Steps
-
-1. Customize agent personalities in `app/prompts.py`
-2. Add real Reddit post scraping
-3. Compare AI vs real verdict outcomes
-
-## Team Notes
-
-- All API calls are logged to `log/`
-- Results stored in `data/runs.db` + JSON

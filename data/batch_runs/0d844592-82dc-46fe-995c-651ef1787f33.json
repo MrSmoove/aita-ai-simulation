@@ -1,0 +1,1210 @@
+{
+  "batch_run_id": "0d844592-82dc-46fe-995c-651ef1787f33",
+  "source_file": "data\\reddit\\aita_posts_2026_random_100.json",
+  "created_at": "2026-04-27T16:22:44.161478",
+  "config": {
+    "model_name": null,
+    "provider": "deepseek",
+    "provider_strategy": "single",
+    "timeline_mode": "24h",
+    "max_steps": 6,
+    "commenter_cap": 30,
+    "voter_ratio": 1.5,
+    "commenter_min": 1,
+    "commenter_scale_power": 0.5,
+    "mobility": 1.2,
+    "op_enabled": true,
+    "concurrency": 1,
+    "scaling_rule": "real_comments^0.5_cap_30_min_1",
+    "source_count": 3,
+    "provider_distribution": {
+      "deepseek": 3
+    },
+    "accuracy": {
+      "correct": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "usage": {
+      "request_count": 26,
+      "prompt_tokens": 18664,
+      "completion_tokens": 5100,
+      "total_tokens": 23764,
+      "models": {
+        "deepseek-v4-flash": 26
+      },
+      "providers": {
+        "deepseek": 26
+      }
+    }
+  },
+  "posts": [
+    {
+      "post": {
+        "post_id": "1sul6sb",
+        "title": "AITA for not wanting to help my dad cheat a drug test?",
+        "body": "My dad works for a construction company. Earlier today, someone backed their truck into his and now they both have to submit to a drug test tomorrow. He texted me asking me if my piss is clean (it is) and if I’d be willing to help him out. He smokes weed pretty regularly and 100% would fail the test. In my state, it is a criminal offense to help someone cheat a drug test, so I don’t really want to commit a crime to help him out even though I love him and would (almost) always help him out.",
+        "true_verdict": "NTA",
+        "topic": null,
+        "author": "OP"
+      },
+      "source_num_comments": 126,
+      "source_score": 22,
+      "source_verdict": "NTA",
+      "source_top_comment": "",
+      "source_top_comment_score": 0,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1sul6sb/aita_for_not_wanting_to_help_my_dad_cheat_a_drug/",
+      "simulation_provider": "deepseek",
+      "simulation_model": "deepseek-v4-flash",
+      "simulated_config": {
+        "model_name": "deepseek-v4-flash",
+        "provider": "deepseek",
+        "num_commenters": 11,
+        "num_voters": 0,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "24h"
+      },
+      "timeline": [
+        {
+          "agent_id": "c11",
+          "text": "NTA\n\nYour dad is asking you to commit a crime to cover for his own choices. It sucks that he might lose his job or face consequences, but that's on him for smoking weed knowing he could be tested. You're right to refuse—helping him cheat could get you in legal trouble, and that's not a fair ask from a parent. He should deal with the fallout like an adult.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:1:c11:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 9,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c8",
+          "text": "NTA\n\nYour dad is asking you to commit a crime for him. I get that he's your dad and you love him, but that doesn't mean you have to risk legal trouble—especially for something as preventable as him not smoking weed while working a job that requires drug tests. He made his choice, and now he has to face the consequences. You're not responsible for bailing him out of a situation he created.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:1:c8:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 102,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c2",
+          "text": "NTA\n\nYour dad is putting you in a terrible position by asking you to commit a literal crime for him. I get that he's your dad and you love him, but \"help me cheat a drug test\" is not a reasonable favor. He made the choice to smoke knowing he might get tested. That's on him, not on you. You're not the asshole for refusing to risk a criminal record for his poor planning.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:1:c2:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 117,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks, I appreciate that. It just sucks because I know he's stressing, but yeah, he knew the risks and I can't catch a charge for his habit.",
+          "step": 1,
+          "role": "op",
+          "comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:1:op",
+          "parent_comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:1:c11:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 119,
+          "bucket_label": "0-2h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c9",
+          "text": "NTA\n\nYour dad made his choice to smoke weed regularly knowing he could be tested at any time. That's on him, not you. Asking you to risk a criminal record so he doesn't have to face the consequences of his own decisions is selfish. I get that you love him, but love doesn't mean setting yourself on fire to keep him warm. He's an adult, he can deal with the fallout like one.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:2:c9:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 197,
+          "bucket_label": "2-5h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c4",
+          "text": "NTA\n\nYour dad made the choice to smoke weed regularly knowing he might have to take a drug test for his job. That's on him, not you. Asking you to commit a crime to bail him out is a massive overstep. You're not his get-out-of-jail-free card. If he loses his job, that's the consequence of his own actions. Don't catch a charge for someone else's bad decisions.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:2:c4:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 204,
+          "bucket_label": "2-5h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks, that's pretty much how I see it too. It just sucks feeling like I'm letting him down even though I know I'm not the one who messed up here.",
+          "step": 2,
+          "role": "op",
+          "comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:2:op",
+          "parent_comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:2:c9:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 299,
+          "bucket_label": "2-5h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c10",
+          "text": "NTA. You're not letting him down—he's letting himself down by making his choices and then trying to put the consequences on you. Asking your own kid to commit a crime so you don't have to face the music is some seriously selfish parenting. He knew the job could test, he chose to smoke anyway. That's not your problem to fix.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:3:c10:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 334,
+          "bucket_label": "5-8h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c3",
+          "text": "NTA\n\nYour dad is a grown adult who made the choice to smoke weed regularly while working a job that can require drug tests at any time. That's his responsibility, not yours. You're right to not risk a criminal record for him. It sucks that he might lose his job, but that's the consequence of his own actions. You're not letting him down—you're just not willing to break the law to bail him out. If he's really stressing, maybe he should look into a lawyer who specializes in employment law or start looking for a new job, not ask his kid to commit a crime.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:4:c3:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 506,
+          "bucket_label": "8-12h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c5",
+          "text": "Exactly. And even if it wasn't a crime, who's to say he won't get tested again next week? Then what, you're just his permanent clean-urine dealer? He needs to either quit or accept the risk. You're not his get-out-of-jail-free card.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:4:c5:1",
+          "parent_comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:1:c11:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 692,
+          "bucket_label": "8-12h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c10",
+          "text": "NTA\n\nExactly this. OP's dad is basically asking his kid to take a felony-level risk so he can keep smoking weed without consequence. That's not love, that's using your family as a safety net for your own bad decisions. And honestly, if he's been smoking regularly, he knew this was a possibility. It's not like random drug tests are unheard of in construction. He should've been prepared to either quit or face the music. OP is right to draw the line.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:6:c10:2",
+          "parent_comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:4:c3:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 1306,
+          "bucket_label": "18-24h",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "a4ba6134-0aef-4f6a-9877-985887325b18:1:c11:1": 1,
+          "a4ba6134-0aef-4f6a-9877-985887325b18:1:c8:1": 0,
+          "a4ba6134-0aef-4f6a-9877-985887325b18:1:c2:1": 2,
+          "a4ba6134-0aef-4f6a-9877-985887325b18:1:op": 0,
+          "a4ba6134-0aef-4f6a-9877-985887325b18:2:c9:1": 0,
+          "a4ba6134-0aef-4f6a-9877-985887325b18:2:c4:1": 1,
+          "a4ba6134-0aef-4f6a-9877-985887325b18:2:op": 0,
+          "a4ba6134-0aef-4f6a-9877-985887325b18:3:c10:1": 1,
+          "a4ba6134-0aef-4f6a-9877-985887325b18:4:c3:1": 0,
+          "a4ba6134-0aef-4f6a-9877-985887325b18:4:c5:1": 1,
+          "a4ba6134-0aef-4f6a-9877-985887325b18:6:c10:2": 0
+        },
+        "comment_votes": {
+          "a4ba6134-0aef-4f6a-9877-985887325b18:1:c11:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "a4ba6134-0aef-4f6a-9877-985887325b18:1:c8:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "a4ba6134-0aef-4f6a-9877-985887325b18:1:c2:1": {
+            "upvotes": 2,
+            "downvotes": 0
+          },
+          "a4ba6134-0aef-4f6a-9877-985887325b18:1:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "a4ba6134-0aef-4f6a-9877-985887325b18:2:c9:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "a4ba6134-0aef-4f6a-9877-985887325b18:2:c4:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "a4ba6134-0aef-4f6a-9877-985887325b18:2:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "a4ba6134-0aef-4f6a-9877-985887325b18:3:c10:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "a4ba6134-0aef-4f6a-9877-985887325b18:4:c3:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "a4ba6134-0aef-4f6a-9877-985887325b18:4:c5:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "a4ba6134-0aef-4f6a-9877-985887325b18:6:c10:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 6,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c6",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 5,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c7",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c8",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c9",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c10",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c11",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          }
+        ],
+        "timeline_mode": "24h",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "0-2h",
+            "start_min": 0,
+            "end_min": 120,
+            "arrival_pct": 0.25,
+            "top_level_bias": 0.88,
+            "return_share": 0.0,
+            "op_reply_rate": 0.7
+          },
+          {
+            "step": 2,
+            "label": "2-5h",
+            "start_min": 121,
+            "end_min": 300,
+            "arrival_pct": 0.3,
+            "top_level_bias": 0.74,
+            "return_share": 0.18,
+            "op_reply_rate": 0.6
+          },
+          {
+            "step": 3,
+            "label": "5-8h",
+            "start_min": 301,
+            "end_min": 480,
+            "arrival_pct": 0.2,
+            "top_level_bias": 0.55,
+            "return_share": 0.24,
+            "op_reply_rate": 0.52
+          },
+          {
+            "step": 4,
+            "label": "8-12h",
+            "start_min": 481,
+            "end_min": 720,
+            "arrival_pct": 0.12,
+            "top_level_bias": 0.38,
+            "return_share": 0.28,
+            "op_reply_rate": 0.38
+          },
+          {
+            "step": 5,
+            "label": "12-18h",
+            "start_min": 721,
+            "end_min": 1080,
+            "arrival_pct": 0.08,
+            "top_level_bias": 0.24,
+            "return_share": 0.22,
+            "op_reply_rate": 0.24
+          },
+          {
+            "step": 6,
+            "label": "18-24h",
+            "start_min": 1081,
+            "end_min": 1440,
+            "arrival_pct": 0.05,
+            "top_level_bias": 0.14,
+            "return_share": 0.16,
+            "op_reply_rate": 0.12
+          }
+        ],
+        "provider": "deepseek",
+        "model_name": "deepseek-v4-flash",
+        "latest_op_comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:2:op",
+        "verdict_tally": {
+          "NTA": 7
+        },
+        "verdict_comment_id": "a4ba6134-0aef-4f6a-9877-985887325b18:1:c2:1",
+        "verdict_score": 2,
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 11,
+          "prompt_tokens": 6024,
+          "completion_tokens": 1877,
+          "total_tokens": 7901,
+          "models": {
+            "deepseek-v4-flash": 11
+          },
+          "providers": {
+            "deepseek": 11
+          }
+        }
+      },
+      "verdict_match": true
+    },
+    {
+      "post": {
+        "post_id": "1svz8km",
+        "title": "WIBTA for going against my family's wishes for my future?",
+        "body": "24M Asian currently in final year of med school. I come from a working class family whose both parents earn barely enough to lead a comfy life. \n\nMy father has an \"Elder son\" mentality for his 6 others siblings. He has self built his life and career as a professor and brought up most of his other not so well off siblings in terms of financial and social support, often putting their interests ahead of ours. But over the years, none of his other siblings have acknowledged his sacrifices for him and kept exploiting him as well as his wife over the years. He still meets them and talks well with all but I feel either my dad's too naive and being exploited or he's stuck in a Sunken Cost Fallacy.\n\nI wanted to pursue a Bachelors in Nuclear engineering ever since my primary school days. But my parents (more likely coz they couldn't afford to) instead pressured me to join med school. I am honestly not enjoying it here coz of the stress and academics. Moreover my seniors have been telling how their work life balance for medical professional is very horrible in our country. \n\nI'm planning to pursue Preparation for the AMC exam so that I move to Australia and practice there. Word is although the preparation and process is very challenging, the work-life balance is much better than in our country. But my parents are upset over this decision of mine, stating that I have tons of familial responsibilities once I finish my education including saving money for my sister's marriage, funding my younger cousins education (my mom's brother's children). I am frustrated bcoz although I acknowledge how much they have supported me for my present education and upbringing, I have always compromised on many of my dreams for them (I intended to buy a motorcycle on my own savings once I start earning in a few months) and I don't want to be burdened with all these responsibilities in my prime youth just like my Dad underwent and later miss out on living my own life. We had a fight over this at dinner and my Sister started labelling me as an AH for disregarding the family's interests for my own. I didn't do anything rash except slamming my room's door hard.\n\nThe worst part is now my mom is complaining to our relatives and family members about my plans and trying to bring me in a bad light. Things been rough since a few weeks at home.\n\nAm I the asshole for going against my family's wishes for my future? Its not that I intend to desert themnor cut ties with them; I am planning to take my parents too along with me should I clear my AMC and if they are okay with moving to a foreign country.",
+        "true_verdict": "NTA",
+        "topic": "economy",
+        "author": "OP"
+      },
+      "source_num_comments": 28,
+      "source_score": 21,
+      "source_verdict": "NTA",
+      "source_top_comment": "",
+      "source_top_comment_score": 0,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1svz8km/wibta_for_going_against_my_familys_wishes_for_my/",
+      "simulation_provider": "deepseek",
+      "simulation_model": "deepseek-v4-flash",
+      "simulated_config": {
+        "model_name": "deepseek-v4-flash",
+        "provider": "deepseek",
+        "num_commenters": 5,
+        "num_voters": 0,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "24h"
+      },
+      "timeline": [
+        {
+          "agent_id": "c2",
+          "text": "NTA\n\nYou're not responsible for funding your sister's marriage or your cousins' education. That's your parents' choice to take on those burdens, not yours. You didn't ask to be born into a family that expects you to sacrifice your entire future for relatives who've been exploiting your father for years. And let's be real—your parents pressured you into a career you never wanted, and now they're mad you're trying to escape the toxic work-life balance that med school is already burning you out for? That's on them.\n\nYou're not abandoning anyone. You're planning to take your parents with you if they're willing. That's more than most kids would offer given the emotional manipulation going on here. Your sister calling you an AH because you won't be her personal ATM is rich—she's just parroting the same entitled mindset that's been draining your father dry.\n\nYou're 24. You have one life. Your father's sunk-cost fallacy with his siblings isn't your inheritance to continue. Go to Australia, build your own career, and if your family wants to be part of your life on your terms, great. If they'd rather guilt-trip you into repeating the same cycle of exploitation, that's their loss. Slamming a door is nothing compared to the emotional blackmail they're pulling.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "a68775b0-2a38-4d96-827d-e889481c8f20:1:c2:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 55,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks, I needed to hear that. The part about being a \"personal ATM\" really hit home—that's exactly how it feels, and I'm just tired of being expected to carry everyone before I've even started my own life.",
+          "step": 1,
+          "role": "op",
+          "comment_id": "a68775b0-2a38-4d96-827d-e889481c8f20:1:op",
+          "parent_comment_id": "a68775b0-2a38-4d96-827d-e889481c8f20:1:c2:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 119,
+          "bucket_label": "0-2h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c4",
+          "text": "NTA\n\nYour parents made the choice to have you and support you through med school, but that doesn't mean you owe them your entire future as their personal ATM. You didn't ask to be born, and you certainly didn't ask to be saddled with funding your sister's wedding or your cousins' education. That's their responsibility, not yours. \n\nYou've already sacrificed your dream career for their pressure. Now they want to sacrifice your twenties and your mental health too? Hard pass. The fact that your mom is running to relatives to trash you just proves she's trying to guilt-trip you into compliance. \n\nYou're not deserting them — you're offering to take them with you if they want. That's more than most would do in your shoes. Go build your life in Australia. You'll be a better son, brother, and person if you're actually happy and not drowning in resentment.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "a68775b0-2a38-4d96-827d-e889481c8f20:2:c4:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 128,
+          "bucket_label": "2-5h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks, I really appreciate that. It's tough hearing that from my own mom and sister, so having someone lay it out like this helps me feel less crazy for wanting my own life.",
+          "step": 2,
+          "role": "op",
+          "comment_id": "a68775b0-2a38-4d96-827d-e889481c8f20:2:op",
+          "parent_comment_id": "a68775b0-2a38-4d96-827d-e889481c8f20:2:c4:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 299,
+          "bucket_label": "2-5h",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "a68775b0-2a38-4d96-827d-e889481c8f20:1:c2:1": 1,
+          "a68775b0-2a38-4d96-827d-e889481c8f20:1:op": 0,
+          "a68775b0-2a38-4d96-827d-e889481c8f20:2:c4:1": 1,
+          "a68775b0-2a38-4d96-827d-e889481c8f20:2:op": 0
+        },
+        "comment_votes": {
+          "a68775b0-2a38-4d96-827d-e889481c8f20:1:c2:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "a68775b0-2a38-4d96-827d-e889481c8f20:1:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "a68775b0-2a38-4d96-827d-e889481c8f20:2:c4:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "a68775b0-2a38-4d96-827d-e889481c8f20:2:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          }
+        ],
+        "timeline_mode": "24h",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "0-2h",
+            "start_min": 0,
+            "end_min": 120,
+            "arrival_pct": 0.25,
+            "top_level_bias": 0.88,
+            "return_share": 0.0,
+            "op_reply_rate": 0.7
+          },
+          {
+            "step": 2,
+            "label": "2-5h",
+            "start_min": 121,
+            "end_min": 300,
+            "arrival_pct": 0.3,
+            "top_level_bias": 0.74,
+            "return_share": 0.18,
+            "op_reply_rate": 0.6
+          },
+          {
+            "step": 3,
+            "label": "5-8h",
+            "start_min": 301,
+            "end_min": 480,
+            "arrival_pct": 0.2,
+            "top_level_bias": 0.55,
+            "return_share": 0.24,
+            "op_reply_rate": 0.52
+          },
+          {
+            "step": 4,
+            "label": "8-12h",
+            "start_min": 481,
+            "end_min": 720,
+            "arrival_pct": 0.12,
+            "top_level_bias": 0.38,
+            "return_share": 0.28,
+            "op_reply_rate": 0.38
+          },
+          {
+            "step": 5,
+            "label": "12-18h",
+            "start_min": 721,
+            "end_min": 1080,
+            "arrival_pct": 0.08,
+            "top_level_bias": 0.24,
+            "return_share": 0.22,
+            "op_reply_rate": 0.24
+          },
+          {
+            "step": 6,
+            "label": "18-24h",
+            "start_min": 1081,
+            "end_min": 1440,
+            "arrival_pct": 0.05,
+            "top_level_bias": 0.14,
+            "return_share": 0.16,
+            "op_reply_rate": 0.12
+          }
+        ],
+        "provider": "deepseek",
+        "model_name": "deepseek-v4-flash",
+        "latest_op_comment_id": "a68775b0-2a38-4d96-827d-e889481c8f20:2:op",
+        "verdict_tally": {
+          "NTA": 2
+        },
+        "verdict_comment_id": "a68775b0-2a38-4d96-827d-e889481c8f20:2:c4:1",
+        "verdict_score": 1,
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 4,
+          "prompt_tokens": 3685,
+          "completion_tokens": 1147,
+          "total_tokens": 4832,
+          "models": {
+            "deepseek-v4-flash": 4
+          },
+          "providers": {
+            "deepseek": 4
+          }
+        }
+      },
+      "verdict_match": true
+    },
+    {
+      "post": {
+        "post_id": "1ssaeap",
+        "title": "AITA for confronting my friends about a trip and setting boundaries?",
+        "body": "I'm in college and became friends with two girls, Rachel and Kat. Rachel has a boyfriend, Peter, and they tend to act like a unit. I planned a DC trip for us and spent hours making an itinerary, checking with them beforehand. Kat contributed, and Rachel said she was fine with anything. During the trip, things didn’t go as planned. They were 4 hours late because Rachel and Peter were “play fighting,” and when we finally went out, Rachel suddenly didn’t want the food we had planned. The day felt unorganized and frustrating, especially since I had put in a lot of effort. Later, Rachel told Peter to take me home early, and Kat also changed plans and didn’t stay at my place like originally planned. They all went back together without me, which upset me since I felt like my effort wasn’t respected. Afterward, Kat told me privately she also felt like a third wheel around Rachel and Peter. When Rachel later mentioned planning a NYC trip, I calmly told her I wasn’t mad but wanted boundaries going forward, like separating couple time and better communication so the same issues wouldn’t happen again. After that, Rachel stopped initiating conversation with me. Kat also became distant. They’ve been hanging out without me and didn’t invite me to things. I even asked Kat to hang out one day and she said no, but then posted herself with mutual friends doing the same activity the next day. I was recently removed from a group chat for a future NYC trip that I had originally been added to before I brought up my concerns. Now I feel like I’m being excluded instead of them communicating with me. I didn’t think I was wrong for bringing up what happened and setting boundaries, especially since Kat had the same issues privately.",
+        "true_verdict": "NTA",
+        "topic": "social",
+        "author": "OP"
+      },
+      "source_num_comments": 40,
+      "source_score": 137,
+      "source_verdict": "NTA",
+      "source_top_comment": "",
+      "source_top_comment_score": 0,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1ssaeap/aita_for_confronting_my_friends_about_a_trip_and/",
+      "simulation_provider": "deepseek",
+      "simulation_model": "deepseek-v4-flash",
+      "simulated_config": {
+        "model_name": "deepseek-v4-flash",
+        "provider": "deepseek",
+        "num_commenters": 6,
+        "num_voters": 0,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "24h"
+      },
+      "timeline": [
+        {
+          "agent_id": "c1",
+          "text": "NTA\n\nYou spent hours planning a trip and your \"friends\" completely disregarded your effort—showing up 4 hours late, bailing on plans, and then literally sending you home alone while they went off together. That's disrespectful, plain and simple. You calmly addressed it and set reasonable boundaries for future trips, which is exactly what any mature person would do.\n\nThe fact that Kat privately agreed with you but is now ghosting you alongside Rachel tells me they're both prioritizing keeping the peace over being a good friend. You got removed from the group chat? That's them doubling down instead of communicating. That's not on you.\n\nYou didn't do anything wrong. They're just mad you called out the dynamic and now they're excluding you because it's easier than admitting they acted like jerks. Find better friends.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:1:c1:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 66,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c2",
+          "text": "NTA\n\nYou put in a ton of effort, they blew off the plans, and then they ditched you. Setting boundaries in a calm, reasonable way is completely fair—especially when Kat herself admitted she felt like a third wheel. The fact that Rachel and Kat are now icing you out instead of having a conversation tells you everything you need to know. They don't want to be held accountable for their behavior. You're not wrong for speaking up; they're wrong for treating you like the problem when all you asked for was basic respect and communication. Sounds like they're not really your friends if they can't handle that.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:1:c2:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 112,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thank you, I really appreciate that. It's honestly just validating to hear that I'm not crazy for being upset—especially since Kat told me she felt the same way, but now she's acting like nothing happened.",
+          "step": 1,
+          "role": "op",
+          "comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:1:op",
+          "parent_comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:1:c1:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 119,
+          "bucket_label": "0-2h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c6",
+          "text": "NTA\n\nYou spent hours planning, they showed zero respect for your time or effort, and then they excluded you for calmly asking for basic communication. That’s not you being difficult—that’s them being inconsiderate and petty. Kat privately agreed with you but still distanced herself, which is weak. You did nothing wrong by setting boundaries with someone who treated you like an afterthought.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:2:c6:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 233,
+          "bucket_label": "2-5h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks, I really needed to hear that. Yeah, it stings that Kat agreed with me privately but then just went along with excluding me anyway.",
+          "step": 2,
+          "role": "op",
+          "comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:2:op",
+          "parent_comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:2:c6:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 299,
+          "bucket_label": "2-5h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c2",
+          "text": "Exactly. The fact that they both ghosted you after you calmly asked for basic respect says it all. Real friends don't punish you for having a mature conversation. They're showing you they'd rather avoid accountability than work things out. You deserve better company.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:3:c2:2",
+          "parent_comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:1:c2:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 344,
+          "bucket_label": "5-8h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c4",
+          "text": "NTA\n\nYour \"friends\" treated you like a free travel agent and then punished you for asking for basic respect. Rachel and Peter sound exhausting, and Kat is spineless—agreeing with you privately but ditching you publicly to stay in their good graces. You didn't do anything wrong by calmly setting boundaries; you did the mature thing. They're icing you out because they know you're right and they don't want to face their own shitty behavior. Honestly? Take the hint and find better friends. These people aren't worth the energy you already wasted on the itinerary.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:3:c4:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 440,
+          "bucket_label": "5-8h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Yeah, you're right. It's just wild that they'd rather ice me out than have one honest conversation. Definitely seeing their priorities clearly now.",
+          "step": 3,
+          "role": "op",
+          "comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:3:op",
+          "parent_comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:3:c2:2",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 479,
+          "bucket_label": "5-8h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c5",
+          "text": "Right on the money. The spineless Kat part especially—she’ll throw OP under the bus to stay in the couple’s good graces until they inevitably turn on her too. OP dodged a bullet, honestly. People who can’t handle “hey, let’s communicate better” aren’t people you want planning future trips with anyway.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:4:c5:1",
+          "parent_comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:3:c4:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 494,
+          "bucket_label": "8-12h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c3",
+          "text": "NTA\n\nHonestly, your \"friends\" are showing you exactly how much they value you—which is not much. You spent hours planning a trip, they disrespected your time, and then when you calmly set a boundary (which is completely reasonable), they froze you out. That's not how friends handle conflict. Rachel sounds like she's wrapped up in her relationship and Kat is being a doormat who agrees with you privately but won't stand up for you publicly. You didn't do anything wrong by communicating. They're punishing you for having standards. Consider this a blessing in disguise—you now know where you stand. Find friends who actually respect your effort and don't ice you out for expecting basic decency.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:4:c3:1",
+          "parent_comment_id": null,
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 632,
+          "bucket_label": "8-12h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c2",
+          "text": "Honestly, the whole \"privately agrees but publicly goes along with the exclusion\" thing from Kat is the worst part. She saw the dynamic was trash, told you she felt it too, and then still chose to ice you out rather than have any spine. That's not a friend, that's someone who'll throw you under the bus to stay in the cool kids' group.\n\nOP, you're better off without people who treat basic respect like an attack. The group chat removal is a blessing in disguise—now you don't have to waste any more energy planning trips for people who see you as a free itinerary-maker they can ditch when it's convenient.",
+          "step": 4,
+          "role": "commenter",
+          "comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:4:c2:3",
+          "parent_comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:1:c1:1",
+          "provider": "deepseek",
+          "model_name": "deepseek-v4-flash",
+          "simulated_minute": 639,
+          "bucket_label": "8-12h",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:1:c1:1": 1,
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:1:c2:1": 2,
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:1:op": 0,
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:2:c6:1": 0,
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:2:op": 0,
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:3:c2:2": 0,
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:3:c4:1": 0,
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:3:op": 0,
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:4:c5:1": 0,
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:4:c3:1": 0,
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:4:c2:3": 0
+        },
+        "comment_votes": {
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:1:c1:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:1:c2:1": {
+            "upvotes": 2,
+            "downvotes": 0
+          },
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:1:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:2:c6:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:2:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:3:c2:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:3:c4:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:3:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:4:c5:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:4:c3:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "bed4ba07-3158-4992-8b51-00e9b59d3316:4:c2:3": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          },
+          {
+            "agent_id": "c6",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "deepseek",
+            "model_name": "deepseek-v4-flash"
+          }
+        ],
+        "timeline_mode": "24h",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "0-2h",
+            "start_min": 0,
+            "end_min": 120,
+            "arrival_pct": 0.25,
+            "top_level_bias": 0.88,
+            "return_share": 0.0,
+            "op_reply_rate": 0.7
+          },
+          {
+            "step": 2,
+            "label": "2-5h",
+            "start_min": 121,
+            "end_min": 300,
+            "arrival_pct": 0.3,
+            "top_level_bias": 0.74,
+            "return_share": 0.18,
+            "op_reply_rate": 0.6
+          },
+          {
+            "step": 3,
+            "label": "5-8h",
+            "start_min": 301,
+            "end_min": 480,
+            "arrival_pct": 0.2,
+            "top_level_bias": 0.55,
+            "return_share": 0.24,
+            "op_reply_rate": 0.52
+          },
+          {
+            "step": 4,
+            "label": "8-12h",
+            "start_min": 481,
+            "end_min": 720,
+            "arrival_pct": 0.12,
+            "top_level_bias": 0.38,
+            "return_share": 0.28,
+            "op_reply_rate": 0.38
+          },
+          {
+            "step": 5,
+            "label": "12-18h",
+            "start_min": 721,
+            "end_min": 1080,
+            "arrival_pct": 0.08,
+            "top_level_bias": 0.24,
+            "return_share": 0.22,
+            "op_reply_rate": 0.24
+          },
+          {
+            "step": 6,
+            "label": "18-24h",
+            "start_min": 1081,
+            "end_min": 1440,
+            "arrival_pct": 0.05,
+            "top_level_bias": 0.14,
+            "return_share": 0.16,
+            "op_reply_rate": 0.12
+          }
+        ],
+        "provider": "deepseek",
+        "model_name": "deepseek-v4-flash",
+        "latest_op_comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:3:op",
+        "verdict_tally": {
+          "NTA": 5
+        },
+        "verdict_comment_id": "bed4ba07-3158-4992-8b51-00e9b59d3316:1:c2:1",
+        "verdict_score": 2,
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 11,
+          "prompt_tokens": 8955,
+          "completion_tokens": 2076,
+          "total_tokens": 11031,
+          "models": {
+            "deepseek-v4-flash": 11
+          },
+          "providers": {
+            "deepseek": 11
+          }
+        }
+      },
+      "verdict_match": true
+    }
+  ]
+}

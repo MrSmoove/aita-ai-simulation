@@ -1,0 +1,322 @@
+{
+  "batch_run_id": "2399d256-1a04-43a9-b2a2-9d3498a174aa",
+  "source_file": "C:\\Users\\nicol\\OneDrive\\Desktop\\aita-ai-simulation\\data\\reddit\\aita_posts.json",
+  "created_at": "2026-04-27T01:43:24.088510",
+  "config": {
+    "model_name": null,
+    "provider": null,
+    "provider_strategy": "balanced",
+    "timeline_mode": "24h",
+    "max_steps": 2,
+    "commenter_cap": 6,
+    "voter_ratio": 1.0,
+    "commenter_min": 1,
+    "commenter_scale_power": 0.5,
+    "mobility": 1.0,
+    "op_enabled": true,
+    "concurrency": 1,
+    "scaling_rule": "power_cap_min",
+    "source_count": 1,
+    "provider_distribution": {
+      "openai": 1
+    },
+    "accuracy": {
+      "correct": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "usage": {
+      "request_count": 9,
+      "prompt_tokens": 8942,
+      "completion_tokens": 938,
+      "total_tokens": 9880,
+      "models": {
+        "gpt-4.1-mini-2025-04-14": 9
+      },
+      "providers": {
+        "openai": 9
+      }
+    },
+    "session_mode": "shared_thread"
+  },
+  "posts": [
+    {
+      "post": {
+        "post_id": "1svqghl",
+        "title": "AITA for telling the family that my cousin has been taking classes in her daughter’s place?",
+        "body": "I (24f) have a younger brother, Joshua (18m).  He’s been really struggling this past year as our parents are going through a nasty divorce.  Our dad had an affair with Joshua’s best friend’s mom, so this has broken up his friend group, too.  As a result, his grades are slipping and he’s at risk of not graduating. Ordinarily, I would never condone cheating, but I agreed to take an online class in his place to help him graduate on time. I don’t feel good about it and I told him he has to take a course on the subject when he goes to college next year, but I just want him to graduate and move out to hopefully get a fresh start.\n\nMeanwhile, my cousin Sarah (34f) has a daughter Shayna (15f), who does high school online. Sarah admitted to me last year that she actually does assignments and even takes entire online courses in Shayna’s place, because the subjects are things Sarah has decided Shayna doesn’t actually need to know.\n\nThe extended family found out about me taking a class for Joshua.  Surprisingly, *Sarah* has been the most vocal about how wrong it is. I thought she was being sarcastic at first, but she’s seriously judging me and doesn’t see any irony in it. I’ve since heard that she’s been talking behind my back about it.  Apparently, I was the only one who knew she regularly did the same for Shayna, so no one called her out.\n\nWe had a big family dinner on Easter, and my uncle asked how Joshua was holding up. I told him it was really rough between home and school, but he seemed to be doing better lately.  Sarah kept trying to butt in, and I tried to ignore her. Finally, she outright told our uncle that I’m pretending to be Joshua for an online class. I’d had enough, and told her she wasn’t in any position to judge me for it, considering she does the same for Shayna all the time, and Shayna isn’t even going through a rough time. The rest of the family started asking Sarah if this was true, and to her credit she admitted it was.  Everyone started ganging up on her, asking why she’s been trashing me for doing the same for Joshua. Sarah was really upset, sat quietly when the rest of us shifted the conversation, and left as soon as dinner was done.\n\nNote: Shayna and Joshua weren’t in the room; the teens and kids were in the family room at the other end of the house.\n\nSarah’s now texting my mom, calling me a hypocrite for embarrassing her in front of the family for taking classes for Shayna when I’m doing the same for Joshua. I honestly would have taken her secret to the grave if she hadn’t given me such a hard time. A couple of our aunts and uncles have said that I shouldn’t have said anything because no one was really taking Sarah’s criticism seriously anyways. Sarah’s sister is saying I should have talked to her about it in private instead of outing her to the whole family. I feel like I’m in the right, but maybe I should have just ignored her, or at least waited to confront her in private. AITA?",
+        "true_verdict": "NTA",
+        "topic": "social",
+        "author": "OP"
+      },
+      "source_num_comments": 81,
+      "source_score": 584,
+      "source_verdict": "NTA",
+      "source_top_comment": "NTA. I’ll refer Sarah to the universal law of “don’t start none, won’t be none.”",
+      "source_top_comment_score": 946,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1svqghl/aita_for_telling_the_family_that_my_cousin_has/",
+      "simulation_provider": "openai",
+      "simulation_model": "gpt-4.1-mini",
+      "simulated_config": {
+        "model_name": "gpt-4.1-mini",
+        "provider": "openai",
+        "num_commenters": 6,
+        "num_voters": 6,
+        "mobility": 1.0,
+        "max_steps": 2,
+        "op_enabled": true,
+        "timeline_mode": "24h"
+      },
+      "timeline": [
+        {
+          "agent_id": "c1",
+          "text": "You’re in a tough spot because both of you are clearly in the wrong for enabling cheating, but Sarah had no right to judge you when she’s doing the exact same thing. Calling her out publicly was harsh, sure, but she was being hypocritical and talking trash behind your back. Sometimes hypocrisy deserves to be exposed, especially when it’s hurting family dynamics. That said, maybe a private conversation first would have been more mature. But given the circumstances, I can’t blame you for standing up for yourself.\n\nNTA",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:1:c1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": null,
+          "bucket_label": "Wave 1",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c2",
+          "text": "You’re in a tricky spot because both you and Sarah are doing something ethically wrong by taking classes for your teens, so neither of you really has the moral high ground here. That said, Sarah was being a hypocrite by judging you when she’s doing the exact same thing, and she only outed you after you didn’t back down. You probably could have handled it more privately to avoid the family drama, but calling out her hypocrisy wasn’t wrong. It’s understandable you didn’t want to keep quiet when she was trashing you behind your back while doing the same thing herself. \n\nESH.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:1:c2",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": null,
+          "bucket_label": "Wave 1",
+          "verdict_label": "ESH"
+        },
+        {
+          "agent_id": "c3",
+          "text": "You were put in a tough spot here. Sarah was being hypocritical by judging you for something she’s clearly doing herself, and calling you out publicly basically forced the family to confront her double standards. That said, dragging it out in front of everyone at a family dinner felt more like a power move than a productive conversation. A private talk first could have avoided the drama and kept the peace. Both of you are enabling cheating, which is a whole other issue, but Sarah’s hypocrisy deserved to be exposed. You’re not wrong for defending yourself, but the way you handled it could’ve been better.\n\nESH",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:1:c3",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": null,
+          "bucket_label": "Wave 1",
+          "verdict_label": "ESH"
+        },
+        {
+          "agent_id": "c4",
+          "text": "You knew Sarah was doing the exact same thing and she still chose to come at you with judgment and hypocrisy. Calling her out in front of everyone was harsh but honestly, she brought it on herself by being so vocal and then acting like a victim. You might have handled it more tactfully by talking to her privately first, but you weren’t wrong to defend yourself and expose her double standard. The bigger problem here is both of you enabling cheating instead of helping the kids learn and grow, but that’s a whole other issue.\n\nESH",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:1:c4",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": null,
+          "bucket_label": "Wave 1",
+          "verdict_label": "ESH"
+        },
+        {
+          "agent_id": "c5",
+          "text": "You’re definitely not wrong for calling out hypocrisy, especially when Sarah was publicly judging you for the exact same behavior she’s guilty of. It sounds like she’s upset because she got caught, and trying to deflect by calling you a hypocrite is disingenuous. That said, outing someone’s secret in a big family setting can escalate things unnecessarily—sometimes a private conversation can solve the issue without causing a scene. But given the context and her attitude, I get why you went public. Both of you are enabling cheating, which is problematic, but Sarah’s judgmental stance makes your response understandable.\n\nNTA",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:1:c5",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": null,
+          "bucket_label": "Wave 1",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c6",
+          "text": "You’re in a tough spot because you’re both doing something shady, but the difference is you only came forward when Sarah started attacking you first. She really opened the door by throwing stones while living in a glass house. If she didn’t want her hypocrisy exposed, she shouldn’t have judged you so harshly or talked behind your back. That said, outing someone in front of the whole family is a bit of a nuclear move and probably escalated things more than a private conversation would have. Sometimes it’s better to keep the peace or handle it one-on-one, especially with family drama. But in this case, she was the aggressor, and you just defended yourself publicly. So yeah, you’re not the asshole here.\n\nNTA",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:1:c6",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": null,
+          "bucket_label": "Wave 1",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks, I get that a private talk might have been better, but I honestly felt like Sarah was trying to publicly shame me first, so I had to defend myself openly. Hypocrisy like that felt like it needed calling out.",
+          "step": 1,
+          "role": "op",
+          "comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:1:op",
+          "parent_comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:1:c1",
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": null,
+          "bucket_label": "Wave 1",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c4",
+          "text": "You both clearly screwed up by enabling cheating for these kids, which is a huge disservice to them in the long run. That said, Sarah’s hypocrisy is wild—calling you out while doing the exact same thing makes her look ridiculous and petty. You probably could have handled it more maturely with a private conversation first, but her trash talking you behind your back gave you good reason to expose her. Family drama sucks, but sometimes hypocrisy needs a spotlight. Overall, you’re not the one who started the mess.\n\nNTA",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:2:c4",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": null,
+          "bucket_label": "Wave 2",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks, I agree Sarah’s hypocrisy really pushed me over the edge. I probably could’ve handled it better, but after all the crap she was saying behind my back, I felt like calling her out publicly was the only way to stop it.",
+          "step": 2,
+          "role": "op",
+          "comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:2:op",
+          "parent_comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:2:c4",
+          "provider": "openai",
+          "model_name": "gpt-4.1-mini",
+          "simulated_minute": null,
+          "bucket_label": "Wave 2",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c1": 5,
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c2": 5,
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c3": 3,
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c4": 1,
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c5": 0,
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c6": 1,
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:op": 0,
+          "0457cb9d-9895-4bf8-bdab-c00801116216:2:c4": 0,
+          "0457cb9d-9895-4bf8-bdab-c00801116216:2:op": 0
+        },
+        "comment_votes": {
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c1": {
+            "upvotes": 5,
+            "downvotes": 0
+          },
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c2": {
+            "upvotes": 5,
+            "downvotes": 0
+          },
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c3": {
+            "upvotes": 4,
+            "downvotes": 1
+          },
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c4": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c5": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:c6": {
+            "upvotes": 2,
+            "downvotes": 1
+          },
+          "0457cb9d-9895-4bf8-bdab-c00801116216:1:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "0457cb9d-9895-4bf8-bdab-c00801116216:2:c4": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "0457cb9d-9895-4bf8-bdab-c00801116216:2:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "casual regular",
+            "return_probability": 0.34,
+            "max_comments": 3,
+            "reply_likelihood": 0.45,
+            "visible_comment_limit": 8
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "reply_likelihood": 0.2,
+            "visible_comment_limit": 5
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "reply_likelihood": 0.2,
+            "visible_comment_limit": 5
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "thread camper",
+            "return_probability": 0.58,
+            "max_comments": 5,
+            "reply_likelihood": 0.74,
+            "visible_comment_limit": 11
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "reply_likelihood": 0.2,
+            "visible_comment_limit": 5
+          },
+          {
+            "agent_id": "c6",
+            "activity_style": "casual regular",
+            "return_probability": 0.34,
+            "max_comments": 3,
+            "reply_likelihood": 0.45,
+            "visible_comment_limit": 8
+          }
+        ],
+        "provider": "openai",
+        "model_name": "gpt-4.1-mini",
+        "timeline_mode": "24h",
+        "mobility": 1.0,
+        "session_mode": "shared_thread",
+        "verdict_tally": {
+          "NTA": 4,
+          "ESH": 3
+        },
+        "verdict_weighted_tally": {
+          "NTA": 8.0,
+          "ESH": 9.0
+        },
+        "verdict_comment_id": "0457cb9d-9895-4bf8-bdab-c00801116216:1:c1",
+        "verdict_score": 5,
+        "top_comment_verdict_label": "NTA",
+        "verdict_label": "ESH",
+        "usage": {
+          "request_count": 9,
+          "prompt_tokens": 8942,
+          "completion_tokens": 938,
+          "total_tokens": 9880,
+          "models": {
+            "gpt-4.1-mini-2025-04-14": 9
+          },
+          "providers": {
+            "openai": 9
+          }
+        }
+      },
+      "verdict_match": false
+    }
+  ]
+}

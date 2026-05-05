@@ -1,0 +1,176 @@
+{
+  "batch_run_id": "8c5000ba-8fe5-4aea-818c-b74d8b0c99e5",
+  "source_file": "data\\reddit\\aita_posts.json",
+  "created_at": "2026-04-26T23:19:30.468804",
+  "config": {
+    "model_name": null,
+    "provider": "openai",
+    "provider_strategy": "single",
+    "timeline_mode": "basic",
+    "max_steps": 1,
+    "commenter_cap": 1,
+    "voter_ratio": 0.0,
+    "commenter_min": 1,
+    "commenter_scale_power": 0.5,
+    "mobility": 1.0,
+    "op_enabled": true,
+    "concurrency": 1,
+    "scaling_rule": "power_cap_min",
+    "source_count": 1,
+    "provider_distribution": {
+      "openai": 1
+    },
+    "accuracy": {
+      "correct": 0,
+      "total": 1,
+      "rate": 0.0
+    },
+    "usage": {
+      "request_count": 2,
+      "prompt_tokens": 1995,
+      "completion_tokens": 200,
+      "total_tokens": 2195,
+      "models": {
+        "gpt-4o-mini-2024-07-18": 2
+      },
+      "providers": {
+        "openai": 2
+      }
+    }
+  },
+  "posts": [
+    {
+      "post": {
+        "post_id": "1svqghl",
+        "title": "AITA for telling the family that my cousin has been taking classes in her daughter’s place?",
+        "body": "I (24f) have a younger brother, Joshua (18m).  He’s been really struggling this past year as our parents are going through a nasty divorce.  Our dad had an affair with Joshua’s best friend’s mom, so this has broken up his friend group, too.  As a result, his grades are slipping and he’s at risk of not graduating. Ordinarily, I would never condone cheating, but I agreed to take an online class in his place to help him graduate on time. I don’t feel good about it and I told him he has to take a course on the subject when he goes to college next year, but I just want him to graduate and move out to hopefully get a fresh start.\n\nMeanwhile, my cousin Sarah (34f) has a daughter Shayna (15f), who does high school online. Sarah admitted to me last year that she actually does assignments and even takes entire online courses in Shayna’s place, because the subjects are things Sarah has decided Shayna doesn’t actually need to know.\n\nThe extended family found out about me taking a class for Joshua.  Surprisingly, *Sarah* has been the most vocal about how wrong it is. I thought she was being sarcastic at first, but she’s seriously judging me and doesn’t see any irony in it. I’ve since heard that she’s been talking behind my back about it.  Apparently, I was the only one who knew she regularly did the same for Shayna, so no one called her out.\n\nWe had a big family dinner on Easter, and my uncle asked how Joshua was holding up. I told him it was really rough between home and school, but he seemed to be doing better lately.  Sarah kept trying to butt in, and I tried to ignore her. Finally, she outright told our uncle that I’m pretending to be Joshua for an online class. I’d had enough, and told her she wasn’t in any position to judge me for it, considering she does the same for Shayna all the time, and Shayna isn’t even going through a rough time. The rest of the family started asking Sarah if this was true, and to her credit she admitted it was.  Everyone started ganging up on her, asking why she’s been trashing me for doing the same for Joshua. Sarah was really upset, sat quietly when the rest of us shifted the conversation, and left as soon as dinner was done.\n\nNote: Shayna and Joshua weren’t in the room; the teens and kids were in the family room at the other end of the house.\n\nSarah’s now texting my mom, calling me a hypocrite for embarrassing her in front of the family for taking classes for Shayna when I’m doing the same for Joshua. I honestly would have taken her secret to the grave if she hadn’t given me such a hard time. A couple of our aunts and uncles have said that I shouldn’t have said anything because no one was really taking Sarah’s criticism seriously anyways. Sarah’s sister is saying I should have talked to her about it in private instead of outing her to the whole family. I feel like I’m in the right, but maybe I should have just ignored her, or at least waited to confront her in private. AITA?",
+        "true_verdict": "NTA",
+        "topic": "social",
+        "author": "OP"
+      },
+      "source_num_comments": 81,
+      "source_score": 584,
+      "source_verdict": "NTA",
+      "source_top_comment": "NTA. I’ll refer Sarah to the universal law of “don’t start none, won’t be none.”",
+      "source_top_comment_score": 946,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1svqghl/aita_for_telling_the_family_that_my_cousin_has/",
+      "simulation_provider": "openai",
+      "simulation_model": "gpt-4o-mini",
+      "simulated_config": {
+        "model_name": "gpt-4o-mini",
+        "provider": "openai",
+        "num_commenters": 1,
+        "num_voters": 0,
+        "mobility": 1.0,
+        "max_steps": 1,
+        "op_enabled": true,
+        "timeline_mode": "basic"
+      },
+      "timeline": [
+        {
+          "agent_id": "c1",
+          "text": "NTA. Honestly, it sounds like Sarah was looking for a fight and got called out for her own hypocrisy. You were trying to support your brother during a tough time, while she’s just enabling her kid to coast through school. If she didn’t want her secret exposed, she shouldn’t have been judging you in the first place. \n\nIt’s a shame that your family is siding with her, but she made her bed by throwing shade at you when she’s doing something similar. It’s not like you went out of your way to embarrass her; it was a direct response to her criticism. If she wanted to keep her actions under wraps, she should’ve kept her mouth shut. ",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "0aa73020-2f94-4228-848d-ffedbbbf80d6:1:c1:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 143,
+          "bucket_label": "Wave 1",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks for your support! Honestly, I was just fed up with her hypocrisy. If she hadn’t been so vocal about judging me, I wouldn’t have felt the need to say anything. It's frustrating to see the family siding with her when she’s the one who started it all.",
+          "step": 1,
+          "role": "op",
+          "comment_id": "0aa73020-2f94-4228-848d-ffedbbbf80d6:1:op",
+          "parent_comment_id": "0aa73020-2f94-4228-848d-ffedbbbf80d6:1:c1:1",
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 178,
+          "bucket_label": "Wave 1",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "0aa73020-2f94-4228-848d-ffedbbbf80d6:1:c1:1": 0,
+          "0aa73020-2f94-4228-848d-ffedbbbf80d6:1:op": 0
+        },
+        "comment_votes": {
+          "0aa73020-2f94-4228-848d-ffedbbbf80d6:1:c1:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "0aa73020-2f94-4228-848d-ffedbbbf80d6:1:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.14,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 4,
+            "reply_likelihood": 0.20800000000000002,
+            "vote_likelihood": 0.6656000000000001,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          }
+        ],
+        "voter_profiles": [],
+        "timeline_mode": "basic",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "Wave 1",
+            "start_min": 0,
+            "end_min": 179,
+            "arrival_pct": 1.0,
+            "top_level_bias": 0.82,
+            "return_share": 0.08,
+            "op_reply_rate": 0.58
+          }
+        ],
+        "provider": "openai",
+        "model_name": "gpt-4o-mini",
+        "mobility": 1.0,
+        "latest_op_comment_id": "0aa73020-2f94-4228-848d-ffedbbbf80d6:1:op",
+        "agent_seen_comment_counts": {
+          "c1": 0
+        },
+        "verdict_tally": {
+          "NTA": 1
+        },
+        "verdict_weighted_tally": {
+          "NTA": 1.0
+        },
+        "verdict_comment_id": "0aa73020-2f94-4228-848d-ffedbbbf80d6:1:c1:1",
+        "verdict_score": 0,
+        "top_comment_verdict_label": "NTA",
+        "verdict_label": "INCONCLUSIVE",
+        "usage": {
+          "request_count": 2,
+          "prompt_tokens": 1995,
+          "completion_tokens": 200,
+          "total_tokens": 2195,
+          "models": {
+            "gpt-4o-mini-2024-07-18": 2
+          },
+          "providers": {
+            "openai": 2
+          }
+        }
+      },
+      "verdict_match": false
+    }
+  ]
+}

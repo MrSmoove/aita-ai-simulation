@@ -1,0 +1,1120 @@
+{
+  "batch_run_id": "23df7b3d-fafa-474a-a3fc-f54b14309c64",
+  "source_file": "data\\reddit\\aita_posts_2026_random_100.json",
+  "created_at": "2026-04-27T16:23:04.443309",
+  "config": {
+    "model_name": null,
+    "provider": "openai",
+    "provider_strategy": "single",
+    "timeline_mode": "24h",
+    "max_steps": 6,
+    "commenter_cap": 30,
+    "voter_ratio": 1.5,
+    "commenter_min": 1,
+    "commenter_scale_power": 0.5,
+    "mobility": 1.2,
+    "op_enabled": true,
+    "concurrency": 1,
+    "scaling_rule": "real_comments^0.5_cap_30_min_1",
+    "source_count": 3,
+    "provider_distribution": {
+      "openai": 3
+    },
+    "accuracy": {
+      "correct": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "usage": {
+      "request_count": 21,
+      "prompt_tokens": 13945,
+      "completion_tokens": 1832,
+      "total_tokens": 15777,
+      "models": {
+        "gpt-4o-mini-2024-07-18": 21
+      },
+      "providers": {
+        "openai": 21
+      }
+    }
+  },
+  "posts": [
+    {
+      "post": {
+        "post_id": "1sul6sb",
+        "title": "AITA for not wanting to help my dad cheat a drug test?",
+        "body": "My dad works for a construction company. Earlier today, someone backed their truck into his and now they both have to submit to a drug test tomorrow. He texted me asking me if my piss is clean (it is) and if I’d be willing to help him out. He smokes weed pretty regularly and 100% would fail the test. In my state, it is a criminal offense to help someone cheat a drug test, so I don’t really want to commit a crime to help him out even though I love him and would (almost) always help him out.",
+        "true_verdict": "NTA",
+        "topic": null,
+        "author": "OP"
+      },
+      "source_num_comments": 126,
+      "source_score": 22,
+      "source_verdict": "NTA",
+      "source_top_comment": "",
+      "source_top_comment_score": 0,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1sul6sb/aita_for_not_wanting_to_help_my_dad_cheat_a_drug/",
+      "simulation_provider": "openai",
+      "simulation_model": "gpt-4o-mini",
+      "simulated_config": {
+        "model_name": "gpt-4o-mini",
+        "provider": "openai",
+        "num_commenters": 11,
+        "num_voters": 0,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "24h"
+      },
+      "timeline": [
+        {
+          "agent_id": "c1",
+          "text": "NTA. \n\nYou're not obligated to risk your own legal standing or integrity to help your dad cheat a drug test. It’s one thing to support family, but helping him break the law crosses a line. Plus, he needs to face the consequences of his choices. It's tough love, but you’re doing the right thing by not getting involved in something illegal.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:1:c1:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 51,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c7",
+          "text": "NTA.\n\nThis is a pretty clear-cut situation. Your dad is asking you to break the law, and it’s not just a minor thing—helping him cheat a drug test can have serious consequences for both of you. You’re right to protect yourself, and your dad should take responsibility for his own actions. It’s tough because you care about him, but enabling him to cheat isn’t going to help him in the long run. You’re doing the right thing by saying no.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:1:c7:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 72,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c11",
+          "text": "NTA. \n\nYou're not obligated to help your dad cheat a drug test, especially since it’s illegal in your state. It’s a tough situation, but he made his choices regarding drug use, and now he’s facing the consequences. Helping him out would put you at risk, and it’s not fair for him to put that pressure on you. You can love him and still draw a line at illegal actions.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:1:c11:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 102,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "OP: Exactly! I love my dad, but I can't compromise my own values or legal standing for his mistakes. It’s frustrating to see him put me in this position.",
+          "step": 1,
+          "role": "op",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:1:op",
+          "parent_comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:1:c1:1",
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 119,
+          "bucket_label": "0-2h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c5",
+          "text": "NTA. Your dad is asking you to put yourself at risk legally and ethically just to cover for his choices. It's one thing to support family, but it's another to compromise your own integrity. You love him, but that doesn't mean you should have to break the law to help him out. He needs to face the consequences of his actions, and you’re right to protect yourself.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:2:c5:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 271,
+          "bucket_label": "2-5h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c3",
+          "text": "NTA. Absolutely agree. It’s tough love, but sometimes you have to let people face the consequences of their choices. Helping him out might feel like a short-term fix, but it just delays the inevitable and could land you both in hot water. Gotta draw the line somewhere, and your own integrity is worth more than helping him dodge responsibility.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:3:c3:1",
+          "parent_comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:1:c7:1",
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 352,
+          "bucket_label": "5-8h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c9",
+          "text": "NTA. Your dad is asking you to put yourself in a risky position just to bail him out of his own poor choices. It's not just about loyalty; it's about your own integrity and legal safety. Helping him cheat a drug test is a crime in your state, and you shouldn’t have to compromise your values for his mistakes. It’s tough, but you have to look out for yourself.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:3:c9:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 396,
+          "bucket_label": "5-8h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "OP: Exactly! I really do want to support him, but I know this would just create more problems down the line. It’s hard to see him struggle, but he needs to face the music.",
+          "step": 3,
+          "role": "op",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:3:op",
+          "parent_comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:3:c3:1",
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 479,
+          "bucket_label": "5-8h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c8",
+          "text": "NTA. Your dad is asking you to compromise your integrity and legal standing to cover for his poor choices. It's not your responsibility to bail him out, especially when it involves breaking the law. You can love him and still say no to something that puts you at risk. It sounds tough, but standing your ground here is the right call.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:5:c8:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 911,
+          "bucket_label": "12-18h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c5",
+          "text": "NTA. Exactly! It's like, where does it end if you start bending your values for family? If he gets caught, it could affect your life too. He needs to take responsibility for his choices, and covering for him just sets a bad precedent. You’re doing the right thing by standing your ground. Family should support each other without compromising their integrity or legal standing.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:6:c5:2",
+          "parent_comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:2:c5:1",
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 1319,
+          "bucket_label": "18-24h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c3",
+          "text": "NTA. Exactly! It’s tough love, but sometimes people need to face the music for their choices. Supporting family doesn't mean enabling bad behavior. If he gets caught, it could affect you too, and that's just not worth it. He needs to own up to his actions, and you shouldn’t have to pay the price for his mistakes.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:6:c3:2",
+          "parent_comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:2:c5:1",
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 1417,
+          "bucket_label": "18-24h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "op",
+          "text": "OP: Totally agree! If I start bending my values for him now, I can only imagine how much more he’d expect in the future. He needs to face the consequences of his actions, and I can't jeopardize my own future for that.",
+          "step": 6,
+          "role": "op",
+          "comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:6:op",
+          "parent_comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:6:c5:2",
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 1439,
+          "bucket_label": "18-24h",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:1:c1:1": 1,
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:1:c7:1": 1,
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:1:c11:1": 1,
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:1:op": 0,
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:2:c5:1": 0,
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:3:c3:1": 0,
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:3:c9:1": 0,
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:3:op": 0,
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:5:c8:1": 1,
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:6:c5:2": 0,
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:6:c3:2": 0,
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:6:op": 0
+        },
+        "comment_votes": {
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:1:c1:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:1:c7:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:1:c11:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:1:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:2:c5:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:3:c3:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:3:c9:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:3:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:5:c8:1": {
+            "upvotes": 1,
+            "downvotes": 0
+          },
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:6:c5:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:6:c3:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "0b9ce0f8-5d95-4874-a442-14b7db859069:6:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c6",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 6,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c7",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c8",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 5,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c9",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c10",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c11",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          }
+        ],
+        "timeline_mode": "24h",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "0-2h",
+            "start_min": 0,
+            "end_min": 120,
+            "arrival_pct": 0.25,
+            "top_level_bias": 0.88,
+            "return_share": 0.0,
+            "op_reply_rate": 0.7
+          },
+          {
+            "step": 2,
+            "label": "2-5h",
+            "start_min": 121,
+            "end_min": 300,
+            "arrival_pct": 0.3,
+            "top_level_bias": 0.74,
+            "return_share": 0.18,
+            "op_reply_rate": 0.6
+          },
+          {
+            "step": 3,
+            "label": "5-8h",
+            "start_min": 301,
+            "end_min": 480,
+            "arrival_pct": 0.2,
+            "top_level_bias": 0.55,
+            "return_share": 0.24,
+            "op_reply_rate": 0.52
+          },
+          {
+            "step": 4,
+            "label": "8-12h",
+            "start_min": 481,
+            "end_min": 720,
+            "arrival_pct": 0.12,
+            "top_level_bias": 0.38,
+            "return_share": 0.28,
+            "op_reply_rate": 0.38
+          },
+          {
+            "step": 5,
+            "label": "12-18h",
+            "start_min": 721,
+            "end_min": 1080,
+            "arrival_pct": 0.08,
+            "top_level_bias": 0.24,
+            "return_share": 0.22,
+            "op_reply_rate": 0.24
+          },
+          {
+            "step": 6,
+            "label": "18-24h",
+            "start_min": 1081,
+            "end_min": 1440,
+            "arrival_pct": 0.05,
+            "top_level_bias": 0.14,
+            "return_share": 0.16,
+            "op_reply_rate": 0.12
+          }
+        ],
+        "provider": "openai",
+        "model_name": "gpt-4o-mini",
+        "latest_op_comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:6:op",
+        "verdict_tally": {
+          "NTA": 6
+        },
+        "verdict_comment_id": "0b9ce0f8-5d95-4874-a442-14b7db859069:5:c8:1",
+        "verdict_score": 1,
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 12,
+          "prompt_tokens": 6585,
+          "completion_tokens": 837,
+          "total_tokens": 7422,
+          "models": {
+            "gpt-4o-mini-2024-07-18": 12
+          },
+          "providers": {
+            "openai": 12
+          }
+        }
+      },
+      "verdict_match": true
+    },
+    {
+      "post": {
+        "post_id": "1svz8km",
+        "title": "WIBTA for going against my family's wishes for my future?",
+        "body": "24M Asian currently in final year of med school. I come from a working class family whose both parents earn barely enough to lead a comfy life. \n\nMy father has an \"Elder son\" mentality for his 6 others siblings. He has self built his life and career as a professor and brought up most of his other not so well off siblings in terms of financial and social support, often putting their interests ahead of ours. But over the years, none of his other siblings have acknowledged his sacrifices for him and kept exploiting him as well as his wife over the years. He still meets them and talks well with all but I feel either my dad's too naive and being exploited or he's stuck in a Sunken Cost Fallacy.\n\nI wanted to pursue a Bachelors in Nuclear engineering ever since my primary school days. But my parents (more likely coz they couldn't afford to) instead pressured me to join med school. I am honestly not enjoying it here coz of the stress and academics. Moreover my seniors have been telling how their work life balance for medical professional is very horrible in our country. \n\nI'm planning to pursue Preparation for the AMC exam so that I move to Australia and practice there. Word is although the preparation and process is very challenging, the work-life balance is much better than in our country. But my parents are upset over this decision of mine, stating that I have tons of familial responsibilities once I finish my education including saving money for my sister's marriage, funding my younger cousins education (my mom's brother's children). I am frustrated bcoz although I acknowledge how much they have supported me for my present education and upbringing, I have always compromised on many of my dreams for them (I intended to buy a motorcycle on my own savings once I start earning in a few months) and I don't want to be burdened with all these responsibilities in my prime youth just like my Dad underwent and later miss out on living my own life. We had a fight over this at dinner and my Sister started labelling me as an AH for disregarding the family's interests for my own. I didn't do anything rash except slamming my room's door hard.\n\nThe worst part is now my mom is complaining to our relatives and family members about my plans and trying to bring me in a bad light. Things been rough since a few weeks at home.\n\nAm I the asshole for going against my family's wishes for my future? Its not that I intend to desert themnor cut ties with them; I am planning to take my parents too along with me should I clear my AMC and if they are okay with moving to a foreign country.",
+        "true_verdict": "NTA",
+        "topic": "economy",
+        "author": "OP"
+      },
+      "source_num_comments": 28,
+      "source_score": 21,
+      "source_verdict": "NTA",
+      "source_top_comment": "",
+      "source_top_comment_score": 0,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1svz8km/wibta_for_going_against_my_familys_wishes_for_my/",
+      "simulation_provider": "openai",
+      "simulation_model": "gpt-4o-mini",
+      "simulated_config": {
+        "model_name": "gpt-4o-mini",
+        "provider": "openai",
+        "num_commenters": 5,
+        "num_voters": 0,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "24h"
+      },
+      "timeline": [
+        {
+          "agent_id": "c1",
+          "text": "NTA\n\nLook, you’re 24 and in med school, which is a huge commitment. It sounds like you’ve been pressured into a career path you don’t want, all because your family thinks you owe them. It’s totally normal to want to pursue your own dreams, especially when you’ve already compromised so much for them. Your parents may have their own expectations, but you’re not responsible for their choices or sacrifices. \n\nYour plans to move to Australia and improve your work-life balance show you’re trying to create a better future for yourself, not just for them. It’s great that you want to support your family, but you can’t do that if you’re unhappy or burnt out. Your life is yours to live, and it’s important to prioritize your own happiness too.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "d19cfc0d-1792-464a-90c9-84541c46891b:2:c1:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 267,
+          "bucket_label": "2-5h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks for the support! I really appreciate it. It's just tough feeling like I’m being pulled in every direction, especially when I’ve already sacrificed so much for their expectations. I want to help my family, but I also need to carve out my own path.",
+          "step": 2,
+          "role": "op",
+          "comment_id": "d19cfc0d-1792-464a-90c9-84541c46891b:2:op",
+          "parent_comment_id": "d19cfc0d-1792-464a-90c9-84541c46891b:2:c1:1",
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 299,
+          "bucket_label": "2-5h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c5",
+          "text": "NTA. \n\nLook, you’ve made it through med school, which is no small feat, and it sounds like you’re not enjoying it because it wasn’t your choice in the first place. Your parents' expectations don’t trump your own happiness and career aspirations. It's totally valid to want a life that isn’t just about fulfilling family obligations, especially when you’ve already sacrificed so much for them. \n\nYour plan to pursue the AMC exam and potentially move to Australia isn't abandoning them; it’s about building a future you actually want. Plus, wanting to help your family later on shows you’re still committed to them, just on your own terms. Your sister and mom need to understand that your life isn't just about their expectations. You deserve to pursue what makes you happy.",
+          "step": 3,
+          "role": "commenter",
+          "comment_id": "d19cfc0d-1792-464a-90c9-84541c46891b:3:c5:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 401,
+          "bucket_label": "5-8h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c5",
+          "text": "NTA. \n\nYou're 24 and you've already made it through med school, which is a huge accomplishment. It sounds like you've been pressured into this path by your family, and it's completely valid to want to pursue something that makes you happy. You’re not abandoning them; you’re trying to live your life on your own terms. Your family's expectations are heavy, but your mental health and happiness matter too. If you think a career in nuclear engineering will give you a better work-life balance and more fulfillment, you owe it to yourself to chase that dream. Your parents may not understand now, but it’s your life, not theirs.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "d19cfc0d-1792-464a-90c9-84541c46891b:5:c5:2",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 922,
+          "bucket_label": "12-18h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c5",
+          "text": "NTA. \n\nExactly! You're not just some family ATM or a backup plan for everyone else's dreams. You’ve put in the work and deserve to chase what you actually want. It’s not like you’re abandoning them; you’re just trying to carve out a life that includes your happiness too. They’ve had their expectations, but now it’s time for you to focus on your future. If your mom and sister can’t see that, that’s on them, not you. Keep pushing for what you want—life’s too short to live it just for others.",
+          "step": 6,
+          "role": "commenter",
+          "comment_id": "d19cfc0d-1792-464a-90c9-84541c46891b:6:c5:3",
+          "parent_comment_id": "d19cfc0d-1792-464a-90c9-84541c46891b:3:c5:1",
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 1233,
+          "bucket_label": "18-24h",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "d19cfc0d-1792-464a-90c9-84541c46891b:2:c1:1": 0,
+          "d19cfc0d-1792-464a-90c9-84541c46891b:2:op": 0,
+          "d19cfc0d-1792-464a-90c9-84541c46891b:3:c5:1": 2,
+          "d19cfc0d-1792-464a-90c9-84541c46891b:5:c5:2": 0,
+          "d19cfc0d-1792-464a-90c9-84541c46891b:6:c5:3": 0
+        },
+        "comment_votes": {
+          "d19cfc0d-1792-464a-90c9-84541c46891b:2:c1:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d19cfc0d-1792-464a-90c9-84541c46891b:2:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d19cfc0d-1792-464a-90c9-84541c46891b:3:c5:1": {
+            "upvotes": 2,
+            "downvotes": 0
+          },
+          "d19cfc0d-1792-464a-90c9-84541c46891b:5:c5:2": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "d19cfc0d-1792-464a-90c9-84541c46891b:6:c5:3": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          }
+        ],
+        "timeline_mode": "24h",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "0-2h",
+            "start_min": 0,
+            "end_min": 120,
+            "arrival_pct": 0.25,
+            "top_level_bias": 0.88,
+            "return_share": 0.0,
+            "op_reply_rate": 0.7
+          },
+          {
+            "step": 2,
+            "label": "2-5h",
+            "start_min": 121,
+            "end_min": 300,
+            "arrival_pct": 0.3,
+            "top_level_bias": 0.74,
+            "return_share": 0.18,
+            "op_reply_rate": 0.6
+          },
+          {
+            "step": 3,
+            "label": "5-8h",
+            "start_min": 301,
+            "end_min": 480,
+            "arrival_pct": 0.2,
+            "top_level_bias": 0.55,
+            "return_share": 0.24,
+            "op_reply_rate": 0.52
+          },
+          {
+            "step": 4,
+            "label": "8-12h",
+            "start_min": 481,
+            "end_min": 720,
+            "arrival_pct": 0.12,
+            "top_level_bias": 0.38,
+            "return_share": 0.28,
+            "op_reply_rate": 0.38
+          },
+          {
+            "step": 5,
+            "label": "12-18h",
+            "start_min": 721,
+            "end_min": 1080,
+            "arrival_pct": 0.08,
+            "top_level_bias": 0.24,
+            "return_share": 0.22,
+            "op_reply_rate": 0.24
+          },
+          {
+            "step": 6,
+            "label": "18-24h",
+            "start_min": 1081,
+            "end_min": 1440,
+            "arrival_pct": 0.05,
+            "top_level_bias": 0.14,
+            "return_share": 0.16,
+            "op_reply_rate": 0.12
+          }
+        ],
+        "provider": "openai",
+        "model_name": "gpt-4o-mini",
+        "latest_op_comment_id": "d19cfc0d-1792-464a-90c9-84541c46891b:2:op",
+        "verdict_tally": {
+          "NTA": 3
+        },
+        "verdict_comment_id": "d19cfc0d-1792-464a-90c9-84541c46891b:3:c5:1",
+        "verdict_score": 2,
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 5,
+          "prompt_tokens": 4564,
+          "completion_tokens": 617,
+          "total_tokens": 5181,
+          "models": {
+            "gpt-4o-mini-2024-07-18": 5
+          },
+          "providers": {
+            "openai": 5
+          }
+        }
+      },
+      "verdict_match": true
+    },
+    {
+      "post": {
+        "post_id": "1ssaeap",
+        "title": "AITA for confronting my friends about a trip and setting boundaries?",
+        "body": "I'm in college and became friends with two girls, Rachel and Kat. Rachel has a boyfriend, Peter, and they tend to act like a unit. I planned a DC trip for us and spent hours making an itinerary, checking with them beforehand. Kat contributed, and Rachel said she was fine with anything. During the trip, things didn’t go as planned. They were 4 hours late because Rachel and Peter were “play fighting,” and when we finally went out, Rachel suddenly didn’t want the food we had planned. The day felt unorganized and frustrating, especially since I had put in a lot of effort. Later, Rachel told Peter to take me home early, and Kat also changed plans and didn’t stay at my place like originally planned. They all went back together without me, which upset me since I felt like my effort wasn’t respected. Afterward, Kat told me privately she also felt like a third wheel around Rachel and Peter. When Rachel later mentioned planning a NYC trip, I calmly told her I wasn’t mad but wanted boundaries going forward, like separating couple time and better communication so the same issues wouldn’t happen again. After that, Rachel stopped initiating conversation with me. Kat also became distant. They’ve been hanging out without me and didn’t invite me to things. I even asked Kat to hang out one day and she said no, but then posted herself with mutual friends doing the same activity the next day. I was recently removed from a group chat for a future NYC trip that I had originally been added to before I brought up my concerns. Now I feel like I’m being excluded instead of them communicating with me. I didn’t think I was wrong for bringing up what happened and setting boundaries, especially since Kat had the same issues privately.",
+        "true_verdict": "NTA",
+        "topic": "social",
+        "author": "OP"
+      },
+      "source_num_comments": 40,
+      "source_score": 137,
+      "source_verdict": "NTA",
+      "source_top_comment": "",
+      "source_top_comment_score": 0,
+      "source_url": "https://reddit.com/r/AmItheAsshole/comments/1ssaeap/aita_for_confronting_my_friends_about_a_trip_and/",
+      "simulation_provider": "openai",
+      "simulation_model": "gpt-4o-mini",
+      "simulated_config": {
+        "model_name": "gpt-4o-mini",
+        "provider": "openai",
+        "num_commenters": 6,
+        "num_voters": 0,
+        "mobility": 1.0,
+        "max_steps": 6,
+        "op_enabled": true,
+        "timeline_mode": "24h"
+      },
+      "timeline": [
+        {
+          "agent_id": "c6",
+          "text": "NTA\n\nYou put in a lot of effort to plan that trip and had every right to express your feelings when things went south. Setting boundaries is healthy, especially when it comes to friendships. It sounds like Rachel and Peter’s dynamic overshadowed the group, and that’s not fair to you or Kat. It’s frustrating that they’re now excluding you instead of communicating about the issues, which shows they’re the ones with the problem, not you. You tried to address it calmly, and if they can’t handle that, it says more about them than you. Keep standing your ground; you deserve better friends.",
+          "step": 1,
+          "role": "commenter",
+          "comment_id": "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:1:c6:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 115,
+          "bucket_label": "0-2h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "c2",
+          "text": "NTA. You put in the effort to plan the trip and had every right to express your frustrations. It sounds like Rachel and Peter completely disregarded your plans, and it’s only fair to set boundaries when you feel like a third wheel. Their reaction to your concerns is immature and shows they can’t handle feedback. If they want to exclude you instead of having a grown-up conversation, that’s on them, not you. You deserve friends who respect your time and feelings.",
+          "step": 2,
+          "role": "commenter",
+          "comment_id": "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:2:c2:1",
+          "parent_comment_id": null,
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 234,
+          "bucket_label": "2-5h",
+          "verdict_label": "NTA"
+        },
+        {
+          "agent_id": "op",
+          "text": "Thanks for the support! I really thought I was being reasonable by just wanting to communicate better, but it feels like they took it way too personally. I guess it just shows how fragile some friendships can be.",
+          "step": 2,
+          "role": "op",
+          "comment_id": "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:2:op",
+          "parent_comment_id": "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:2:c2:1",
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 299,
+          "bucket_label": "2-5h",
+          "verdict_label": null
+        },
+        {
+          "agent_id": "c1",
+          "text": "NTA. Exactly! It’s wild that they can’t handle a little feedback and then turn it into exclusion. You put in the work to plan and just wanted some respect and communication. If Rachel and Peter want to act like a couple unit, that’s their choice, but it shouldn’t come at the expense of your friendship. Honestly, if they can’t manage to be decent about it, maybe it’s better to reevaluate if they’re worth your time. You deserve friends who appreciate your efforts, not ones who ghost you when you speak up.",
+          "step": 5,
+          "role": "commenter",
+          "comment_id": "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:5:c1:1",
+          "parent_comment_id": "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:2:c2:1",
+          "provider": "openai",
+          "model_name": "gpt-4o-mini",
+          "simulated_minute": 756,
+          "bucket_label": "12-18h",
+          "verdict_label": null
+        }
+      ],
+      "metadata": {
+        "comment_scores": {
+          "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:1:c6:1": 2,
+          "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:2:c2:1": 2,
+          "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:2:op": 0,
+          "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:5:c1:1": 0
+        },
+        "comment_votes": {
+          "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:1:c6:1": {
+            "upvotes": 2,
+            "downvotes": 0
+          },
+          "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:2:c2:1": {
+            "upvotes": 2,
+            "downvotes": 0
+          },
+          "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:2:op": {
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:5:c1:1": {
+            "upvotes": 0,
+            "downvotes": 0
+          }
+        },
+        "commenter_profiles": [
+          {
+            "agent_id": "c1",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 3,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c2",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c3",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c4",
+            "activity_style": "thread camper",
+            "return_probability": 0.5,
+            "max_comments": 3,
+            "max_top_level_comments": 2,
+            "max_reply_comments": 2,
+            "max_votes": 6,
+            "reply_likelihood": 0.68,
+            "vote_likelihood": 0.82,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 4,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c5",
+            "activity_style": "casual regular",
+            "return_probability": 0.28,
+            "max_comments": 2,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 1,
+            "max_votes": 4,
+            "reply_likelihood": 0.4,
+            "vote_likelihood": 0.72,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 2,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          },
+          {
+            "agent_id": "c6",
+            "activity_style": "drive-by commenter",
+            "return_probability": 0.08,
+            "max_comments": 1,
+            "max_top_level_comments": 1,
+            "max_reply_comments": 0,
+            "max_votes": 2,
+            "reply_likelihood": 0.15,
+            "vote_likelihood": 0.55,
+            "downvote_likelihood": 0.18,
+            "arrival_wave": 1,
+            "provider": "openai",
+            "model_name": "gpt-4o-mini"
+          }
+        ],
+        "timeline_mode": "24h",
+        "wave_schedule": [
+          {
+            "step": 1,
+            "label": "0-2h",
+            "start_min": 0,
+            "end_min": 120,
+            "arrival_pct": 0.25,
+            "top_level_bias": 0.88,
+            "return_share": 0.0,
+            "op_reply_rate": 0.7
+          },
+          {
+            "step": 2,
+            "label": "2-5h",
+            "start_min": 121,
+            "end_min": 300,
+            "arrival_pct": 0.3,
+            "top_level_bias": 0.74,
+            "return_share": 0.18,
+            "op_reply_rate": 0.6
+          },
+          {
+            "step": 3,
+            "label": "5-8h",
+            "start_min": 301,
+            "end_min": 480,
+            "arrival_pct": 0.2,
+            "top_level_bias": 0.55,
+            "return_share": 0.24,
+            "op_reply_rate": 0.52
+          },
+          {
+            "step": 4,
+            "label": "8-12h",
+            "start_min": 481,
+            "end_min": 720,
+            "arrival_pct": 0.12,
+            "top_level_bias": 0.38,
+            "return_share": 0.28,
+            "op_reply_rate": 0.38
+          },
+          {
+            "step": 5,
+            "label": "12-18h",
+            "start_min": 721,
+            "end_min": 1080,
+            "arrival_pct": 0.08,
+            "top_level_bias": 0.24,
+            "return_share": 0.22,
+            "op_reply_rate": 0.24
+          },
+          {
+            "step": 6,
+            "label": "18-24h",
+            "start_min": 1081,
+            "end_min": 1440,
+            "arrival_pct": 0.05,
+            "top_level_bias": 0.14,
+            "return_share": 0.16,
+            "op_reply_rate": 0.12
+          }
+        ],
+        "provider": "openai",
+        "model_name": "gpt-4o-mini",
+        "latest_op_comment_id": "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:2:op",
+        "verdict_tally": {
+          "NTA": 2
+        },
+        "verdict_comment_id": "2aa0b14f-6707-4249-851e-2d10fd2e6b5d:1:c6:1",
+        "verdict_score": 2,
+        "verdict_label": "NTA",
+        "usage": {
+          "request_count": 4,
+          "prompt_tokens": 2796,
+          "completion_tokens": 378,
+          "total_tokens": 3174,
+          "models": {
+            "gpt-4o-mini-2024-07-18": 4
+          },
+          "providers": {
+            "openai": 4
+          }
+        }
+      },
+      "verdict_match": true
+    }
+  ]
+}

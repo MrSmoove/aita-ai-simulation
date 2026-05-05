@@ -6,8 +6,7 @@ __pycache__/
 venv/
 node_modules/
 data/runs/
-data/batch_runs/
-data/reddit/
+
 *.log
 .DS_Store
 *.db
@@ -15,8 +14,7 @@ data/reddit/
 .vscode/
 
 # Environment variables
-.env
-.env.local
+
 
 # Data files
 data/reddit/*.jsonl
