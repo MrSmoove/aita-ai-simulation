@@ -28,7 +28,22 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 ### Step 3. Environment file
 
-This repository already includes a .env file.
+Create a local .env from the provided template:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Then open .env and paste in the API key(s) you are providing.
+
+At minimum, set the provider key you plan to use (for example OPENAI_API_KEY for OpenAI runs).
+
+Common keys in this project include:
+- OPENAI_API_KEY
+- DEEPSEEK_API_KEY
+- MISTRAL_API_KEY
+- GROQ_API_KEY
+- GEMINI_API_KEY
 
 If API keys are expired or out of credits, batch runs will fail at generation time.
 
@@ -95,7 +110,7 @@ http://localhost:8000/frontend/
 ### Troubleshooting
 
 - If python is not found, replace python with py in all commands.
-- If API calls fail, verify .env exists in project root and has valid keys.
+- If API calls fail, verify .env exists in project root (copied from .env.example) and contains valid keys.
 - If you see ModuleNotFoundError for pydantic_core, reinstall:
 
 ```powershell
