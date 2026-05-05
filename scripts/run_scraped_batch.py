@@ -11,6 +11,7 @@ import argparse
 import asyncio
 
 from app.services import simulation
+from app.services import simulation_isolated
 from app.services import storage
 
 
@@ -29,10 +30,13 @@ async def main() -> None:
     parser.add_argument("--mobility", type=float, default=1.0, help="How freely agents return and engage (0.5 to 2.5)")
     parser.add_argument("--concurrency", type=int, default=1, help="Number of posts to simulate in parallel")
     parser.add_argument("--limit", type=int, default=None, help="Optional number of scraped posts to process")
+    parser.add_argument("--isolated", action="store_true", help="Use per-commenter isolated sessions")
     args = parser.parse_args()
     storage.init_db()
 
-    result = await simulation.run_batch_from_scrape(
+    simulation_module = simulation_isolated if args.isolated else simulation
+
+    result = await simulation_module.run_batch_from_scrape(
         source_file=args.source,
         model_name=args.model,
         max_steps=args.max_steps,
@@ -48,15 +52,20 @@ async def main() -> None:
         limit=args.limit,
     )
 
-    print(f"✓ Batch simulation complete. Batch ID: {result['batch_run_id']}")
+    mode_label = "Isolated batch simulation" if args.isolated else "Batch simulation"
+    print(f"✓ {mode_label} complete. Batch ID: {result['batch_run_id']}")
     print(f"  Source: {result['source_file']}")
     print(f"  Posts: {len(result['posts'])}")
     print(f"  Provider strategy: {result['config'].get('provider_strategy')}")
     print(f"  Timeline mode: {result['config'].get('timeline_mode')}")
+    if result.get("config", {}).get("session_mode"):
+        print(f"  Session mode: {result['config'].get('session_mode')}")
     print(f"  Saved to: data/batch_runs/{result['batch_run_id']}.json")
     accuracy = result.get("config", {}).get("accuracy", {})
     if accuracy:
-        print(f"  Accuracy: {accuracy.get('correct')}/{accuracy.get('total')} correct ({accuracy.get('rate', 0)*100:.1f}%)")
+        accuracy_rate = accuracy.get("rate")
+        accuracy_pct = (accuracy_rate or 0) * 100
+        print(f"  Accuracy: {accuracy.get('correct')}/{accuracy.get('total')} correct ({accuracy_pct:.1f}%)")
     usage = result.get("config", {}).get("usage", {})
     provider_distribution = result.get("config", {}).get("provider_distribution", {})
     if provider_distribution:

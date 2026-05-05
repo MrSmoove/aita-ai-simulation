@@ -15,16 +15,12 @@ from app.schemas import AgentAction, BatchPostResult, BatchRun, Post, Simulation
 from app.services import storage
 
 ACTIVITY_STYLES = [
-    {"label": "drive-by commenter", "return_probability": 0.14, "max_comments": 2, "reply_likelihood": 0.2, "vote_likelihood": 0.64},
-    {"label": "casual regular", "return_probability": 0.34, "max_comments": 3, "reply_likelihood": 0.45, "vote_likelihood": 0.78},
-    {"label": "thread camper", "return_probability": 0.58, "max_comments": 5, "reply_likelihood": 0.74, "vote_likelihood": 0.88},
-]
-VOTER_STYLES = [
-    {"label": "drive-by voter", "return_probability": 0.2, "vote_likelihood": 0.72, "max_votes": 6, "downvote_likelihood": 0.12},
-    {"label": "casual voter", "return_probability": 0.38, "vote_likelihood": 0.82, "max_votes": 10, "downvote_likelihood": 0.14},
-    {"label": "heavy voter", "return_probability": 0.6, "vote_likelihood": 0.9, "max_votes": 16, "downvote_likelihood": 0.16},
+    {"label": "drive-by commenter", "return_probability": 0.08, "max_comments": 1, "reply_likelihood": 0.15, "vote_likelihood": 0.55},
+    {"label": "casual regular", "return_probability": 0.28, "max_comments": 2, "reply_likelihood": 0.4, "vote_likelihood": 0.72},
+    {"label": "thread camper", "return_probability": 0.5, "max_comments": 3, "reply_likelihood": 0.68, "vote_likelihood": 0.82},
 ]
 ACTION_TYPES = ["no_engage", "vote_only", "top_level", "reply", "comment_vote"]
+VERDICTS = ("NTA", "YTA", "ESH", "NAH")
 TIMELINE_24H = [
     {"step": 1, "label": "0-2h", "start_min": 0, "end_min": 120, "arrival_pct": 0.25, "top_level_bias": 0.88, "return_share": 0.0, "op_reply_rate": 0.7},
     {"step": 2, "label": "2-5h", "start_min": 121, "end_min": 300, "arrival_pct": 0.30, "top_level_bias": 0.74, "return_share": 0.18, "op_reply_rate": 0.6},
@@ -81,18 +77,12 @@ def _allocate_counts(total: int, percentages: List[float]) -> List[int]:
 def _scaled_num_commenters(
     real_num_comments: int,
     commenter_cap: int,
-    min_commenters: int = 1,
+    min_commenters: int = 10,
     scale_power: float = 0.5,
 ) -> int:
-    scale_power = min(1.0, max(0.3, scale_power))
-    min_commenters = max(1, min_commenters)
     if real_num_comments <= 0:
         return min(min_commenters, commenter_cap)
     return max(min_commenters, min(round(real_num_comments ** scale_power), commenter_cap))
-
-
-def _scaled_limit(base: float, mobility: float, floor: int = 1) -> int:
-    return max(floor, round(base * mobility))
 
 
 def _empty_usage_summary() -> Dict[str, Any]:
@@ -137,8 +127,8 @@ def _merge_usage_summaries(summaries: List[Optional[Dict[str, Any]]]) -> Dict[st
 
 def _build_commenter_profiles(
     num_commenters: int,
-    mobility: float = 1.0,
     available_providers: Optional[List[str]] = None,
+    mobility: float = 1.0,
 ) -> List[Dict[str, Any]]:
     # Distribute activity styles: ~50% drive-by, ~30% casual regular, ~20% thread camper
     activity_counts = _allocate_counts(num_commenters, [0.5, 0.3, 0.2])
@@ -152,32 +142,34 @@ def _build_commenter_profiles(
         activity_index = activity_assignments[index]
         activity = ACTIVITY_STYLES[activity_index]
         if activity["label"] == "drive-by commenter":
-            max_top_level_comments = _scaled_limit(1, mobility)
-            max_reply_comments = max(0, _scaled_limit(1, mobility, floor=0) - 1)
-            max_votes = _scaled_limit(4, mobility)
+            max_top_level_comments = 1
+            max_reply_comments = 0
+            max_votes = 2
         elif activity["label"] == "casual regular":
-            max_top_level_comments = _scaled_limit(2, mobility)
-            max_reply_comments = _scaled_limit(2, mobility)
-            max_votes = _scaled_limit(6, mobility)
+            max_top_level_comments = 1
+            max_reply_comments = 1
+            max_votes = 4
         else:  # thread camper
-            max_top_level_comments = _scaled_limit(3, mobility)
-            max_reply_comments = _scaled_limit(4, mobility)
-            max_votes = _scaled_limit(10, mobility)
+            max_top_level_comments = 2
+            max_reply_comments = 2
+            max_votes = 6
         # Assign provider round-robin so agents come from different models.
         providers = available_providers or ["openai"]
         agent_provider = providers[index % len(providers)]
         agent_model = llm.resolve_model_name(agent_provider, None)
+        return_probability = min(0.95, max(0.02, activity["return_probability"] * mobility))
+        vote_likelihood = min(0.95, max(0.05, activity["vote_likelihood"] * (0.8 + (0.2 * mobility))))
         profiles.append(
             {
                 "agent_id": f"c{index + 1}",
                 "activity_style": activity["label"],
-                "return_probability": min(0.92, activity["return_probability"] * mobility),
-                "max_comments": _scaled_limit(activity["max_comments"], mobility),
+                "return_probability": return_probability,
+                "max_comments": activity["max_comments"],
                 "max_top_level_comments": max_top_level_comments,
                 "max_reply_comments": max_reply_comments,
                 "max_votes": max_votes,
-                "reply_likelihood": min(0.95, activity["reply_likelihood"] * (0.92 + 0.12 * mobility)),
-                "vote_likelihood": min(0.95, activity["vote_likelihood"] * (0.94 + 0.1 * mobility)),
+                "reply_likelihood": activity["reply_likelihood"],
+                "vote_likelihood": vote_likelihood,
                 "downvote_likelihood": 0.18,
                 "arrival_wave": 1,
                 "provider": agent_provider,
@@ -192,39 +184,90 @@ def _build_voter_profiles(
     mobility: float = 1.0,
     available_providers: Optional[List[str]] = None,
 ) -> List[Dict[str, Any]]:
-    if num_voters <= 0:
-        return []
-
-    style_counts = _allocate_counts(num_voters, [0.45, 0.35, 0.2])
-    style_assignments: List[int] = []
-    for style_idx, count in enumerate(style_counts):
-        style_assignments.extend([style_idx] * count)
-    random.shuffle(style_assignments)
-
-    providers = available_providers or ["openai"]
     profiles: List[Dict[str, Any]] = []
-    for index in range(num_voters):
-        style = VOTER_STYLES[style_assignments[index]]
+    providers = available_providers or ["openai"]
+    for index in range(max(0, num_voters)):
         agent_provider = providers[index % len(providers)]
         agent_model = llm.resolve_model_name(agent_provider, None)
         profiles.append(
             {
                 "agent_id": f"v{index + 1}",
-                "activity_style": style["label"],
-                "return_probability": min(0.95, style["return_probability"] * (0.9 + 0.12 * mobility)),
+                "activity_style": "vote-only",
+                "return_probability": min(0.95, max(0.05, 0.22 * mobility)),
                 "max_comments": 0,
                 "max_top_level_comments": 0,
                 "max_reply_comments": 0,
-                "max_votes": _scaled_limit(style["max_votes"], mobility),
+                "max_votes": max(1, round(3 * mobility)),
                 "reply_likelihood": 0.0,
-                "vote_likelihood": min(0.98, style["vote_likelihood"] * (0.94 + 0.1 * mobility)),
-                "downvote_likelihood": style["downvote_likelihood"],
+                "vote_likelihood": min(0.98, max(0.2, 0.75 * mobility)),
+                "downvote_likelihood": 0.18,
                 "arrival_wave": 1,
                 "provider": agent_provider,
                 "model_name": agent_model,
             }
         )
     return profiles
+
+
+def _build_agent_visible_comment_ids(
+    profile: Dict[str, Any],
+    available_comment_ids: List[str],
+    seen_comment_ids: set[str],
+    comment_scores: Dict[str, int],
+    comment_step_by_id: Dict[str, int],
+    current_step: int,
+) -> List[str]:
+    if not available_comment_ids:
+        return []
+
+    # Blend high-score comments with a few recent unseen comments.
+    sorted_by_score = sorted(
+        available_comment_ids,
+        key=lambda cid: (comment_scores.get(cid, 0), comment_step_by_id.get(cid, 0)),
+        reverse=True,
+    )
+    top_visible = sorted_by_score[:25]
+    recent_unseen = [
+        cid for cid in reversed(available_comment_ids)
+        if cid not in seen_comment_ids
+    ][:10]
+
+    merged: List[str] = []
+    for comment_id in top_visible + recent_unseen:
+        if comment_id not in merged:
+            merged.append(comment_id)
+    return merged
+
+
+def _build_weighted_verdict_tally(
+    eligible_comment_ids: List[str],
+    comment_scores: Dict[str, int],
+    comment_vote_totals: Dict[str, Dict[str, int]],
+    verdict_label_by_comment_id: Dict[str, Optional[str]],
+) -> Dict[str, float]:
+    tally: Dict[str, float] = {label: 0.0 for label in VERDICTS}
+    for comment_id in eligible_comment_ids:
+        label = verdict_label_by_comment_id.get(comment_id)
+        if not label:
+            continue
+        totals = comment_vote_totals.get(comment_id, {})
+        upvotes = totals.get("upvotes", 0)
+        score = comment_scores.get(comment_id, 0)
+        weight = max(1.0, 1.0 + (0.5 * upvotes) + score)
+        tally[label] = tally.get(label, 0.0) + weight
+    return {label: round(value, 3) for label, value in tally.items() if value > 0}
+
+
+def _resolve_final_verdict(weighted_tally: Dict[str, float], top_comment_label: Optional[str]) -> Optional[str]:
+    if weighted_tally:
+        best_weight = max(weighted_tally.values())
+        winners = [label for label, weight in weighted_tally.items() if weight == best_weight]
+        if top_comment_label and top_comment_label in winners:
+            return top_comment_label
+        for label in VERDICTS:
+            if label in winners:
+                return label
+    return top_comment_label
 
 
 def _choose_agent_action(
@@ -245,12 +288,22 @@ def _choose_agent_action(
     can_reply = can_comment and has_visible_comments and reply_count < profile["max_reply_comments"]
     can_vote = has_visible_comments and vote_count < profile["max_votes"]
 
+    # Ensure each arrived agent takes at least one action by the final wave when possible.
+    if step == total_steps and total_action_count == 0:
+        if can_vote:
+            return "vote_only"
+        if can_top_level:
+            return "top_level"
+        if can_reply:
+            return "reply"
+        return "no_engage"
+
     weights: Dict[str, float] = {
-        "no_engage": 0.12 if is_new_arrival else 0.18,
-        "vote_only": 0.22,
-        "top_level": max(0.05, wave["top_level_bias"] * (0.68 if is_new_arrival else 0.48)),
-        "reply": max(0.05, (1 - wave["top_level_bias"]) * (0.56 if not is_new_arrival else 0.36)),
-        "comment_vote": 0.2,
+        "no_engage": 0.18 if is_new_arrival else 0.26,
+        "vote_only": 0.18,
+        "top_level": max(0.05, wave["top_level_bias"] * (0.62 if is_new_arrival else 0.42)),
+        "reply": max(0.05, (1 - wave["top_level_bias"]) * (0.48 if not is_new_arrival else 0.3)),
+        "comment_vote": 0.14,
     }
 
     allowed: List[str] = ["no_engage"]
@@ -459,6 +512,7 @@ def _vote_on_comments(
     comment_step_by_id: Dict[str, int],
     current_step: int,
     vote_counts: Dict[str, int],
+    visible_comment_ids_by_agent: Optional[Dict[str, List[str]]] = None,
     agent_verdict_by_id: Optional[Dict[str, Optional[str]]] = None,
     verdict_label_by_comment_id: Optional[Dict[str, Optional[str]]] = None,
 ) -> None:
@@ -478,10 +532,15 @@ def _vote_on_comments(
         if random.random() > voter.get("vote_likelihood", 0.65):
             continue
 
+        visible_for_voter = None
+        if visible_comment_ids_by_agent:
+            visible_for_voter = set(visible_comment_ids_by_agent.get(voter_id, []))
+
         voteable_ids = [
             comment_id
             for comment_id in candidate_comment_ids
             if comment_role_by_id.get(comment_id) != voter_id
+            and (visible_for_voter is None or comment_id in visible_for_voter)
         ]
         if not voteable_ids:
             continue
@@ -518,9 +577,7 @@ def _vote_on_comments(
                 downvote_bias = 0.78
         else:
             # No verdict info — use score-based neutral bias
-            downvote_bias = voter.get("downvote_likelihood", 0.12)
-            if current_score < 0:
-                downvote_bias += 0.12
+            downvote_bias = 0.08 if current_score >= 0 else 0.28
             downvote_bias += min(depth_by_id.get(target_id, 0), 3) * 0.04
 
         is_downvote = random.random() < min(0.85, downvote_bias)
@@ -547,7 +604,7 @@ def _build_provider_plan(
         return [{"provider": chosen_provider, "model_name": chosen_model} for _ in range(total_posts)]
 
     available = llm.available_providers()
-    ordered = [name for name in ["openai", "deepseek", "groq", "gemini"] if name in available]
+    ordered = [name for name in ["openai", "deepseek", "mistral", "groq", "gemini"] if name in available]
     if not ordered:
         ordered = [llm.resolve_provider(provider)]
 
@@ -585,49 +642,34 @@ async def run_single_post(
             model_name=resolved_model_name,
             provider=resolved_provider,
             num_commenters=config.num_commenters,
-            num_voters=config.num_voters,
-            mobility=config.mobility,
             max_steps=len(_build_wave_schedule(config.timeline_mode, config.max_steps)),
             op_enabled=config.op_enabled,
             timeline_mode=config.timeline_mode,
         )
 
         schedule = _build_wave_schedule(resolved_config.timeline_mode, resolved_config.max_steps)
-        sim_providers = llm.available_providers() or [resolved_provider]
-        commenter_profiles = _build_commenter_profiles(
-            resolved_config.num_commenters,
-            mobility=resolved_config.mobility,
-            available_providers=sim_providers,
-        )
-        voter_profiles = _build_voter_profiles(
-            resolved_config.num_voters,
-            mobility=resolved_config.mobility,
-            available_providers=sim_providers,
-        )
+        # Keep provider assignment per post consistent when a provider is resolved.
+        sim_providers = [resolved_provider]
+        commenter_profiles = _build_commenter_profiles(resolved_config.num_commenters, sim_providers)
         _assign_arrival_waves(commenter_profiles, schedule)
-        _assign_arrival_waves(voter_profiles, schedule)
+        profile_by_agent_id = {profile["agent_id"]: profile for profile in commenter_profiles}
 
         timeline: List[AgentAction] = []
         metadata: Dict[str, Any] = {
             "comment_scores": {},
             "comment_votes": {},
             "commenter_profiles": commenter_profiles,
-            "voter_profiles": voter_profiles,
             "timeline_mode": resolved_config.timeline_mode,
             "wave_schedule": schedule,
             "provider": resolved_provider,
             "model_name": resolved_model_name,
-            "mobility": resolved_config.mobility,
         }
         comment_scores: Dict[str, int] = metadata["comment_scores"]
         comment_vote_totals: Dict[str, Dict[str, int]] = metadata["comment_votes"]
         action_counts: Dict[str, int] = {profile["agent_id"]: 0 for profile in commenter_profiles}
         top_level_action_counts: Dict[str, int] = {profile["agent_id"]: 0 for profile in commenter_profiles}
         reply_action_counts: Dict[str, int] = {profile["agent_id"]: 0 for profile in commenter_profiles}
-        vote_counts: Dict[str, int] = {
-            profile["agent_id"]: 0
-            for profile in (commenter_profiles + voter_profiles)
-        }
+        vote_counts: Dict[str, int] = {profile["agent_id"]: 0 for profile in commenter_profiles}
         total_action_counts: Dict[str, int] = {profile["agent_id"]: 0 for profile in commenter_profiles}
         comment_text_by_id: Dict[str, str] = {}
         comment_role_by_id: Dict[str, str] = {}
@@ -645,16 +687,6 @@ async def run_single_post(
             new_arrivals = [profile for profile in commenter_profiles if profile["arrival_wave"] == step]
             arrived_profiles = [profile for profile in commenter_profiles if profile["arrival_wave"] <= step]
             returning_profiles = _select_returning_profiles(arrived_profiles, step, wave, action_counts, vote_counts)
-            voter_new_arrivals = [profile for profile in voter_profiles if profile["arrival_wave"] == step]
-            voter_arrived_profiles = [profile for profile in voter_profiles if profile["arrival_wave"] <= step]
-            returning_voters = _select_returning_profiles(
-                voter_arrived_profiles,
-                step,
-                wave,
-                action_counts,
-                vote_counts,
-            )
-            active_wave_voters = voter_new_arrivals + returning_voters
 
             participant_meta = [{"profile": profile, "is_new_arrival": True} for profile in new_arrivals]
             participant_meta.extend({"profile": profile, "is_new_arrival": False} for profile in returning_profiles)
@@ -810,7 +842,7 @@ async def run_single_post(
                 if action.role == "commenter" and action.comment_id is not None
             ]
             _vote_on_comments(
-                voter_profiles=vote_only_profiles + comment_vote_profiles + active_wave_voters,
+                voter_profiles=vote_only_profiles + comment_vote_profiles,
                 candidate_comment_ids=candidate_comment_ids,
                 comment_scores=comment_scores,
                 comment_vote_totals=comment_vote_totals,
@@ -1095,7 +1127,7 @@ async def run_batch_from_scrape(
             "mobility": mobility,
             "op_enabled": op_enabled,
             "concurrency": concurrency,
-            "scaling_rule": "power_cap_min",
+            "scaling_rule": f"real_comments^{commenter_scale_power}_cap_{commenter_cap}_min_{commenter_min}",
             "source_count": len(finalized_posts),
             "provider_distribution": provider_counts,
             "accuracy": {
